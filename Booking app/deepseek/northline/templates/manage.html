@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Booking {{ appt['reference'] }} — Northline Barber{% endblock %}
+{% block content %}
+<section class="panel narrow">
+  <p class="eyebrow">Private booking view</p>
+  <h1>{{ appt['reference'] }}</h1>
+
+  {% if cancelled %}
+  <div class="alert alert-success" role="status">
+    <h2>Booking cancelled</h2>
+    <p>Your appointment is cancelled and the time has been released. You can book again any time.</p>
+  </div>
+  {% elif error %}
+  <div class="alert alert-error" role="alert">
+    <h2>We could not cancel that</h2>
+    <p>{{ error }}</p>
+  </div>
+  {% endif %}
+
+  <div class="ticket">
+    <div class="ticket-main">
+      <p class="ticket-when">{{ appt['start_utc']|local_dt }}</p>
+      <p class="ticket-what">{{ appt['service_name'] }} · {{ appt['duration_minutes'] }} min
+        with {{ appt['barber_name'] }}</p>
+      <p class="ticket-price">AUD {{ '%.2f'|format(appt['price_cents'] / 100) }} — pay in the shop</p>
+    </div>
+    <dl class="ticket-meta">
+      <div><dt>Name</dt><dd>{{ appt['customer_name'] }}</dd></div>
+      <div><dt>Email</dt><dd>{{ appt['customer_email'] }}</dd></div>
+      <div><dt>Status</dt><dd>
+        {% if appt['status'] == 'confirmed' %}
+          <span class="badge badge-confirmed">Confirmed</span>
+        {% else %}
+          <span class="badge badge-cancelled">Cancelled</span>
+        {% endif %}
+      </dd></div>
+    </dl>
+  </div>
+
+  {% if appt['status'] == 'confirmed' %}
+    {% if appt['start_utc']|is_future %}
+    <form method="post" action="{{ url_for('customer.cancel', token=appt['manage_token']) }}"
+          data-confirm="Cancel this appointment? The time will be released for other customers.">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button class="btn btn-danger" type="submit">Cancel this appointment</button>
+    </form>
+    <p class="muted small">Cancelling frees the slot immediately. This demo keeps the cancelled
+      record in the shop's dashboard.</p>
+    {% else %}
+    <p class="alert alert-info" role="status">This appointment is in the past, so it can no longer be cancelled here.</p>
+    {% endif %}
+  {% endif %}
+
+  <p class="back-row"><a href="{{ url_for('customer.home') }}">Book another appointment</a></p>
+</section>
+{% endblock %}

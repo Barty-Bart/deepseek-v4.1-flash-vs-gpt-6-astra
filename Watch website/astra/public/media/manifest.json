@@ -1,0 +1,139 @@
+{
+  "version": 2,
+  "status": "preview",
+  "provenance": "Higgsfield imagery and connected generated clips with documented local finishing. Storyboard incomplete: reassembly and visible plausible clasp closure failed bounded generation attempts. Preview uses clean wrist footage.",
+  "landscape": {
+    "frameCount": 244,
+    "width": 1440,
+    "height": 804,
+    "fps": 18,
+    "poster": "/media/landscape-v2/poster.webp",
+    "posterType": "full",
+    "pattern": "/media/landscape-v2/frame-{frame}.webp",
+    "startIndex": 1,
+    "padding": 4,
+    "original": "public/media/originals/landscape-v2.mp4",
+    "version": "v2",
+    "inspectedForDecodability": [
+      "frame-0001.webp",
+      "frame-0087.webp",
+      "frame-0096.webp",
+      "frame-0185.webp",
+      "frame-0192.webp",
+      "frame-0123.webp",
+      "frame-0244.webp"
+    ],
+    "visualAcceptance": "Reviewed as an explicitly unfinished cinematic study. Opening/construction and macro accepted; final wrist preview does not fulfil the required reassembly and visible clasp closure.",
+    "duration": 13.555555555555555,
+    "timeline": [
+      0,
+      0.1111111111111111,
+      0.390652557319224,
+      0.7856790123456789,
+      1
+    ],
+    "resolutionCopyAt": 0.8930041399176954,
+    "sequenceBytes": 6464798,
+    "decodedCacheBytes": 60203520,
+    "sourceOriginal": "public/media/originals/landscape-v1.mp4",
+    "mediaExpansion": [
+      0.3778483245149912,
+      0.4103703703703703,
+      0.7598353909465021,
+      0.7856790123456789
+    ],
+    "timingEdit": {
+      "sidecar": "public/media/originals/landscape-v2.json",
+      "removedFrames": 83,
+      "intervals": [
+        {
+          "name": "exploded pause",
+          "start": 4.8,
+          "end": 8.25,
+          "keep": 10,
+          "first": 86,
+          "last": 149,
+          "beforeFrames": 64,
+          "afterFrames": 10
+        },
+        {
+          "name": "abstract blur",
+          "start": 13.2,
+          "end": 15.2,
+          "keep": 8,
+          "first": 238,
+          "last": 274,
+          "beforeFrames": 37,
+          "afterFrames": 8
+        }
+      ]
+    }
+  },
+  "portrait": {
+    "frameCount": 351,
+    "width": 720,
+    "height": 1290,
+    "fps": 18,
+    "poster": "/media/portrait-v2/poster.webp",
+    "posterType": "full",
+    "pattern": "/media/portrait-v2/frame-{frame}.webp",
+    "startIndex": 1,
+    "padding": 4,
+    "original": "public/media/originals/portrait-v2.mp4",
+    "version": "v2",
+    "inspectedForDecodability": [
+      "frame-0001.webp",
+      "frame-0105.webp",
+      "frame-0114.webp",
+      "frame-0203.webp",
+      "frame-0210.webp",
+      "frame-0176.webp",
+      "frame-0351.webp"
+    ],
+    "visualAcceptance": "Reviewed as an explicitly unfinished cinematic study. Opening/construction and macro accepted; final wrist preview does not fulfil the required reassembly and visible clasp closure.",
+    "timeline": [
+      0,
+      0.07714285714285714,
+      0.32257142857142856,
+      0.5969142857142857,
+      1
+    ],
+    "resolutionCopyAt": 0.8428571942857144,
+    "duration": 19.5,
+    "sequenceBytes": 12157368,
+    "decodedCacheBytes": 48297600,
+    "sourceOriginal": "public/media/originals/portrait-v1.mp4",
+    "mediaExpansion": [
+      0.3101257142857143,
+      0.33634285714285705,
+      0.5789714285714286,
+      0.5969142857142857
+    ],
+    "timingEdit": {
+      "sidecar": "public/media/originals/portrait-v2.json",
+      "removedFrames": 65,
+      "intervals": [
+        {
+          "name": "exploded pause",
+          "start": 5.75,
+          "end": 8.25,
+          "keep": 10,
+          "first": 104,
+          "last": 149,
+          "beforeFrames": 46,
+          "afterFrames": 10
+        },
+        {
+          "name": "abstract blur",
+          "start": 13.2,
+          "end": 15.2,
+          "keep": 8,
+          "first": 238,
+          "last": 274,
+          "beforeFrames": 37,
+          "afterFrames": 8
+        }
+      ]
+    }
+  }
+}

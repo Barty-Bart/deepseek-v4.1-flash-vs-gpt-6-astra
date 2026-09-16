@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>MERIDIAN — Every part, a purpose.</title>
+    <meta
+      name="description"
+      content="MERIDIAN is a fictional independent mechanical-watch studio concept. Explore the M01 collection, the craft behind it and a demonstrated trade-in flow."
+    />
+    <meta name="theme-color" content="#101820" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="./media/posters/landscape-poster.webp" as="image" media="(min-width: 900px)" />
+    <link rel="preload" href="./media/posters/portrait-poster.webp" as="image" media="(max-width: 899px)" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#collection">Skip to the collection</a>
+
+    <!-- ============ header ============ -->
+    <header class="site-header" id="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="MERIDIAN, home">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <circle cx="20" cy="20" r="18.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <path d="M20 3.4 26.6 20 20 36.6 13.4 20Z" fill="none" stroke="currentColor" stroke-width="1.1" />
+            <path d="M3.4 20h33.2" stroke="currentColor" stroke-width="1.1" />
+            <path d="M20 12.6 23.4 20 20 27.4 16.6 20Z" fill="currentColor" />
+          </svg>
+          <span class="brand-word">MERIDIAN</span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#craft">Craft</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#trade-in">Trade In</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button class="bag-button" type="button" data-bag-open aria-haspopup="dialog" aria-controls="bag-drawer">
+            <span class="bag-label">Bag</span>
+            <span class="bag-count" data-bag-count aria-hidden="true">0</span>
+            <span class="sr-only" data-bag-count-sr>Bag, 0 items</span>
+          </button>
+          <button
+            class="menu-toggle"
+            type="button"
+            data-menu-toggle
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+          >
+            <span class="menu-bars" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </div>
+      </div>
+      <div class="header-rule" aria-hidden="true"></div>
+    </header>
+
+    <!-- ============ mobile menu ============ -->
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+      <nav aria-label="Mobile">
+        <ul>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#craft">Craft</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#trade-in">Trade In</a></li>
+        </ul>
+      </nav>
+      <p class="menu-foot">Fictional brand concept. Illustration only.</p>
+    </div>
+
+    <main id="top">
+      <!-- ============ 1. pinned cinematic stage ============ -->
+      <section class="stage-section" id="film" aria-labelledby="film-title">
+        <div class="stage-track" data-stage-track>
+          <div class="stage-sticky" data-stage-sticky>
+            <div class="stage-media" data-stage-media aria-hidden="true">
+              <img
+                class="stage-poster is-shown"
+                data-stage-poster
+                src="./media/posters/landscape-poster.webp"
+                alt=""
+                width="1440"
+                height="810"
+                decoding="async"
+              />
+              <canvas class="stage-canvas" data-stage-canvas width="1440" height="810"></canvas>
+            </div>
+
+            <div class="stage-copy" aria-live="polite">
+              <div class="beat" data-beat="assembled">
+                <h1 class="beat-title" id="film-title">Every part, a purpose.</h1>
+                <p class="beat-support">Mechanical craft. Made for the hours that matter.</p>
+                <p class="beat-cta"><a class="btn btn-primary" href="#collection">Explore M01</a></p>
+              </div>
+              <div class="beat" data-beat="exploded">
+                <h2 class="beat-title">Considered, down to the smallest detail.</h2>
+                <p class="beat-support">A complete world of precision, working as one.</p>
+              </div>
+              <div class="beat beat-silent" data-beat="macro" aria-hidden="true"></div>
+              <div class="beat" data-beat="wrist">
+                <h2 class="beat-title">Made to become part of your day.</h2>
+                <p class="beat-cta"><a class="btn btn-primary" href="#collection">Find your Meridian</a></p>
+              </div>
+            </div>
+
+            <div class="stage-foot">
+              <a class="skip-story" href="#collection" data-skip-story>Skip the story</a>
+              <p class="scroll-cue" data-scroll-cue aria-hidden="true"><span>Scroll</span><i></i></p>
+              <p class="stage-progress" data-stage-progress aria-hidden="true"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 2. collection ============ -->
+      <section class="section collection" id="collection" aria-labelledby="collection-title">
+        <div class="section-head">
+          <p class="eyebrow">The collection</p>
+          <h2 class="section-title" id="collection-title">Five watches. One case architecture.</h2>
+          <p class="section-intro">
+            Every M01 and M02 shares the same 40 mm case, the same bracelet geometry and the same
+            movement. What changes is the dial, the finish and the strap.
+          </p>
+        </div>
+
+        <ul class="product-grid" data-product-grid></ul>
+
+        <p class="collection-note">
+          Prices in USD. Concept specifications — illustrative only. Adding to the bag is a
+          demonstration and places no order.
+        </p>
+      </section>
+
+      <!-- ============ 3. craft ============ -->
+      <section class="section craft" id="craft" aria-labelledby="craft-title">
+        <div class="craft-layout">
+          <figure class="craft-figure">
+            <img
+              src="./media/craft/movement-macro.webp"
+              alt="Macro view of the M01 automatic movement, with a polished bridge and a train of brass gears"
+              width="1400"
+              height="933"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Automatic movement, 40-hour reserve.</figcaption>
+          </figure>
+
+          <div class="craft-copy">
+            <p class="eyebrow">The craft</p>
+            <h2 class="section-title" id="craft-title">
+              A mechanical watch is a small argument for doing things properly.
+            </h2>
+            <p class="lede">
+              The M01 case is turned from a single block of stainless steel, then brushed in one
+              direction across the flanks and polished on the bezel so the two finishes meet on a
+              crisp line.
+            </p>
+            <p>
+              Inside, an automatic movement winds itself from the motion of your wrist and keeps a
+              40-hour reserve — enough to take it off on Friday evening and find it running on
+              Monday morning.
+            </p>
+            <p>
+              The dial is finished with a fine sunray brush that runs outward from the centre, which
+              is why the M01 changes character as you move. Applied indices sit slightly proud of the
+              surface so the hands read clearly at a glance.
+            </p>
+            <p>
+              The bracelet is built from flat three-link sections that taper toward the clasp, with a
+              concealed folding clasp so the outside stays clean.
+            </p>
+          </div>
+        </div>
+
+        <ul class="craft-highlights">
+          <li>
+            <p class="highlight-value">40 h</p>
+            <h3 class="highlight-label">Power reserve</h3>
+            <p>Automatic winding, enough to rest a weekend.</p>
+          </li>
+          <li>
+            <p class="highlight-value">100 m</p>
+            <h3 class="highlight-label">Water resistance</h3>
+            <p>Everyday wear, rain and washing up included.</p>
+          </li>
+          <li>
+            <p class="highlight-value">40 mm</p>
+            <h3 class="highlight-label">Case diameter</h3>
+            <p>A considered size that sits flat under a cuff.</p>
+          </li>
+        </ul>
+
+        <p class="spec-note">
+          Concept specifications. Fictional product specifications for this demonstration, not
+          verified engineering claims.
+        </p>
+      </section>
+
+      <!-- ============ 4. our story ============ -->
+      <section class="section about" id="story" aria-labelledby="story-title">
+        <div class="about-layout">
+          <div class="about-copy">
+            <p class="eyebrow">Our story</p>
+            <h2 class="section-title" id="story-title">Founded in 2018 on a simple disagreement.</h2>
+            <p class="lede">
+              MERIDIAN began in 2018 with a small argument about what an everyday mechanical watch
+              should cost.
+            </p>
+            <p>
+              Four people — an engineer, a designer, a machinist and someone who had spent a decade
+              servicing watches for other people — spent two years on the M01 case before the first
+              one was assembled.
+            </p>
+            <p>
+              The studio is deliberately narrow in scope. One case architecture, a handful of dials,
+              and a bracelet that is finished to the same standard on the inside as the outside.
+              Nothing is added for the sake of a feature list.
+            </p>
+            <p>
+              Eight years later the collection is still built around that first case. Watches have
+              found 9,800 owners. Around 12,400 have been sold since the studio opened.
+            </p>
+          </div>
+
+          <figure class="about-figure">
+            <img
+              src="./media/lifestyle/worn-arcade.webp"
+              alt="The M01 Midnight worn on the wrist while walking through a sunlit city arcade"
+              width="1600"
+              height="1067"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>M01 Midnight, worn daily.</figcaption>
+          </figure>
+        </div>
+
+        <div class="stats">
+          <dl class="stats-list">
+            <div><dt>8</dt><dd>Years of design</dd></div>
+            <div><dt>12,400</dt><dd>Watches sold</dd></div>
+            <div><dt>9,800</dt><dd>Owners</dd></div>
+          </dl>
+          <p class="concept-note">
+            <span class="concept-badge">Fictional brand concept — illustrative figures</span>
+          </p>
+        </div>
+
+      </section>
+
+      <!-- ============ 5. trade in ============ -->
+      <section class="section trade" id="trade-in" aria-labelledby="trade-title">
+        <div class="section-head">
+          <p class="eyebrow">Trade in</p>
+          <h2 class="section-title" id="trade-title">We buy watches, too.</h2>
+          <p class="section-intro">
+            If a watch has stopped earning its place on your wrist, we would rather it went to
+            someone who will wear it. Tell us what you have and we will tell you what we would offer.
+          </p>
+        </div>
+
+        <ol class="trade-steps">
+          <li>
+            <p class="step-n">01</p>
+            <h3>Tell us about it</h3>
+            <p>Brand, model and an honest description of the condition. Add a photo if you have one.</p>
+          </li>
+          <li>
+            <p class="step-n">02</p>
+            <h3>Receive an assessment</h3>
+            <p>A member of the studio reviews what you send and prepares an indicative valuation.</p>
+          </li>
+          <li>
+            <p class="step-n">03</p>
+            <h3>Choose your next chapter</h3>
+            <p>
+              Take the valuation as a credit against a Meridian, or leave it. There is no obligation
+              either way.
+            </p>
+          </li>
+        </ol>
+
+        <div class="trade-panel">
+          <form class="trade-form" data-trade-form novalidate>
+            <div class="field">
+              <label for="trade-brand">Brand</label>
+              <input id="trade-brand" name="brand" type="text" autocomplete="off" required
+                     aria-describedby="err-brand" />
+              <p class="field-error" id="err-brand" data-error-for="brand" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="trade-model">Model</label>
+              <input id="trade-model" name="model" type="text" autocomplete="off" required
+                     aria-describedby="err-model" />
+              <p class="field-error" id="err-model" data-error-for="model" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="trade-condition">Condition</label>
+              <select id="trade-condition" name="condition" required aria-describedby="err-condition">
+                <option value="">Select a condition</option>
+                <option value="Unworn">Unworn</option>
+                <option value="Excellent">Excellent</option>
+                <option value="Good">Good</option>
+                <option value="Fair">Fair</option>
+                <option value="Needs service">Needs service</option>
+              </select>
+              <p class="field-error" id="err-condition" data-error-for="condition" hidden></p>
+            </div>
+
+            <div class="field field-photo">
+              <label for="trade-photo">Photo <span class="optional">(optional)</span></label>
+              <input id="trade-photo" name="photo" type="file" accept="image/*" aria-describedby="info-photo" />
+              <p class="field-hint" id="info-photo">
+                Your photo is previewed on this page only. It is never uploaded or sent anywhere.
+              </p>
+              <figure class="photo-preview" data-photo-preview hidden>
+                <img data-photo-image alt="" />
+                <figcaption data-photo-caption></figcaption>
+              </figure>
+              <p class="field-error" data-error-for="photo" hidden></p>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Prepare demo valuation</button>
+              <button class="btn btn-quiet" type="reset">Clear form</button>
+            </div>
+
+            <p class="form-note">
+              This is a demonstration form. Nothing you enter is sent, stored or shared.
+            </p>
+
+            <div class="form-result" data-trade-result hidden role="status" tabindex="-1">
+              <p class="form-result-title">Demo valuation request prepared — nothing has been sent.</p>
+              <dl class="form-result-list" data-trade-summary></dl>
+              <p class="form-result-note">
+                Fictional brand concept. No data leaves this page and no valuation is promised.
+              </p>
+              <button class="btn btn-quiet" type="button" data-trade-reset>Start another</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ footer ============ -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <circle cx="20" cy="20" r="18.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <path d="M20 3.4 26.6 20 20 36.6 13.4 20Z" fill="none" stroke="currentColor" stroke-width="1.1" />
+            <path d="M3.4 20h33.2" stroke="currentColor" stroke-width="1.1" />
+            <path d="M20 12.6 23.4 20 20 27.4 16.6 20Z" fill="currentColor" />
+          </svg>
+          <div>
+            <p class="footer-word">MERIDIAN</p>
+            <p class="footer-tagline">Every part, a purpose.</p>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer">
+          <ul>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#craft">Craft</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#trade-in">Trade In</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-meta">
+          <p class="footer-currency">All prices in USD</p>
+          <p class="footer-concept">
+            MERIDIAN is a fictional brand concept created for a design demonstration. It is not a
+            real merchant. Prices, statistics and product specifications are illustrative, not
+            verified engineering claims, and no orders, payments or data collection take place.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ product detail panel ============ -->
+    <div class="modal" data-product-modal hidden>
+      <div class="modal-scrim" data-modal-close tabindex="-1"></div>
+      <div class="modal-panel product-panel" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+        <button class="modal-close" type="button" data-modal-close aria-label="Close product details">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="product-panel-media">
+          <img data-pm-image src="" alt="" />
+        </div>
+        <div class="product-panel-body">
+          <p class="eyebrow">M01 / M02 collection</p>
+          <h2 class="panel-title" id="pm-title" data-pm-title></h2>
+          <p class="panel-price" data-pm-price></p>
+          <p class="panel-blurb" data-pm-blurb></p>
+
+          <fieldset class="variant-picker">
+            <legend>Choose a variant</legend>
+            <ul data-pm-variants></ul>
+          </fieldset>
+
+          <dl class="panel-specs" data-pm-specs></dl>
+
+          <div class="panel-buy">
+            <div class="qty" data-pm-qty>
+              <span class="qty-label" id="pm-qty-label">Quantity</span>
+              <div class="qty-controls" role="group" aria-labelledby="pm-qty-label">
+                <button type="button" data-qty-down aria-label="Decrease quantity">&minus;</button>
+                <output data-qty-value aria-live="polite">1</output>
+                <button type="button" data-qty-up aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-wide" type="button" data-pm-add>Add to bag</button>
+          </div>
+
+          <p class="panel-note">
+            Concept specifications — illustrative. This is a demonstration bag; no order is placed.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ bag drawer ============ -->
+    <div class="modal" data-bag-modal hidden>
+      <div class="modal-scrim" data-bag-dismiss tabindex="-1"></div>
+      <aside class="modal-panel bag-panel" id="bag-drawer" role="dialog" aria-modal="true" aria-labelledby="bag-title">
+        <header class="bag-head">
+          <h2 id="bag-title">Your bag</h2>
+          <button class="modal-close" type="button" data-bag-dismiss aria-label="Close bag">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </header>
+
+        <div class="bag-body" data-bag-body>
+          <p class="bag-empty" data-bag-empty>
+            Your bag is empty.
+            <span>Add a watch from the collection to see how totals work here.</span>
+          </p>
+          <ul class="bag-list" data-bag-list></ul>
+        </div>
+
+        <footer class="bag-foot" data-bag-foot>
+          <dl class="bag-totals">
+            <div><dt>Subtotal</dt><dd data-total-subtotal>$0.00</dd></div>
+            <div><dt>Shipping</dt><dd>Included</dd></div>
+            <div><dt>Duties and tax</dt><dd>Calculated at checkout</dd></div>
+            <div class="bag-grand"><dt>Total</dt><dd data-total-grand>$0.00</dd></div>
+          </dl>
+          <button class="btn btn-primary btn-wide" type="button" data-demo-checkout>
+            Review demo order
+          </button>
+          <div class="bag-foot-actions">
+            <button class="btn btn-quiet" type="button" data-bag-reset>Reset bag</button>
+          </div>
+          <p class="bag-note">
+            Demonstration bag. Nothing is charged and no order is placed.
+          </p>
+          <div class="demo-summary" data-demo-summary hidden tabindex="-1" role="status">
+            <h3>Demo order summary</h3>
+            <p>
+              This is a demonstration summary only. No payment has been taken, no order has been
+              placed and no data has left this page.
+            </p>
+            <ul data-demo-lines></ul>
+            <p class="demo-summary-total" data-demo-total></p>
+            <button class="btn btn-quiet" type="button" data-demo-close>Close summary</button>
+          </div>
+        </footer>
+      </aside>
+    </div>
+
+    <div class="bag-toast" data-bag-toast hidden role="status"></div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

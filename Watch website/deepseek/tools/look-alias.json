@@ -1,0 +1,22 @@
+{
+  "views": [
+    {
+      "name": "family-1440",
+      "width": 1440,
+      "height": 900,
+      "scrolls": [
+        5900
+      ]
+    },
+    {
+      "name": "family-390",
+      "width": 390,
+      "height": 844,
+      "mobile": true,
+      "scrolls": [
+        5300
+      ]
+    }
+  ],
+  "url": "http://127.0.0.1:5179/"
+}

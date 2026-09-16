@@ -1,0 +1,65 @@
+PASS Live preview renders at 1440×1000 with keyboard skip link and visible focus
+PASS Live preview renders at 390×844 without page overflow; time controls have 44px targets
+127.0.0.1 - - [15/Sep/2026 15:00:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:24] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:24] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:24] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:25] "GET /api/availability?service=3&staff=1&date=2026-09-15 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:25] "GET /api/availability?service=3&staff=2&date=2026-09-15 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:25] "[32mPOST /book HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:00:25] "GET /booking/L7GH7W9M6XSUt5owNm72wqBjWHPLTQRtRer0zMYb0gg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:25] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:25] "GET /static/app.js HTTP/1.1" 200 -
+PASS Customer can select service/barber/time and confirm; summary and stored duration agree
+127.0.0.1 - - [15/Sep/2026 15:00:25] "GET /booking/L7GH7W9M6XSUt5owNm72wqBjWHPLTQRtRer0zMYb0gg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:25] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:25] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "[32mPOST /booking/L7GH7W9M6XSUt5owNm72wqBjWHPLTQRtRer0zMYb0gg/cancel HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET /booking/L7GH7W9M6XSUt5owNm72wqBjWHPLTQRtRer0zMYb0gg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET /?service=3&staff=2&date=2026-09-15 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET /static/app.js HTTP/1.1" 200 -
+PASS Private booking page renders on mobile; cancellation releases the selected slot
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:26] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:27] "GET /api/availability?service=1&staff=1&date=2026-09-16 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:27] "GET /api/availability?service=1&staff=1&date=2026-09-20 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:27] "GET /api/availability?service=1&staff=1&date=2026-09-20 HTTP/1.1" 200 -
+PASS Mobile date rail and date picker refresh availability; closed days have a helpful empty state
+127.0.0.1 - - [15/Sep/2026 15:00:27] "[32mGET /admin HTTP/1.1[0m" 302 -
+127.0.0.1 - - [15/Sep/2026 15:00:27] "GET /admin/login HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:27] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:27] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:27] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:28] "[32mPOST /admin/login HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:00:28] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:28] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:28] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:28] "GET /admin?date=2026-09-16&staff= HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:28] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:28] "GET /static/app.js HTTP/1.1" 200 -
+PASS Admin requires sign in and shows seeded appointments for the chosen date
+127.0.0.1 - - [15/Sep/2026 15:00:29] "[31m[1mPOST /admin/blocks HTTP/1.1[0m" 409 -
+127.0.0.1 - - [15/Sep/2026 15:00:29] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:29] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:30] "[32mPOST /admin/blocks HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:00:30] "GET /admin?date=2026-09-16&staff= HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:30] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:30] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:30] "[32mPOST /admin/blocks/3/delete HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:00:30] "GET /admin?date=2026-09-16&staff= HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:30] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:00:30] "GET /static/app.js HTTP/1.1" 200 -
+PASS Admin receives a named overlap error and can create/remove a valid unavailable period
+Traceback (most recent call last):
+  File "./scripts/verify_ui.py", line 157, in <module>
+    no_overflow(page)
+    ~~~~~~~~~~~^^^^^^
+  File "./scripts/verify_ui.py", line 47, in no_overflow
+    raise AssertionError('Page overflows horizontally: ' + json.dumps(offenders))
+AssertionError: Page overflows horizontally: [{"tag": "TABLE", "class": "", "width": 760}, {"tag": "THEAD", "class": "", "width": 760}, {"tag": "TR", "class": "", "width": 760}, {"tag": "TH", "class": "", "width": 120}, {"tag": "TH", "class": "", "width": 103}, {"tag": "TH", "class": "", "width": 126}, {"tag": "TH", "class": "", "width": 91}, {"tag": "TBODY", "class": "", "width": 760}, {"tag": "TR", "class": "", "width": 760}, {"tag": "TD", "class": "", "width": 120}, {"tag": "SPAN", "class": "", "width": 94}, {"tag": "TD", "class": "", "width": 103}, {"tag": "SPAN", "class": "staff-name", "width": 35}, {"tag": "SPAN", "class": "staff-dot", "width": 7}, {"tag": "TD", "class": "", "width": 126}]

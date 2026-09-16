@@ -1,0 +1,9 @@
+{
+  "url": "http://127.0.0.1:5179/",
+  "views": [
+    { "name": "stats", "width": 1440, "height": 900, "scrolls": [7600] },
+    { "name": "trade", "width": 1440, "height": 900, "scrolls": [9200] },
+    { "name": "stats-390", "width": 390, "height": 844, "mobile": true, "scrolls": [6600] },
+    { "name": "trade-390", "width": 390, "height": 844, "mobile": true, "scrolls": [7900] }
+  ]
+}

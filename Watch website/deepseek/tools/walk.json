@@ -1,0 +1,17 @@
+{
+  "views": [
+    {
+      "name": "fix",
+      "width": 1440,
+      "height": 900,
+      "canvasDump": true,
+      "scrolls": [
+        3500,
+        3960,
+        4400,
+        5400
+      ],
+      "probe": "() => { const sp = window.__stage || {}; return { y: Math.round(window.scrollY), current: sp.current, drawn: sp.drawnBitmapIndex, settled: sp.isSettled(), loaded: sp.loaded.size }; }"
+    }
+  ]
+}

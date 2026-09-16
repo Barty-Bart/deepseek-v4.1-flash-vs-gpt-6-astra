@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "./scripts/verify_operation.py", line 73, in <module>
+    verify()
+    ~~~~~~^^
+  File "./scripts/verify_operation.py", line 53, in verify
+    raise RuntimeError('The alternate preview did not start; see alternate-port.log')
+RuntimeError: The alternate preview did not start; see alternate-port.log

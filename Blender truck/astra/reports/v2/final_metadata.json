@@ -1,0 +1,36 @@
+{
+  "scene": "./pickup_truck_v2.blend",
+  "sha256": "87e45acda5c96de74f36f71f2521b6050dbe0c0f29506b9ae2b183f63238bbe2",
+  "original_sha256": "077f035f0202dffc63b8c8433709b1fabbf69f36698949d46cf4ae2929a68ffd",
+  "objects": 1403,
+  "frame_range": [
+    1,
+    498
+  ],
+  "saved_frame": 1,
+  "fps": 24,
+  "engine": "BLENDER_EEVEE",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "active_camera": "CAM_ANIMATION_V2 | engine and dual rear inspection",
+  "verification_status": "PASS: 19 checks; 498 evaluated output frames",
+  "documentation_matches_disk": true,
+  "external_images": [],
+  "embedded_texts": [
+    "build_truck_v2.py",
+    "finalize_truck_v2.py",
+    "README | START HERE",
+    "README_v2.md",
+    "V1 ARCHIVE | build_truck.py",
+    "V1 ARCHIVE | finalize_scene.py",
+    "V1 ARCHIVE | README.md",
+    "V1 ARCHIVE | verification.json",
+    "V1 ARCHIVE | verify_scene.py",
+    "verification_v2.json",
+    "verify_truck_v2.py",
+    "viewport_inspect_v2.py"
+  ],
+  "rendering_performed": false
+}

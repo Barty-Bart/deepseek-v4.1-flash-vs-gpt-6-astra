@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Find my booking — Northline Barber{% endblock %}
+{% block content %}
+<section class="panel narrow">
+  <h1>Find your booking</h1>
+  <p class="lede">Paste the private management link (or just its code) that you were shown when you booked.</p>
+
+  {% if error %}<div class="alert alert-error" role="alert"><p>{{ error }}</p></div>{% endif %}
+
+  <form class="booking-form" method="post" action="{{ url_for('customer.manage_lookup') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <p class="field">
+      <label for="token">Private link or code</label>
+      <input type="text" id="token" name="token" required autocomplete="off" spellcheck="false"
+             placeholder="https://127.0.0.1:5181/manage/…">
+    </p>
+    <button class="btn btn-primary" type="submit">Open my booking</button>
+  </form>
+
+  <div class="alert alert-info" role="alert">
+    <p>We can't look bookings up by name or email in this local demo, because no confirmation
+      emails are sent. If you lost your link, the shop can cancel the appointment from the staff
+      dashboard and you can book again.</p>
+  </div>
+</section>
+{% endblock %}

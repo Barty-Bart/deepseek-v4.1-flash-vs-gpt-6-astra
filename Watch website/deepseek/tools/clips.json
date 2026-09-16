@@ -1,0 +1,9 @@
+{
+  "landscape": [
+    { "n": 1, "file": "assets/masters/video/L1.mp4" },
+    { "n": 2, "file": "assets/masters/video/L2.mp4" },
+    { "n": 3, "file": "assets/masters/video/L3.mp4" },
+    { "n": 4, "file": "assets/masters/video/L4.mp4" }
+  ],
+  "portrait": []
+}

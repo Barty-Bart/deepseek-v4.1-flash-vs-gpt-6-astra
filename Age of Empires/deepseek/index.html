@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>Verdant Vale</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="app">
+  <canvas id="game" aria-label="Game world"></canvas>
+
+  <header id="topbar">
+    <div class="brand">
+      <span class="crest"></span>
+      <span class="brand-name">Verdant&nbsp;Vale</span>
+    </div>
+    <div class="resources">
+      <div class="res" data-res="food" title="Food — gathered from berries and farms">
+        <span class="ico" data-icon="food"></span><span id="res-food">0</span>
+      </div>
+      <div class="res" data-res="wood" title="Wood — gathered from trees">
+        <span class="ico" data-icon="wood"></span><span id="res-wood">0</span>
+      </div>
+      <div class="res" data-res="gold" title="Gold — gathered from gold mines">
+        <span class="ico" data-icon="gold"></span><span id="res-gold">0</span>
+      </div>
+      <div class="res pop" data-res="pop" title="Population / population limit">
+        <span class="ico" data-icon="pop"></span><span id="res-pop">0/0</span>
+      </div>
+      <div id="age-chip" class="age-chip" title="">Hearth Age</div>
+    </div>
+    <div class="tools">
+      <button id="btn-home" class="tool" title="Jump to town centre (H)">Home</button>
+      <button id="btn-pause" class="tool" title="Pause or resume (P)">Pause</button>
+      <button id="btn-mute" class="tool" title="Mute or unmute (M)">Sound</button>
+      <button id="btn-restart" class="tool" title="Restart the match (R)">Restart</button>
+      <button id="btn-help" class="tool" title="Show controls (?)">Controls</button>
+    </div>
+  </header>
+
+  <footer id="bottombar">
+    <div class="minimap-frame">
+      <canvas id="minimap" width="240" height="180"></canvas>
+    </div>
+    <section id="selection">
+      <div id="sel-title">No selection</div>
+      <div id="sel-sub">Drag to select villagers or soldiers.</div>
+      <div id="sel-hp" class="hpbar hidden"><i id="sel-hp-fill"></i></div>
+      <div id="sel-queue" class="queue hidden">
+        <span id="sel-queue-label"></span>
+        <div class="progress"><i id="sel-queue-fill"></i></div>
+      </div>
+    </section>
+    <section id="actions"></section>
+    <div id="hint" class="hint">Left-drag select &middot; Right-click command &middot; WASD / edge pan &middot; Wheel zoom</div>
+  </footer>
+
+  <div id="toasts"></div>
+
+  <div id="overlay-menu" class="overlay menu">
+    <div class="menu-panel">
+      <div class="menu-crest"></div>
+      <h1>Verdant Vale</h1>
+      <p class="tagline">Raise a settlement, advance through the ages, and raze the rival town centre.</p>
+      <button id="btn-start" class="menu-btn">Start Game</button>
+      <div class="menu-cols">
+        <div>
+          <h3>First steps</h3>
+          <ol>
+            <li>Drag a box over your three villagers.</li>
+            <li>Right-click trees and berry bushes to gather.</li>
+            <li>Build a House, then a Barracks.</li>
+            <li>Advance to the Keep Age from the town centre.</li>
+          </ol>
+        </div>
+        <div>
+          <h3>Controls</h3>
+          <ul>
+            <li><b>Left click / drag</b> — select</li>
+            <li><b>Right click</b> — move, gather, attack, help build</li>
+            <li><b>W A S D</b> or screen edge — pan &middot; <b>wheel</b> — zoom</li>
+            <li><b>H</b> home &middot; <b>P</b> pause &middot; <b>M</b> mute &middot; <b>R</b> restart</li>
+          </ul>
+        </div>
+      </div>
+      <p class="menu-foot">
+        Fog of war is on: unexplored ground is black, land you have seen but cannot watch is dimmed.
+        Scout out <b>Ashfell</b> and destroy their town centre to win.
+      </p>
+    </div>
+  </div>
+
+  <div id="overlay-help" class="overlay hidden">
+    <div class="panel">
+      <h2>Controls</h2>
+      <div class="help-cols">
+        <div>
+          <h3>Camera</h3>
+          <ul>
+            <li><b>W A S D</b> or <b>arrow keys</b> — pan</li>
+            <li><b>Move mouse to screen edge</b> — pan</li>
+            <li><b>Middle-drag</b> — pan</li>
+            <li><b>Mouse wheel</b> — zoom in / out</li>
+            <li><b>H</b> — jump to town centre</li>
+            <li><b>Click the minimap</b> — jump camera</li>
+          </ul>
+          <h3>Groups</h3>
+          <ul>
+            <li><b>Select 2+ units</b> — formation buttons appear</li>
+            <li><b>Line / Box / Staggered / Flank</b> — pick a shape, then move</li>
+            <li>Formations re-form the group on the spot</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Commands</h3>
+          <ul>
+            <li><b>Left click</b> — select a unit or building</li>
+            <li><b>Left drag</b> — selection box</li>
+            <li><b>Shift + click</b> — add to selection</li>
+            <li><b>Right click</b> — move, gather, attack or build</li>
+            <li><b>Esc</b> — cancel / clear selection</li>
+            <li><b>Right-click a farm</b> — villagers work the field</li>
+            <li><b>P</b> pause &middot; <b>M</b> mute &middot; <b>R</b> restart</li>
+          </ul>
+        </div>
+      </div>
+      <h3>Ages</h3>
+      <p>Select your town centre and press <b>Advance to the Keep Age</b> (350 food, 120 gold) to unlock
+        <b>Watch Towers</b> and <b>Archers</b>. The <b>Crown Age</b> (700 food, 350 gold) adds <b>Knights</b>
+        and reinforces every tower. Locked buttons in the command card show what each age brings.</p>
+      <h3>Goal</h3>
+      <p>Destroy the <b>Ashfell</b> town centre to win. Lose your own town centre and the match is over.
+        Villagers gather food, wood and gold. Houses raise the population limit, barracks train soldiers,
+        and the town centre and watch towers shoot at raiders.</p>
+      <button class="tool primary" data-close="overlay-help">Close</button>
+    </div>
+  </div>
+
+  <div id="overlay-pause" class="overlay hidden">
+    <div class="panel small">
+      <h2>Paused</h2>
+      <p>Press <b>P</b> to resume.</p>
+    </div>
+  </div>
+
+  <div id="overlay-end" class="overlay hidden">
+    <div class="panel small">
+      <h2 id="end-title">Victory</h2>
+      <p id="end-body"></p>
+      <div class="end-actions">
+        <button id="btn-end-restart" class="tool primary">Play again</button>
+        <button class="tool" data-close="overlay-end">Keep looking</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

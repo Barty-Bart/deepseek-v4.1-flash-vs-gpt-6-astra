@@ -1,0 +1,6 @@
+{
+  "views": [
+    { "name": "desktop-1440", "width": 1440, "height": 900, "durationMs": 6000 },
+    { "name": "phone-390", "width": 390, "height": 844, "mobile": true, "durationMs": 6000 }
+  ]
+}

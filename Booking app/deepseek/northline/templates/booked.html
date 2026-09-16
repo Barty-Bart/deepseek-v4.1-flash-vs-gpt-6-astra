@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Booking confirmed — {{ appt['reference'] }}{% endblock %}
+{% block content %}
+<section class="panel confirm-panel">
+  <p class="eyebrow">Confirmed</p>
+  <h1>You're booked in, {{ appt['customer_name'].split(' ')[0] }}.</h1>
+  <p class="lede">
+    Show this reference when you arrive. We've also given you a private link below to view or
+    cancel this appointment.
+  </p>
+
+  <div class="ticket">
+    <div class="ticket-main">
+      <p class="ticket-ref">{{ appt['reference'] }}</p>
+      <p class="ticket-when">{{ appt['start_utc']|local_dt }}</p>
+      <p class="ticket-what">{{ appt['service_name'] }} · {{ appt['duration_minutes'] }} min
+        with {{ appt['barber_name'] }}</p>
+      <p class="ticket-price">AUD {{ '%.2f'|format(appt['price_cents'] / 100) }} — pay in the shop</p>
+    </div>
+    <dl class="ticket-meta">
+      <div><dt>Name</dt><dd>{{ appt['customer_name'] }}</dd></div>
+      <div><dt>Email</dt><dd>{{ appt['customer_email'] }}</dd></div>
+      <div><dt>Status</dt><dd><span class="badge badge-confirmed">Confirmed</span></dd></div>
+    </dl>
+  </div>
+
+  <div class="link-card">
+    <h2>Your private management link</h2>
+    <p class="muted small">Anyone with this link can view and cancel the booking. Keep it to yourself.</p>
+    <p class="link-row">
+      <input type="text" id="manage-link" readonly value="{{ url_for('customer.manage', token=appt['manage_token'], _external=True) }}"
+             aria-label="Private management link">
+      <button class="btn btn-ghost" type="button" data-copy="#manage-link">Copy link</button>
+    </p>
+    <p><a class="btn btn-primary" href="{{ url_for('customer.manage', token=appt['manage_token']) }}">View this booking</a></p>
+  </div>
+
+  <div class="alert alert-info" role="alert">
+    <h2>About this local demo</h2>
+    <p>A confirmation email is <strong>not</strong> sent from this build, and no payment was taken.
+      Bookmark or copy the private link above if you need it later.</p>
+  </div>
+
+  <p class="back-row"><a href="{{ url_for('customer.home') }}">Book another appointment</a></p>
+</section>
+{% endblock %}

@@ -1,0 +1,142 @@
+{
+  "started_at": "2026-09-15T07:08:38.487362+00:00",
+  "checks": [
+    "chromium-1440x1000: sticky header, anchors, focus, accessible menu and thumb targets",
+    "chromium-1440x1000: booking, stale-slot conflict, private cancellation and released availability",
+    "chromium-1440x1000: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout"
+  ],
+  "screenshots": [
+    "chromium-1440x1000-booking.png",
+    "chromium-1440x1000-confirmation.png",
+    "chromium-1440x1000-login.png",
+    "chromium-1440x1000-admin.png",
+    "chromium-393x852-booking.png"
+  ],
+  "picker_calls": [
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "left"
+    },
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "middle"
+    },
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "right"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "left"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "middle"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "right"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "left"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "middle"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "right"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "left"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "middle"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "right"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "left"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "middle"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "right"
+    }
+  ],
+  "page_errors": [],
+  "server_errors": [],
+  "result": "failed",
+  "failure": "",
+  "elapsed_seconds": 7.09
+}

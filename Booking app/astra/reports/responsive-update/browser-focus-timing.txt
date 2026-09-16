@@ -1,0 +1,44 @@
+PASS chromium-1440x1000: sticky header, anchors, focus, accessible menu and thumb targets
+PASS chromium-1440x1000: booking, stale-slot conflict, private cancellation and released availability
+PASS chromium-1440x1000: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS chromium-393x852: sticky header, anchors, focus, accessible menu and thumb targets
+PASS chromium-393x852: booking, stale-slot conflict, private cancellation and released availability
+PASS chromium-393x852: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS chromium-402x874: sticky header, anchors, focus, accessible menu and thumb targets
+PASS chromium-402x874: booking, stale-slot conflict, private cancellation and released availability
+PASS chromium-402x874: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS chromium: all five fields automatically use selectable fallbacks when showPicker is missing
+PASS chromium: all five fields automatically use selectable fallbacks when showPicker is throws
+PASS JavaScript-disabled phone booking/cancellation and sticky-header anchor clearance remain functional
+PASS webkit-1440x1000: sticky header, anchors, focus, accessible menu and thumb targets
+PASS webkit-1440x1000: booking, stale-slot conflict, private cancellation and released availability
+PASS webkit-1440x1000: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS webkit-393x852: sticky header, anchors, focus, accessible menu and thumb targets
+PASS webkit-393x852: booking, stale-slot conflict, private cancellation and released availability
+Traceback (most recent call last):
+  File "./scripts/verify_responsive.py", line 398, in <module>
+    journey(browser, engine, width, height, base)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "./scripts/verify_responsive.py", line 309, in journey
+    expect(row).to_be_visible()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "./.venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py", line 20424, in to_be_visible
+    self._sync(self._impl_obj.to_be_visible(visible=visible, timeout=timeout))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "./.venv/lib/python3.14/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "./.venv/lib/python3.14/site-packages/playwright/_impl/_assertions.py", line 763, in to_be_visible
+    await self._expect_impl(
+    ...<5 lines>...
+    )
+  File "./.venv/lib/python3.14/site-packages/playwright/_impl/_assertions.py", line 83, in _expect_impl
+    raise AssertionError(
+        f"{out_message}\nActual value: {actual} {format_call_log(result.get('log'))}"
+    )
+AssertionError: Locator expected to be visible
+Actual value: <element(s) not found> 
+Call log:
+  - Expect "to_be_visible" with timeout 5000ms
+  - waiting for locator(".block-row").filter(has_text="Responsive verification")
+

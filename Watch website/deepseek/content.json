@@ -1,0 +1,313 @@
+{
+  "brand": {
+    "name": "MERIDIAN",
+    "tagline": "Every part, a purpose.",
+    "foundedYear": 2018,
+    "currency": "USD",
+    "disclosure": "Fictional brand concept \u2014 illustrative figures",
+    "footerDisclosure": "MERIDIAN is a fictional brand concept created for a design demonstration. It is not a real merchant. Prices, statistics and product specifications are illustrative, not verified engineering claims, and no orders, payments or data collection take place."
+  },
+  "stats": [
+    {
+      "value": "8",
+      "label": "Years of design"
+    },
+    {
+      "value": "12,400",
+      "label": "Watches sold"
+    },
+    {
+      "value": "9,800",
+      "label": "Owners"
+    }
+  ],
+  "sharedSpecs": [
+    {
+      "label": "Movement",
+      "value": "Automatic mechanical"
+    },
+    {
+      "label": "Case",
+      "value": "40 mm brushed stainless steel"
+    },
+    {
+      "label": "Crystal",
+      "value": "Sapphire"
+    },
+    {
+      "label": "Power reserve",
+      "value": "40 hours"
+    },
+    {
+      "label": "Water resistance",
+      "value": "100 m"
+    },
+    {
+      "label": "Bracelet",
+      "value": "Three-link, concealed folding clasp"
+    }
+  ],
+  "products": [
+    {
+      "id": "m01-midnight",
+      "name": "M01 Midnight",
+      "price": 895,
+      "swatch": "#16294A",
+      "swatchName": "Midnight blue",
+      "image": "media/products/m01-midnight.webp",
+      "alt": "M01 Midnight, midnight-blue dial on a brushed steel three-link bracelet",
+      "blurb": "The reference piece. A midnight sunray dial that reads almost black in low light, then opens up in daylight.",
+      "strap": "Brushed steel bracelet",
+      "caseFinish": "Brushed stainless steel",
+      "wristImage": "media/products/m01-midnight-wrist.webp",
+      "wristAlt": "M01 Midnight worn on the wrist"
+    },
+    {
+      "id": "m01-ivory",
+      "name": "M01 Ivory",
+      "price": 895,
+      "swatch": "#E8E0D0",
+      "swatchName": "Warm ivory",
+      "image": "media/products/m01-ivory.webp",
+      "alt": "M01 Ivory, warm ivory dial on a brushed steel three-link bracelet",
+      "blurb": "The same case, a quietly warm ivory dial. Legible in full sun, calm under office light.",
+      "strap": "Brushed steel bracelet",
+      "caseFinish": "Brushed stainless steel",
+      "wristImage": "media/products/m01-ivory-wrist.webp",
+      "wristAlt": "M01 Ivory worn on the wrist"
+    },
+    {
+      "id": "m01-forest",
+      "name": "M01 Forest",
+      "price": 895,
+      "swatch": "#24382E",
+      "swatchName": "Forest green",
+      "image": "media/products/m01-forest.webp",
+      "alt": "M01 Forest, dark forest-green dial on a brushed steel three-link bracelet",
+      "blurb": "A deep forest dial with silver indices. Sits closer to grey than green until light finds it.",
+      "strap": "Brushed steel bracelet",
+      "caseFinish": "Brushed stainless steel",
+      "wristImage": "media/products/m01-forest-wrist.webp",
+      "wristAlt": "M01 Forest worn on the wrist"
+    },
+    {
+      "id": "m01-eclipse",
+      "name": "M01 Eclipse",
+      "price": 945,
+      "swatch": "#2A2D31",
+      "swatchName": "Charcoal, coated case",
+      "image": "media/products/m01-eclipse.webp",
+      "alt": "M01 Eclipse, charcoal dial with a dark coated case and bracelet",
+      "blurb": "Charcoal dial, anthracite coated case and bracelet. The most discreet watch in the collection.",
+      "strap": "Anthracite coated bracelet",
+      "caseFinish": "Dark coated stainless steel",
+      "wristImage": "media/products/m01-eclipse-wrist.webp",
+      "wristAlt": "M01 Eclipse worn on the wrist"
+    },
+    {
+      "id": "m02-atelier",
+      "name": "M02 Atelier",
+      "price": 795,
+      "swatch": "#C29B62",
+      "swatchName": "Champagne, cognac leather",
+      "image": "media/products/m02-atelier.webp",
+      "alt": "M02 Atelier, champagne dial on a cognac leather strap",
+      "blurb": "Champagne dial on cognac leather. The same case architecture, a warmer way to wear it.",
+      "strap": "Cognac leather strap",
+      "caseFinish": "Brushed stainless steel",
+      "wristImage": "media/products/m02-atelier-wrist.webp",
+      "wristAlt": "M02 Atelier worn on the wrist"
+    }
+  ],
+  "story": {
+    "headline": "Every part, a purpose.",
+    "support": "Mechanical craft. Made for the hours that matter.",
+    "cta": "Explore M01",
+    "beats": [
+      {
+        "id": "assembled",
+        "scene": "Assembled",
+        "visualStory": "The complete closed M01 Midnight floats in a dark seamless studio, three-quarter dial view, bracelet curved. A slow controlled move catches the brushed steel.",
+        "copy": "Every part, a purpose.",
+        "support": "Mechanical craft. Made for the hours that matter.",
+        "cta": "Explore M01",
+        "ctaHref": "#collection"
+      },
+      {
+        "id": "exploded",
+        "scene": "Exploded construction",
+        "visualStory": "The same watch separates along one deliberate axis into crystal, bezel, dial, hands, movement, case and back. A limited set of visible gears sits inside the movement layer. No wrist in frame.",
+        "copy": "Considered, down to the smallest detail.",
+        "support": "A complete world of precision, working as one.",
+        "cta": null,
+        "ctaHref": null
+      },
+      {
+        "id": "macro",
+        "scene": "Macro transition",
+        "visualStory": "The camera travels into the movement until a polished gear and bridge fill the frame, then pulls focus into a deliberate soft blur. No copy.",
+        "copy": null,
+        "support": null,
+        "cta": null,
+        "ctaHref": null
+      },
+      {
+        "id": "wrist",
+        "scene": "Wrist resolution",
+        "visualStory": "Pulling back out of the blur, the components reform into the same assembled watch. A natural adult wrist enters, the bracelet wraps and the clasp closes, resolving on a composed wrist-worn shot.",
+        "copy": "Made to become part of your day.",
+        "support": null,
+        "cta": "Find your Meridian",
+        "ctaHref": "#collection"
+      }
+    ],
+    "mobileBeats": [
+      {
+        "id": "assembled",
+        "copy": "Every part, a purpose.",
+        "support": null,
+        "cta": "Explore M01",
+        "ctaHref": "#collection"
+      },
+      {
+        "id": "exploded",
+        "copy": null,
+        "support": null,
+        "cta": null,
+        "ctaHref": null
+      },
+      {
+        "id": "macro",
+        "copy": null,
+        "support": null,
+        "cta": null,
+        "ctaHref": null
+      },
+      {
+        "id": "wrist",
+        "copy": "Made to become part of your day.",
+        "support": null,
+        "cta": "Find your Meridian",
+        "ctaHref": "#collection"
+      }
+    ]
+  },
+  "craft": {
+    "eyebrow": "The craft",
+    "headline": "A mechanical watch is a small argument for doing things properly.",
+    "intro": "The M01 case is turned from a single block of stainless steel, then brushed in one direction across the flanks and polished on the bezel so the two finishes meet on a crisp line.",
+    "paragraphs": [
+      "Inside, an automatic movement winds itself from the motion of your wrist and keeps a 40-hour reserve \u2014 enough to take it off on Friday evening and find it running on Monday morning.",
+      "The dial is finished with a fine sunray brush that runs outward from the centre, which is why the M01 changes character as you move. Applied indices sit slightly proud of the surface so the hands read clearly at a glance.",
+      "The bracelet is built from flat three-link sections that taper toward the clasp, with a concealed folding clasp so the outside stays clean."
+    ],
+    "highlights": [
+      {
+        "value": "40 h",
+        "label": "Power reserve",
+        "detail": "Automatic winding, enough to rest a weekend."
+      },
+      {
+        "value": "100 m",
+        "label": "Water resistance",
+        "detail": "Everyday wear, rain and washing up included."
+      },
+      {
+        "value": "40 mm",
+        "label": "Case diameter",
+        "detail": "A considered size that sits flat under a cuff."
+      }
+    ],
+    "specNote": "Concept specifications. Fictional product specifications for this demonstration, not verified engineering claims."
+  },
+  "about": {
+    "eyebrow": "Our story",
+    "headline": "Founded in 2018 on a simple disagreement.",
+    "paragraphs": [
+      "MERIDIAN began in 2018 with a small argument about what an everyday mechanical watch should cost. Four people \u2014 an engineer, a designer, a machinist and someone who had spent a decade servicing watches for other people \u2014 spent two years on the M01 case before the first one was assembled.",
+      "The studio is deliberately narrow in scope. One case architecture, a handful of dials, and a bracelet that is finished to the same standard on the inside as the outside. Nothing is added for the sake of a feature list.",
+      "Eight years later the collection is still built around that first case. Watches have found 9,800 owners. Around 12,400 have been sold since the studio opened."
+    ],
+    "lifestyleAlt": "The M01 Midnight worn on the wrist while walking through a sunlit city arcade",
+    "lifestyleCaption": "M01 Midnight, worn daily."
+  },
+  "tradeIn": {
+    "eyebrow": "Trade in",
+    "headline": "We buy watches, too.",
+    "intro": "If a watch has stopped earning its place on your wrist, we would rather it went to someone who will wear it. Tell us what you have and we will tell you what we would offer.",
+    "steps": [
+      {
+        "n": "01",
+        "title": "Tell us about it",
+        "body": "Brand, model and an honest description of the condition. Add a photo if you have one."
+      },
+      {
+        "n": "02",
+        "title": "Receive an assessment",
+        "body": "A member of the studio reviews what you send and prepares an indicative valuation."
+      },
+      {
+        "n": "03",
+        "title": "Choose your next chapter",
+        "body": "Take the valuation as a credit against a Meridian, or leave it. There is no obligation either way."
+      }
+    ],
+    "conditions": [
+      "Unworn",
+      "Excellent",
+      "Good",
+      "Fair",
+      "Needs service"
+    ],
+    "formNote": "This is a demonstration form. Nothing you enter is sent, stored or shared.",
+    "successMessage": "Demo valuation request prepared \u2014 nothing has been sent."
+  },
+  "copy": {
+    "skipStory": "Skip the story",
+    "scrollCue": "Scroll",
+    "collectionEyebrow": "The collection",
+    "collectionHeadline": "Five watches. One case architecture.",
+    "collectionIntro": "Every M01 and M02 shares the same 40 mm case, the same bracelet geometry and the same movement. What changes is the dial, the finish and the strap.",
+    "addToBag": "Add to bag",
+    "viewDetails": "View details",
+    "selected": "Selected",
+    "bagTitle": "Your bag",
+    "bagEmpty": "Your bag is empty.",
+    "bagEmptyHint": "Add a watch from the collection to see how totals work here.",
+    "quantity": "Quantity",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingValue": "Included",
+    "duty": "Duties and tax",
+    "dutyValue": "Calculated at checkout",
+    "total": "Total",
+    "demoCheckout": "Review demo order",
+    "resetBag": "Reset bag",
+    "clearBag": "Empty bag",
+    "bagNote": "Demonstration bag. Nothing is charged and no order is placed.",
+    "demoSummaryTitle": "Demo order summary",
+    "demoSummaryBody": "This is a demonstration summary only. No payment has been taken, no order has been placed and no data has left this page.",
+    "demoSummaryClose": "Close summary",
+    "tradeInSubmit": "Prepare demo valuation",
+    "tradeInReset": "Clear form"
+  },
+  "nav": [
+    {
+      "label": "Collection",
+      "href": "#collection"
+    },
+    {
+      "label": "Craft",
+      "href": "#craft"
+    },
+    {
+      "label": "Our Story",
+      "href": "#story"
+    },
+    {
+      "label": "Trade In",
+      "href": "#trade-in"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+PASS chromium-1440x1000: sticky header, anchors, focus, accessible menu and thumb targets
+PASS chromium-1440x1000: booking, stale-slot conflict, private cancellation and released availability
+PASS chromium-1440x1000: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+Traceback (most recent call last):
+  File "./scripts/verify_responsive.py", line 344, in <module>
+    journey(browser, engine, width, height, base)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "./scripts/verify_responsive.py", line 186, in journey
+    header_and_menu(page, mobile)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "./scripts/verify_responsive.py", line 100, in header_and_menu
+    assert page.locator('.menu-toggle').get_attribute('aria-expanded') == 'false'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,221 @@
+{
+  "generatedAt": "2026-09-15T19:23:20",
+  "source": "generated masters; frames extracted with ffmpeg + Pillow (webp q72)",
+  "qualityNote": "landscape 1152x648, portrait 720x1280, 10 fps target, webp q58/q52",
+  "posters": {
+    "landscape": "./media/posters/landscape-poster.webp",
+    "portrait": "./media/posters/portrait-poster.webp"
+  },
+  "variants": {
+    "landscape": {
+      "width": 1152,
+      "height": 648,
+      "fps": 12,
+      "frames": 240,
+      "clips": [
+        60,
+        60,
+        60,
+        60
+      ],
+      "path": "./media/seq/landscape/f{i}.webp",
+      "poster": "./media/posters/landscape-poster.webp",
+      "clipsSource": [
+        {
+          "clip": 1,
+          "file": "assets/masters/video/L1.mp4"
+        },
+        {
+          "clip": 2,
+          "file": "assets/masters/video/L2.mp4"
+        },
+        {
+          "clip": 3,
+          "file": "assets/masters/video/L3.mp4"
+        },
+        {
+          "clip": 4,
+          "file": "assets/masters/video/L4.mp4"
+        }
+      ]
+    },
+    "portrait": {
+      "width": 720,
+      "height": 1280,
+      "fps": 12,
+      "frames": 240,
+      "clips": [
+        60,
+        60,
+        60,
+        60
+      ],
+      "path": "./media/seq/portrait/f{i}.webp",
+      "poster": "./media/posters/portrait-poster.webp",
+      "clipsSource": [
+        {
+          "clip": 1,
+          "file": "assets/masters/video/P1.mp4"
+        },
+        {
+          "clip": 2,
+          "file": "assets/masters/video/P2.mp4"
+        },
+        {
+          "clip": 3,
+          "file": "assets/masters/video/P3.mp4"
+        },
+        {
+          "clip": 4,
+          "file": "assets/masters/video/P4.mp4"
+        }
+      ]
+    }
+  },
+  "timeline": {
+    "desktop": {
+      "stageViewports": 5.8,
+      "fps": 12,
+      "clipFrames": [
+        60,
+        60,
+        60,
+        60
+      ],
+      "totalFrames": 240,
+      "stops": [
+        {
+          "p": 0.0,
+          "frame": 0,
+          "kind": "travel"
+        },
+        {
+          "p": 0.24686,
+          "frame": 60,
+          "kind": "travel"
+        },
+        {
+          "p": 0.49791,
+          "frame": 120,
+          "kind": "travel"
+        },
+        {
+          "p": 0.74895,
+          "frame": 180,
+          "kind": "travel"
+        },
+        {
+          "p": 1.0,
+          "frame": 239,
+          "kind": "travel"
+        }
+      ],
+      "beats": [
+        {
+          "id": "assembled",
+          "label": "I",
+          "start": 0.0,
+          "end": 0.24686,
+          "frameStart": 0,
+          "frameEnd": 59
+        },
+        {
+          "id": "exploded",
+          "label": "II",
+          "start": 0.24686,
+          "end": 0.49791,
+          "frameStart": 60,
+          "frameEnd": 119
+        },
+        {
+          "id": "macro",
+          "label": "III",
+          "start": 0.49791,
+          "end": 0.74895,
+          "frameStart": 120,
+          "frameEnd": 179
+        },
+        {
+          "id": "wrist",
+          "label": "IV",
+          "start": 0.74895,
+          "end": 1.0,
+          "frameStart": 180,
+          "frameEnd": 239
+        }
+      ]
+    },
+    "mobile": {
+      "stageViewports": 4.6,
+      "fps": 12,
+      "clipFrames": [
+        60,
+        60,
+        60,
+        60
+      ],
+      "totalFrames": 240,
+      "stops": [
+        {
+          "p": 0.0,
+          "frame": 0,
+          "kind": "travel"
+        },
+        {
+          "p": 0.24686,
+          "frame": 60,
+          "kind": "travel"
+        },
+        {
+          "p": 0.49791,
+          "frame": 120,
+          "kind": "travel"
+        },
+        {
+          "p": 0.74895,
+          "frame": 180,
+          "kind": "travel"
+        },
+        {
+          "p": 1.0,
+          "frame": 239,
+          "kind": "travel"
+        }
+      ],
+      "beats": [
+        {
+          "id": "assembled",
+          "label": "I",
+          "start": 0.0,
+          "end": 0.24686,
+          "frameStart": 0,
+          "frameEnd": 59
+        },
+        {
+          "id": "exploded",
+          "label": "II",
+          "start": 0.24686,
+          "end": 0.49791,
+          "frameStart": 60,
+          "frameEnd": 119
+        },
+        {
+          "id": "macro",
+          "label": "III",
+          "start": 0.49791,
+          "end": 0.74895,
+          "frameStart": 120,
+          "frameEnd": 179
+        },
+        {
+          "id": "wrist",
+          "label": "IV",
+          "start": 0.74895,
+          "end": 1.0,
+          "frameStart": 180,
+          "frameEnd": 239
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}Staff dashboard — Northline Barber{% endblock %}
+{% block content %}
+
+<div class="dash-head">
+  <div>
+    <p class="eyebrow">Staff dashboard</p>
+    <h1>Bookings for {{ day.strftime('%A %-d %B %Y') }}</h1>
+    <p class="muted small">Signed in as {{ admin['username'] }} · times shown in {{ shop_tz_name }}</p>
+  </div>
+  <form method="post" action="{{ url_for('admin.logout') }}" class="inline-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <button class="btn btn-ghost" type="submit">Sign out</button>
+  </form>
+</div>
+
+<form class="filters" method="get" action="{{ url_for('admin_panel.dashboard') }}">
+  <p class="field">
+    <label for="f-date">Date</label>
+    <input type="date" id="f-date" name="date" value="{{ day.isoformat() }}" required>
+  </p>
+  <p class="field">
+    <label for="f-barber">Barber</label>
+    <select id="f-barber" name="barber">
+      <option value="">All barbers</option>
+      {% for barber in barbers %}
+      <option value="{{ barber['id'] }}" {% if barber_filter and barber_filter['id'] == barber['id'] %}selected{% endif %}>
+        {{ barber['name'] }}
+      </option>
+      {% endfor %}
+    </select>
+  </p>
+  <button class="btn btn-primary" type="submit">Show</button>
+  <div class="filters-nav">
+    <a class="btn btn-ghost" aria-label="Previous day, {{ prev_day }}"
+       href="{{ url_for('admin_panel.dashboard', date=prev_day, barber=barber_filter['id'] if barber_filter else '') }}">← Prev</a>
+    <a class="btn btn-ghost" href="{{ url_for('admin_panel.dashboard', date=today, barber=barber_filter['id'] if barber_filter else '') }}">Today</a>
+    <a class="btn btn-ghost" aria-label="Next day, {{ next_day }}"
+       href="{{ url_for('admin_panel.dashboard', date=next_day, barber=barber_filter['id'] if barber_filter else '') }}">Next →</a>
+  </div>
+</form>
+
+<section class="stat-row" aria-label="Day summary">
+  <p class="stat"><span class="stat-num">{{ day_stats['confirmed'] }}</span><span class="stat-label">confirmed</span></p>
+  <p class="stat"><span class="stat-num">{{ day_stats['cancelled'] }}</span><span class="stat-label">cancelled</span></p>
+  <p class="stat"><span class="stat-num">AUD {{ '%.2f'|format(day_stats['revenue_cents'] / 100) }}</span><span class="stat-label">booked value</span></p>
+</section>
+
+<section class="panel" aria-labelledby="appts-heading">
+  <h2 id="appts-heading">Appointments</h2>
+  {% if appointments %}
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Appointments for {{ day.strftime('%-d %B %Y') }}">
+    <table class="data-table" role="table">
+      <caption class="visually-hidden">Appointments for {{ day.isoformat() }}</caption>
+      <thead role="rowgroup">
+        <tr role="row">
+          <th scope="col" role="columnheader">Time</th>
+          <th scope="col" role="columnheader">Barber</th>
+          <th scope="col" role="columnheader">Customer</th>
+          <th scope="col" role="columnheader">Service</th>
+          <th scope="col" role="columnheader">Status</th>
+          <th scope="col" role="columnheader"><span class="visually-hidden">Actions</span></th>
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        {% for appt in appointments %}
+        <tr role="row">
+          <th scope="row" role="rowheader" class="cell-time">{{ appt['start_utc']|local_time }}–{{ appt['end_utc']|local_time }}</th>
+          <td class="cell-barber" role="cell">{{ appt['barber_name'] }}</td>
+          <td class="cell-customer" role="cell">
+            <span class="cell-name">{{ appt['customer_name'] }}</span>
+            <a class="cell-email" href="mailto:{{ appt['customer_email'] }}">{{ appt['customer_email'] }}</a>
+          </td>
+          <td class="cell-service" role="cell">{{ appt['service_name'] }}<span class="muted small"> · {{ appt['duration_minutes'] }} min · AUD {{ '%.2f'|format(appt['price_cents'] / 100) }}</span></td>
+          <td class="cell-status" role="cell">
+            {% if appt['status'] == 'confirmed' %}
+              <span class="badge badge-confirmed">Confirmed</span>
+            {% else %}
+              <span class="badge badge-cancelled">Cancelled</span>
+            {% endif %}
+            <span class="ref">{{ appt['reference'] }}</span>
+          </td>
+          <td class="cell-actions" role="cell">
+            {% if appt['status'] == 'confirmed' %}
+            <form method="post" action="{{ url_for('admin_panel.cancel_appointment', appointment_id=appt['id']) }}"
+                  data-confirm="Cancel {{ appt['reference'] }} for {{ appt['customer_name'] }}? The slot becomes bookable again.">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+              <input type="hidden" name="return_date" value="{{ day.isoformat() }}">
+              <input type="hidden" name="return_barber" value="{{ barber_filter['id'] if barber_filter else '' }}">
+              <button class="btn btn-small btn-danger" type="submit">Cancel</button>
+            </form>
+            {% else %}
+            <span class="muted small">—</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p class="empty">No bookings on this day{{ ' for this barber' if barber_filter else '' }}.
+    Change the date or filter above.</p>
+  {% endif %}
+</section>
+
+<section class="panel" aria-labelledby="blocks-heading">
+  <h2 id="blocks-heading">Staff unavailable periods</h2>
+  <p class="muted small">These block the whole duration, so bookings can't be made inside them.
+    A period that overlaps a confirmed appointment is rejected — cancel that appointment first.</p>
+
+  {% if blocks %}
+  <ul class="block-list">
+    {% for block in blocks %}
+    <li>
+      <span class="block-when">{{ block['start_utc']|local_time }}–{{ block['end_utc']|local_time }}</span>
+      <span class="block-who">{{ block['barber_name'] }}</span>
+      <span class="block-why">{{ block['reason'] or 'Unavailable' }}</span>
+      <form method="post" action="{{ url_for('admin_panel.delete_block', block_id=block['id']) }}"
+            data-confirm="Remove this unavailable period?">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="return_date" value="{{ day.isoformat() }}">
+        <input type="hidden" name="return_barber" value="{{ barber_filter['id'] if barber_filter else '' }}">
+        <button class="btn btn-small btn-ghost" type="submit">Remove</button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">No unavailable periods on {{ day.strftime('%-d %B') }}{{ ' for this barber' if barber_filter else '' }}.</p>
+  {% endif %}
+
+  <h3 class="subhead">Add an unavailable period</h3>
+  <form class="booking-form block-form" method="post" action="{{ url_for('admin_panel.create_block') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="return_date" value="{{ day.isoformat() }}">
+    <input type="hidden" name="return_barber" value="{{ barber_filter['id'] if barber_filter else '' }}">
+    <div class="field-row field-row-4">
+      <p class="field">
+        <label for="b-barber">Barber</label>
+        <select id="b-barber" name="barber" required>
+          {% for barber in barbers %}
+          <option value="{{ barber['id'] }}" {% if barber_filter and barber_filter['id'] == barber['id'] %}selected{% endif %}>
+            {{ barber['name'] }}
+          </option>
+          {% endfor %}
+        </select>
+      </p>
+      <p class="field">
+        <label for="b-date">Date</label>
+        <input type="date" id="b-date" name="date" value="{{ day.isoformat() }}" required>
+      </p>
+      <p class="field">
+        <label for="b-start">From</label>
+        <input type="time" id="b-start" name="start" step="900" value="09:00" required>
+      </p>
+      <p class="field">
+        <label for="b-end">To</label>
+        <input type="time" id="b-end" name="end" step="900" value="10:00" required>
+      </p>
+    </div>
+    <p class="field">
+      <label for="b-reason">Reason (optional)</label>
+      <input type="text" id="b-reason" name="reason" maxlength="120" placeholder="e.g. Dentist appointment">
+    </p>
+    <button class="btn btn-primary" type="submit">Add unavailable period</button>
+  </form>
+</section>
+
+{% endblock %}

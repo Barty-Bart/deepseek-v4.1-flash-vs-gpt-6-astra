@@ -1,0 +1,780 @@
+{
+  "file": "./pickup_truck_v2.blend",
+  "duration_seconds": 20.75,
+  "frames_checked": 498,
+  "hold_frames": [
+    361,
+    420
+  ],
+  "hold_seconds": 2.5,
+  "hold_minimum_frame": 378,
+  "hold_maximum_frame": 386,
+  "hold_RR_travel_range_m": [
+    -0.017552589997649193,
+    0.059755731374025345
+  ],
+  "hold_shock_length_ranges_m": {
+    "RL": [
+      0.6826371652520322,
+      0.7148211910773935
+    ],
+    "RR": [
+      0.6779258386122968,
+      0.7157152757174328
+    ]
+  },
+  "hold_shackle_angle_ranges_deg": {
+    "RL": [
+      5.3038459424163555,
+      15.397189578027609
+    ],
+    "RR": [
+      5.286603129856658,
+      17.665565410827835
+    ]
+  },
+  "maximum_wheel_contact_error_m": 2.753853797909933e-05,
+  "maximum_wheel_spin_error_rad": 3.7676022373034357e-06,
+  "suspension_range_m": [
+    -0.022123543545603752,
+    0.06690220534801483
+  ],
+  "maximum_link_endpoint_error_m": 4.5099097342555393e-07,
+  "maximum_leaf_saddle_error_m": 1.144424701625146e-05,
+  "maximum_leaf_eye_error_m": 7.629627358341049e-06,
+  "maximum_shackle_span_error_m": 4.49661627599518e-07,
+  "minimum_camera_clearance": {
+    "frame": 452,
+    "distance_m": 0.08916917256019675,
+    "object": "Hitch ball tongue"
+  },
+  "maximum_camera_angular_step": {
+    "frame": 260,
+    "angular_step_deg": 22.95945092330458
+  },
+  "full_vehicle_framing": {
+    "84": {
+      "min_x": 0.059136245399713516,
+      "max_x": 0.9022091031074524,
+      "min_y": 0.020237207412719727,
+      "max_y": 0.9451442956924438
+    },
+    "108": {
+      "min_x": 0.059136245399713516,
+      "max_x": 0.9022091031074524,
+      "min_y": 0.020237207412719727,
+      "max_y": 0.6783748269081116
+    },
+    "133": {
+      "min_x": 0.07962941378355026,
+      "max_x": 0.8980473875999451,
+      "min_y": 0.23981305956840515,
+      "max_y": 0.7481068968772888
+    },
+    "156": {
+      "min_x": 0.07965147495269775,
+      "max_x": 0.8981085419654846,
+      "min_y": 0.19499269127845764,
+      "max_y": 0.7479559183120728
+    },
+    "180": {
+      "min_x": 0.0671970322728157,
+      "max_x": 0.8974448442459106,
+      "min_y": 0.20794402062892914,
+      "max_y": 0.7559688091278076
+    },
+    "498": {
+      "min_x": 0.2801317274570465,
+      "max_x": 0.6522186994552612,
+      "min_y": 0.24940864741802216,
+      "max_y": 0.6561114192008972
+    }
+  },
+  "visibility": {
+    "1": {
+      "Engine valve cover": {
+        "visible": true,
+        "visible_samples": 345,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Engine wiring loom": 57,
+          "Oil filler cap": 51,
+          "Engine cylinder head": 38,
+          "Alternator cast housing": 31
+        }
+      },
+      "Engine cylinder head": {
+        "visible": true,
+        "visible_samples": 217,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Alternator cast housing": 103,
+          "Ignition coil 2": 54,
+          "Engine valve cover": 52,
+          "Accessory shaft mount Water pump": 50
+        }
+      },
+      "Engine bay battery": {
+        "visible": true,
+        "visible_samples": 140,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Battery lid": 230,
+          "Engine bay inner wheelhouse -1": 150,
+          "Fender mounting lip -1": 30,
+          "Battery hold-down bridge": 13
+        }
+      },
+      "Air filter lid": {
+        "visible": true,
+        "visible_samples": 553,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Airbox molded lid ridge 2.14": 8,
+          "Radiator pressure cap": 4,
+          "Radiator filler neck elbow": 3,
+          "Airbox molded lid ridge 2.035": 1
+        }
+      },
+      "Coolant expansion reservoir": {
+        "visible": true,
+        "visible_samples": 396,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Intake plenum": 99,
+          "Coolant pressure cap": 56,
+          "Expansion reservoir small hose": 24
+        }
+      },
+      "Upper radiator coolant hose": {
+        "visible": true,
+        "visible_samples": 165,
+        "tested_in_frame": 190,
+        "occluders": {
+          "Alternator cast housing": 9,
+          "Radiator core": 6,
+          "Alternator cooling rib 1.91": 3,
+          "Dipstick handle": 2
+        }
+      },
+      "Engine serpentine belt | tangent continuous loop": {
+        "visible": true,
+        "visible_samples": 218,
+        "tested_in_frame": 498,
+        "occluders": {
+          "Radiator core": 142,
+          "Upper radiator coolant hose": 83,
+          "Accessory pulley grooved rim Water pump": 31,
+          "Accessory pulley hub Water pump": 9
+        }
+      },
+      "Accessory pulley grooved rim Crank": {
+        "visible": true,
+        "visible_samples": 169,
+        "tested_in_frame": 576,
+        "occluders": {
+          "Radiator core": 321,
+          "Cooling fan protective shroud": 59,
+          "Upper radiator coolant hose": 23
+        }
+      },
+      "Accessory pulley grooved rim Alternator": {
+        "visible": true,
+        "visible_samples": 263,
+        "tested_in_frame": 576,
+        "occluders": {
+          "Upper radiator coolant hose": 186,
+          "Engine serpentine belt | tangent continuous loop": 71,
+          "Accessory pulley hub Alternator": 20,
+          "Accessory pulley spoke Alternator0": 18
+        }
+      },
+      "Swept cooling fan blade 0": {
+        "visible": true,
+        "visible_samples": 176,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Radiator core": 335,
+          "Cooling fan protective shroud": 46,
+          "Radiator fin 0.0": 14,
+          "Radiator fin -0.042": 4
+        }
+      },
+      "Ignition coil 3": {
+        "visible": true,
+        "visible_samples": 449,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Engine valve cover": 67,
+          "Ignition coil plug 3": 60
+        }
+      }
+    },
+    "36": {
+      "Engine valve cover": {
+        "visible": true,
+        "visible_samples": 365,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Oil filler cap": 61,
+          "Engine wiring loom": 52,
+          "Engine cylinder head": 29,
+          "Alternator cooling rib 1.91": 27
+        }
+      },
+      "Engine cylinder head": {
+        "visible": true,
+        "visible_samples": 202,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Alternator cast housing": 102,
+          "Engine valve cover": 57,
+          "Ignition coil 2": 52,
+          "Accessory shaft mount Water pump": 50
+        }
+      },
+      "Engine bay battery": {
+        "visible": true,
+        "visible_samples": 160,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Battery lid": 247,
+          "Engine bay inner wheelhouse -1": 134,
+          "Battery hold-down bridge": 12,
+          "Battery terminal cover 1.22": 10
+        }
+      },
+      "Air filter lid": {
+        "visible": true,
+        "visible_samples": 556,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Airbox molded lid ridge 2.14": 8,
+          "Radiator pressure cap": 4,
+          "Radiator filler neck elbow": 3,
+          "Airbox molded lid ridge 2.035": 1
+        }
+      },
+      "Coolant expansion reservoir": {
+        "visible": true,
+        "visible_samples": 435,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Intake plenum": 81,
+          "Coolant pressure cap": 40,
+          "Expansion reservoir small hose": 14
+        }
+      },
+      "Upper radiator coolant hose": {
+        "visible": true,
+        "visible_samples": 155,
+        "tested_in_frame": 190,
+        "occluders": {
+          "Alternator cast housing": 16,
+          "Radiator core": 6,
+          "Alternator cooling rib 1.94": 6,
+          "Alternator cooling rib 1.91": 2
+        }
+      },
+      "Engine serpentine belt | tangent continuous loop": {
+        "visible": true,
+        "visible_samples": 310,
+        "tested_in_frame": 498,
+        "occluders": {
+          "Radiator core": 142,
+          "Accessory pulley grooved rim Water pump": 32,
+          "Accessory pulley spoke Water pump2": 4,
+          "Cooling fan protective shroud": 3
+        }
+      },
+      "Accessory pulley grooved rim Crank": {
+        "visible": true,
+        "visible_samples": 147,
+        "tested_in_frame": 576,
+        "occluders": {
+          "Radiator core": 291,
+          "Cooling fan protective shroud": 118,
+          "Cooling fan hub": 11,
+          "Radiator fin -0.168": 2
+        }
+      },
+      "Accessory pulley grooved rim Alternator": {
+        "visible": true,
+        "visible_samples": 395,
+        "tested_in_frame": 576,
+        "occluders": {
+          "Engine serpentine belt | tangent continuous loop": 114,
+          "Accessory pulley hub Alternator": 25,
+          "Accessory pulley spoke Alternator0": 16,
+          "Accessory pulley spoke Alternator3": 7
+        }
+      },
+      "Swept cooling fan blade 0": {
+        "visible": true,
+        "visible_samples": 96,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Cooling fan protective shroud": 303,
+          "Radiator core": 164,
+          "Radiator fin -0.126": 15
+        }
+      },
+      "Ignition coil 3": {
+        "visible": true,
+        "visible_samples": 461,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Ignition coil plug 3": 58,
+          "Engine valve cover": 57
+        }
+      }
+    },
+    "378": {
+      "Leaf pack RR lamination 1": {
+        "visible": true,
+        "visible_samples": 133,
+        "tested_in_frame": 484,
+        "occluders": {
+          "Rear axle | rigid driven tube": 107,
+          "Leaf spring saddle -1": 50,
+          "Leaf pack RR lamination 4": 36,
+          "Leaf pack RR lamination 3": 30
+        }
+      },
+      "Leaf pack RL lamination 1": {
+        "visible": true,
+        "visible_samples": 139,
+        "tested_in_frame": 484,
+        "occluders": {
+          "Rear axle | rigid driven tube": 109,
+          "Leaf pack RL lamination 3": 42,
+          "Leaf spring saddle 1": 33,
+          "Leaf pack RL lamination 4": 28
+        }
+      },
+      "Rear shock body RR": {
+        "visible": true,
+        "visible_samples": 108,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear upper damper frame bracket -1": 15,
+          "Frame crossmember 00": 9,
+          "Rear shock chrome shaft RR": 9,
+          "Shock eye RR upper": 1
+        }
+      },
+      "Rear shock body RL": {
+        "visible": true,
+        "visible_samples": 106,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear upper damper frame bracket 1": 15,
+          "Rear shock chrome shaft RL": 10,
+          "Frame crossmember 00": 8,
+          "Shock eye RL upper": 1
+        }
+      },
+      "Rear shock chrome shaft RR": {
+        "visible": true,
+        "visible_samples": 28,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear axle | rigid driven tube": 53,
+          "Rear shock body RR": 49,
+          "Rear upper damper frame bracket -1": 16
+        }
+      },
+      "Rear shock chrome shaft RL": {
+        "visible": true,
+        "visible_samples": 28,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear axle | rigid driven tube": 53,
+          "Rear shock body RL": 49,
+          "Rear upper damper frame bracket 1": 16
+        }
+      },
+      "Wheel hub RR": {
+        "visible": true,
+        "visible_samples": 6,
+        "tested_in_frame": 529,
+        "occluders": {
+          "Tire RR | formed sidewall and carcass": 237,
+          "Leaf pack RR lamination 4": 68,
+          "Tread RR | 192 staggered all-terrain blocks": 49,
+          "Leaf pack RR lamination 3": 44
+        }
+      },
+      "Wheel hub RL": {
+        "visible": true,
+        "visible_samples": 7,
+        "tested_in_frame": 529,
+        "occluders": {
+          "Tire RL | formed sidewall and carcass": 178,
+          "Leaf pack RL lamination 4": 94,
+          "Rear wheel bearing housing 1": 51,
+          "Leaf pack RL lamination 3": 51
+        }
+      },
+      "Rear axle | rigid driven tube": {
+        "visible": true,
+        "visible_samples": 80,
+        "tested_in_frame": 662,
+        "occluders": {
+          "Leaf pack RL lamination 3": 114,
+          "Leaf pack RR lamination 3": 112,
+          "Tire RR | formed sidewall and carcass": 65,
+          "Tire RL | formed sidewall and carcass": 64
+        }
+      },
+      "Rear differential | cast housing": {
+        "visible": true,
+        "visible_samples": 411,
+        "tested_in_frame": 549,
+        "occluders": {
+          "Rear driveshaft | articulated": 109,
+          "Rear axle | rigid driven tube": 14,
+          "Prop shaft flange pinion": 6,
+          "Universal joint cross Joint rear pinion": 3
+        }
+      },
+      "Rear driveshaft | articulated": {
+        "visible": true,
+        "visible_samples": 71,
+        "tested_in_frame": 81,
+        "occluders": {
+          "Universal joint cross Joint rear pinion": 5,
+          "Universal yoke ear pinion1": 4,
+          "Rotating prop shaft witness band 3.141592653589793": 1
+        }
+      },
+      "Moving shackle side plate RR-0.052": {
+        "visible": true,
+        "visible_samples": 32,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Frame rail R": 293,
+          "Rear axle brake hardline -1": 246,
+          "Shackle elastomer bushing RRlower": 7
+        }
+      },
+      "Moving shackle side plate RL0.052": {
+        "visible": true,
+        "visible_samples": 29,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Frame rail L": 293,
+          "Rear axle brake hardline 1": 249,
+          "Shackle elastomer bushing RLlower": 7
+        }
+      }
+    },
+    "386": {
+      "Leaf pack RR lamination 1": {
+        "visible": true,
+        "visible_samples": 134,
+        "tested_in_frame": 484,
+        "occluders": {
+          "Rear axle | rigid driven tube": 126,
+          "Leaf spring saddle -1": 63,
+          "Leaf pack RR lamination 4": 39,
+          "Leaf pack RR lamination 2": 27
+        }
+      },
+      "Leaf pack RL lamination 1": {
+        "visible": true,
+        "visible_samples": 138,
+        "tested_in_frame": 484,
+        "occluders": {
+          "Rear axle | rigid driven tube": 133,
+          "Leaf pack RL lamination 3": 44,
+          "Leaf spring saddle 1": 42,
+          "Front fixed eye bushing 1": 28
+        }
+      },
+      "Rear shock body RR": {
+        "visible": true,
+        "visible_samples": 109,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear upper damper frame bracket -1": 13,
+          "Rear shock chrome shaft RR": 12,
+          "Frame crossmember 00": 8,
+          "Shock eye RR upper": 2
+        }
+      },
+      "Rear shock body RL": {
+        "visible": true,
+        "visible_samples": 108,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear upper damper frame bracket 1": 13,
+          "Rear shock chrome shaft RL": 12,
+          "Frame crossmember 00": 8,
+          "Shock eye RL upper": 2
+        }
+      },
+      "Rear shock chrome shaft RR": {
+        "visible": true,
+        "visible_samples": 16,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear axle | rigid driven tube": 65,
+          "Rear shock body RR": 53,
+          "Rear upper damper frame bracket -1": 12
+        }
+      },
+      "Rear shock chrome shaft RL": {
+        "visible": true,
+        "visible_samples": 16,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear axle | rigid driven tube": 65,
+          "Rear shock body RL": 52,
+          "Rear upper damper frame bracket 1": 13
+        }
+      },
+      "Wheel hub RR": {
+        "visible": true,
+        "visible_samples": 10,
+        "tested_in_frame": 529,
+        "occluders": {
+          "Tire RR | formed sidewall and carcass": 226,
+          "Leaf pack RR lamination 4": 64,
+          "Tread RR | 192 staggered all-terrain blocks": 56,
+          "Leaf pack RR lamination 3": 43
+        }
+      },
+      "Wheel hub RL": {
+        "visible": true,
+        "visible_samples": 7,
+        "tested_in_frame": 529,
+        "occluders": {
+          "Tire RL | formed sidewall and carcass": 172,
+          "Leaf pack RL lamination 4": 88,
+          "Tread RL | 192 staggered all-terrain blocks": 50,
+          "Rear wheel bearing housing 1": 50
+        }
+      },
+      "Rear axle | rigid driven tube": {
+        "visible": true,
+        "visible_samples": 80,
+        "tested_in_frame": 662,
+        "occluders": {
+          "Leaf pack RR lamination 3": 119,
+          "Leaf pack RL lamination 3": 101,
+          "Tire RL | formed sidewall and carcass": 72,
+          "Tire RR | formed sidewall and carcass": 59
+        }
+      },
+      "Rear differential | cast housing": {
+        "visible": true,
+        "visible_samples": 412,
+        "tested_in_frame": 549,
+        "occluders": {
+          "Rear driveshaft | articulated": 105,
+          "Rear axle | rigid driven tube": 15,
+          "Prop shaft flange pinion": 5,
+          "Universal yoke ear pinion1": 4
+        }
+      },
+      "Rear driveshaft | articulated": {
+        "visible": true,
+        "visible_samples": 71,
+        "tested_in_frame": 81,
+        "occluders": {
+          "Universal joint cross Joint rear pinion": 5,
+          "Universal yoke ear pinion-1": 4,
+          "Rotating prop shaft witness band 0": 1
+        }
+      },
+      "Moving shackle side plate RR-0.052": {
+        "visible": false,
+        "visible_samples": 0,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Rear axle | rigid driven tube": 281,
+          "Frame rail R": 281,
+          "Rear axle brake hardline -1": 16
+        }
+      },
+      "Moving shackle side plate RL0.052": {
+        "visible": true,
+        "visible_samples": 21,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Frame rail L": 292,
+          "Rear axle | rigid driven tube": 265
+        }
+      }
+    },
+    "410": {
+      "Leaf pack RR lamination 1": {
+        "visible": true,
+        "visible_samples": 136,
+        "tested_in_frame": 484,
+        "occluders": {
+          "Rear axle | rigid driven tube": 115,
+          "Leaf spring saddle -1": 50,
+          "Leaf pack RR lamination 4": 38,
+          "Leaf pack RR lamination 2": 29
+        }
+      },
+      "Leaf pack RL lamination 1": {
+        "visible": true,
+        "visible_samples": 138,
+        "tested_in_frame": 484,
+        "occluders": {
+          "Rear axle | rigid driven tube": 122,
+          "Leaf pack RL lamination 3": 44,
+          "Leaf spring saddle 1": 37,
+          "Front fixed eye bushing 1": 28
+        }
+      },
+      "Rear shock body RR": {
+        "visible": true,
+        "visible_samples": 110,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear upper damper frame bracket -1": 15,
+          "Rear shock chrome shaft RR": 10,
+          "Frame crossmember 00": 8,
+          "Shock eye RR upper": 1
+        }
+      },
+      "Rear shock body RL": {
+        "visible": true,
+        "visible_samples": 107,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear upper damper frame bracket 1": 13,
+          "Rear shock chrome shaft RL": 10,
+          "Frame crossmember 00": 8,
+          "Fuel tank retaining strap -0.79": 4
+        }
+      },
+      "Rear shock chrome shaft RR": {
+        "visible": true,
+        "visible_samples": 23,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear axle | rigid driven tube": 58,
+          "Rear shock body RR": 49,
+          "Rear upper damper frame bracket -1": 16
+        }
+      },
+      "Rear shock chrome shaft RL": {
+        "visible": true,
+        "visible_samples": 20,
+        "tested_in_frame": 146,
+        "occluders": {
+          "Rear axle | rigid driven tube": 61,
+          "Rear shock body RL": 50,
+          "Rear upper damper frame bracket 1": 15
+        }
+      },
+      "Wheel hub RR": {
+        "visible": true,
+        "visible_samples": 7,
+        "tested_in_frame": 529,
+        "occluders": {
+          "Tire RR | formed sidewall and carcass": 234,
+          "Leaf pack RR lamination 4": 62,
+          "Tread RR | 192 staggered all-terrain blocks": 52,
+          "Leaf pack RR lamination 3": 45
+        }
+      },
+      "Wheel hub RL": {
+        "visible": true,
+        "visible_samples": 8,
+        "tested_in_frame": 529,
+        "occluders": {
+          "Tire RL | formed sidewall and carcass": 176,
+          "Leaf pack RL lamination 4": 98,
+          "Rear wheel bearing housing 1": 54,
+          "Leaf pack RL lamination 3": 47
+        }
+      },
+      "Rear axle | rigid driven tube": {
+        "visible": true,
+        "visible_samples": 80,
+        "tested_in_frame": 662,
+        "occluders": {
+          "Leaf pack RL lamination 3": 124,
+          "Leaf pack RR lamination 3": 111,
+          "Tire RR | formed sidewall and carcass": 65,
+          "Tire RL | formed sidewall and carcass": 59
+        }
+      },
+      "Rear differential | cast housing": {
+        "visible": true,
+        "visible_samples": 408,
+        "tested_in_frame": 549,
+        "occluders": {
+          "Rear driveshaft | articulated": 106,
+          "Rear axle | rigid driven tube": 14,
+          "Prop shaft flange pinion": 6,
+          "Universal yoke ear pinion-1": 4
+        }
+      },
+      "Rear driveshaft | articulated": {
+        "visible": true,
+        "visible_samples": 72,
+        "tested_in_frame": 81,
+        "occluders": {
+          "Universal joint cross Joint rear pinion": 5,
+          "Universal yoke ear pinion1": 2,
+          "Universal yoke ear pinion-1": 2
+        }
+      },
+      "Moving shackle side plate RR-0.052": {
+        "visible": true,
+        "visible_samples": 117,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Frame rail R": 293,
+          "Rear axle brake hardline -1": 124,
+          "Leaf pack RR lamination 1": 28,
+          "Shackle elastomer bushing RRlower": 13
+        }
+      },
+      "Moving shackle side plate RL0.052": {
+        "visible": true,
+        "visible_samples": 31,
+        "tested_in_frame": 578,
+        "occluders": {
+          "Frame rail L": 294,
+          "Rear axle | rigid driven tube": 249,
+          "Shackle elastomer bushing RLlower": 4
+        }
+      }
+    }
+  },
+  "hood_engine_intersections": [],
+  "invalid_drivers": [],
+  "base_v1_unchanged": true,
+  "render_invoked": false,
+  "checks": {
+    "original_preserved": true,
+    "correct_duration": true,
+    "hold_is_2_5_seconds": true,
+    "truck_keeps_driving_during_hold": true,
+    "suspension_within_80mm": true,
+    "wheel_contact_within_2mm": true,
+    "wheel_rotation_consistent": true,
+    "link_endpoints_within_0_1mm": true,
+    "leaf_saddles_within_0_1mm": true,
+    "leaf_eyes_within_0_1mm": true,
+    "shackles_rigid": true,
+    "camera_clearance_over_50mm": true,
+    "hood_clears_engine_when_closed": true,
+    "all_drivers_valid": true,
+    "rear_cycle_over_50mm": true,
+    "engine_key_groups_visible": true,
+    "new_rear_key_groups_visible": true,
+    "whole_vehicle_fits_wide_shots": true,
+    "hood_sweep_clears_fixed_body": true
+  },
+  "hood_sweep_intersections": [],
+  "verification_seconds": 14.776872290996835
+}

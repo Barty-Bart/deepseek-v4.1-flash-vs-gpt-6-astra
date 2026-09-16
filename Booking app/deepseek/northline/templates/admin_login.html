@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Staff sign in — Northline Barber{% endblock %}
+{% block content %}
+<section class="panel narrow">
+  <p class="eyebrow">Staff area</p>
+  <h1>Sign in</h1>
+  <p class="muted">Bookings and customer details are only visible to signed-in staff.</p>
+
+  {% if error %}
+  <div class="alert alert-error" role="alert"><p>{{ error }}</p></div>
+  {% endif %}
+
+  <form class="booking-form" method="post" action="{{ url_for('admin.login') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <p class="field">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required autocomplete="username"
+             value="{{ username or '' }}" autocapitalize="none" spellcheck="false">
+    </p>
+    <p class="field">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required autocomplete="current-password">
+    </p>
+    <button class="btn btn-primary" type="submit">Sign in</button>
+  </form>
+
+  <p class="muted small">Local demo credentials are documented in the project README.</p>
+</section>
+{% endblock %}

@@ -1,0 +1,701 @@
+{
+  "started_at": "2026-09-15T08:10:38.272656+00:00",
+  "checks": [
+    "chromium-1440x1000: sticky header, anchors, focus, accessible menu and thumb targets",
+    "chromium-1440x1000: booking, stale-slot conflict, private cancellation and released availability",
+    "chromium-1440x1000: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout",
+    "chromium-393x852: sticky header, anchors, focus, accessible menu and thumb targets",
+    "chromium-393x852: booking, stale-slot conflict, private cancellation and released availability",
+    "chromium-393x852: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout",
+    "chromium-402x874: sticky header, anchors, focus, accessible menu and thumb targets",
+    "chromium-402x874: booking, stale-slot conflict, private cancellation and released availability",
+    "chromium-402x874: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout",
+    "chromium: all five fields automatically use selectable fallbacks when showPicker is missing",
+    "chromium: all five fields automatically use selectable fallbacks when showPicker is throws",
+    "JavaScript-disabled phone booking/cancellation and sticky-header anchor clearance remain functional",
+    "webkit-1440x1000: sticky header, anchors, focus, accessible menu and thumb targets",
+    "webkit-1440x1000: booking, stale-slot conflict, private cancellation and released availability",
+    "webkit-1440x1000: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout",
+    "webkit-393x852: sticky header, anchors, focus, accessible menu and thumb targets",
+    "webkit-393x852: booking, stale-slot conflict, private cancellation and released availability",
+    "webkit-393x852: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout",
+    "webkit-402x874: sticky header, anchors, focus, accessible menu and thumb targets",
+    "webkit-402x874: booking, stale-slot conflict, private cancellation and released availability",
+    "webkit-402x874: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout",
+    "webkit: all five fields automatically use selectable fallbacks when showPicker is missing",
+    "webkit: all five fields automatically use selectable fallbacks when showPicker is throws",
+    "Existing database and signing secret preserved; no uncaught JavaScript errors or HTTP 5xx responses"
+  ],
+  "screenshots": [
+    "chromium-1440x1000-booking.png",
+    "chromium-1440x1000-confirmation.png",
+    "chromium-1440x1000-login.png",
+    "chromium-1440x1000-admin.png",
+    "chromium-393x852-booking.png",
+    "chromium-393x852-menu.png",
+    "chromium-393x852-calendar.png",
+    "chromium-393x852-confirmation.png",
+    "chromium-393x852-cancelled.png",
+    "chromium-393x852-login.png",
+    "chromium-393x852-admin.png",
+    "chromium-402x874-booking.png",
+    "chromium-402x874-menu.png",
+    "chromium-402x874-calendar.png",
+    "chromium-402x874-confirmation.png",
+    "chromium-402x874-cancelled.png",
+    "chromium-402x874-login.png",
+    "chromium-402x874-admin.png",
+    "live-preview-393x852.png"
+  ],
+  "picker_calls": [
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "left"
+    },
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "middle"
+    },
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "right"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "left"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "middle"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "right"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "left"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "middle"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "right"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "left"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "middle"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "right"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "left"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "middle"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-1440x1000",
+      "position": "right"
+    },
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "left"
+    },
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "middle"
+    },
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "right"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "left"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "middle"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "right"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "left"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "middle"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "right"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "left"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "middle"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "right"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "left"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "middle"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-393x852",
+      "position": "right"
+    },
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "left"
+    },
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "middle"
+    },
+    {
+      "id": "date-picker",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "right"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "left"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "middle"
+    },
+    {
+      "id": "filter-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "right"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "left"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "middle"
+    },
+    {
+      "id": "block-date",
+      "type": "date",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "right"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "left"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "middle"
+    },
+    {
+      "id": "block-start",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "right"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "left"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "middle"
+    },
+    {
+      "id": "block-end",
+      "type": "time",
+      "activation": true,
+      "result": "returned",
+      "case": "chromium-402x874",
+      "position": "right"
+    },
+    {
+      "id": "#date-picker",
+      "case": "webkit-1440x1000",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#date-picker",
+      "case": "webkit-1440x1000",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#date-picker",
+      "case": "webkit-1440x1000",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#filter-date",
+      "case": "webkit-1440x1000",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#filter-date",
+      "case": "webkit-1440x1000",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#filter-date",
+      "case": "webkit-1440x1000",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-date",
+      "case": "webkit-1440x1000",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-date",
+      "case": "webkit-1440x1000",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-date",
+      "case": "webkit-1440x1000",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-start",
+      "case": "webkit-1440x1000",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-start",
+      "case": "webkit-1440x1000",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-start",
+      "case": "webkit-1440x1000",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-end",
+      "case": "webkit-1440x1000",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-end",
+      "case": "webkit-1440x1000",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-end",
+      "case": "webkit-1440x1000",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#date-picker",
+      "case": "webkit-393x852",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#date-picker",
+      "case": "webkit-393x852",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#date-picker",
+      "case": "webkit-393x852",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#filter-date",
+      "case": "webkit-393x852",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#filter-date",
+      "case": "webkit-393x852",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#filter-date",
+      "case": "webkit-393x852",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-date",
+      "case": "webkit-393x852",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-date",
+      "case": "webkit-393x852",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-date",
+      "case": "webkit-393x852",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-start",
+      "case": "webkit-393x852",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-start",
+      "case": "webkit-393x852",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-start",
+      "case": "webkit-393x852",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-end",
+      "case": "webkit-393x852",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-end",
+      "case": "webkit-393x852",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-end",
+      "case": "webkit-393x852",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#date-picker",
+      "case": "webkit-402x874",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#date-picker",
+      "case": "webkit-402x874",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#date-picker",
+      "case": "webkit-402x874",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#filter-date",
+      "case": "webkit-402x874",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#filter-date",
+      "case": "webkit-402x874",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#filter-date",
+      "case": "webkit-402x874",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-date",
+      "case": "webkit-402x874",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-date",
+      "case": "webkit-402x874",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-date",
+      "case": "webkit-402x874",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-start",
+      "case": "webkit-402x874",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-start",
+      "case": "webkit-402x874",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-start",
+      "case": "webkit-402x874",
+      "position": "right",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-end",
+      "case": "webkit-402x874",
+      "position": "left",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-end",
+      "case": "webkit-402x874",
+      "position": "middle",
+      "result": "direct accessible fallback"
+    },
+    {
+      "id": "#block-end",
+      "case": "webkit-402x874",
+      "position": "right",
+      "result": "direct accessible fallback"
+    }
+  ],
+  "page_errors": [],
+  "server_errors": [],
+  "block_responses": [
+    409,
+    303,
+    409,
+    303,
+    409,
+    303,
+    409,
+    303,
+    409,
+    303,
+    409,
+    303
+  ],
+  "demo_data_preserved": true,
+  "result": "passed",
+  "elapsed_seconds": 34.62
+}

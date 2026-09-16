@@ -1,0 +1,7 @@
+{
+  "url": "http://127.0.0.1:5179/",
+  "views": [
+    { "name": "pos", "width": 1440, "height": 900, "selectorScroll": true,
+      "scrolls": [0] }
+  ]
+}

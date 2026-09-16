@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}Northline Barber — book a cut in Melbourne{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Tuesday–Saturday · 09:00–17:00</p>
+    <h1>Walk in sharp.</h1>
+    <p class="lede">
+      A two-chair barber shop on Northline Arcade. Pick your service, pick Alex or Jordan,
+      and take a 15-minute slot that is genuinely free — no phone calls, no double bookings.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#book">Start a booking</a>
+      <a class="btn btn-ghost" href="{{ url_for('customer.manage_entry') }}">I already have a booking</a>
+    </div>
+  </div>
+  <dl class="hero-facts">
+    <div>
+      <dt>Chairs</dt>
+      <dd>Alex &amp; Jordan</dd>
+    </div>
+    <div>
+      <dt>Break</dt>
+      <dd>{{ break_window }} daily</dd>
+    </div>
+    <div>
+      <dt>Booking window</dt>
+      <dd>Now + {{ horizon }} days</dd>
+    </div>
+    <div>
+      <dt>Timezone</dt>
+      <dd>{{ shop_tz_name }}</dd>
+    </div>
+  </dl>
+</section>
+
+<section class="panel" id="book" aria-labelledby="book-heading">
+  <div class="panel-head">
+    <h2 id="book-heading">Book an appointment</h2>
+    <p class="muted">Three quick steps. Duration and price are shown before you confirm.</p>
+  </div>
+
+  <form class="booking-form" method="get" action="{{ url_for('customer.book') }}">
+    <fieldset>
+      <legend><span class="step">1</span> Choose a service</legend>
+      <div class="choice-grid">
+        {% for service in services %}
+        <label class="choice">
+          <input type="radio" name="service" value="{{ service['id'] }}"
+                 {% if selected_service and selected_service['id'] == service['id'] %}checked{% endif %} required>
+          <span class="choice-body">
+            <span class="choice-name">{{ service['name'] }}</span>
+            <span class="choice-meta">{{ service['duration_minutes'] }} min · AUD {{ '%.2f'|format(service['price_cents'] / 100) }}</span>
+          </span>
+        </label>
+        {% else %}
+        <p class="empty">No services are set up yet. Run the seed command to load the demo data.</p>
+        {% endfor %}
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend><span class="step">2</span> Choose a barber</legend>
+      <div class="choice-grid choice-grid-barbers">
+        {% for barber in barbers %}
+        <label class="choice">
+          <input type="radio" name="barber" value="{{ barber['id'] }}"
+                 {% if selected_barber and selected_barber['id'] == barber['id'] %}checked{% endif %} required>
+          <span class="choice-body">
+            <span class="choice-name">{{ barber['name'] }}</span>
+            <span class="choice-meta">Starts {{ barber['work_start'] }} · breaks {{ break_window }}</span>
+          </span>
+        </label>
+        {% else %}
+        <p class="empty">No barbers are set up yet. Run the seed command to load the demo data.</p>
+        {% endfor %}
+      </div>
+    </fieldset>
+
+    <div class="form-footer">
+      <button class="btn btn-primary" type="submit" {% if not services or not barbers %}disabled{% endif %}>
+        Continue to choose a time
+      </button>
+      <p class="muted small">Opens the day and time picker.</p>
+    </div>
+  </form>
+</section>
+
+<section class="info-grid" aria-label="Good to know">
+  <article>
+    <h3>No account needed</h3>
+    <p>We ask for your name and email only. You get a booking reference and a private link to view or cancel.</p>
+  </article>
+  <article>
+    <h3>Real availability</h3>
+    <p>Times that clash with a break, a staff block or an existing booking are never offered.</p>
+  </article>
+  <article>
+    <h3>Local demo limits</h3>
+    <p>Confirmation emails are not sent, and there is no payment step. Keep your private link to manage the booking.</p>
+  </article>
+</section>
+
+{% endblock %}

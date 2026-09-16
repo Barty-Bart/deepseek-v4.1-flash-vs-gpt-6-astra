@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#25382e" />
+    <meta
+      name="description"
+      content="A handcrafted medieval strategy game. Gather, build, and lead your settlement to victory."
+    />
+    <title>Hearth & Banner — The Borderlands</title>
+    <link rel="icon" type="image/svg+xml" href="/crest.svg" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas
+        id="world"
+        aria-label="Strategy game map. Select with left click; move and interact with right click."
+      ></canvas>
+      <div class="vignette"></div>
+      <header class="topbar">
+        <div class="brand">
+          <img src="/crest.svg" alt="" />
+          <div>
+            HEARTH <span>&</span> BANNER<button
+              id="civilization-button"
+              title="View civilization advancement at your town centre"
+            >
+              <b>I</b> HEARTH AGE <span>↗</span>
+            </button>
+          </div>
+        </div>
+        <div class="resources" aria-label="Settlement resources">
+          <div class="resource" title="Food • Gather berries or work farms">
+            <span class="res-icon food"></span>
+            <div><strong id="food">240</strong><small>FOOD</small></div>
+            <em id="food-workers">0</em>
+          </div>
+          <div class="resource" title="Wood • Fell trees">
+            <span class="res-icon wood"></span>
+            <div><strong id="wood">260</strong><small>WOOD</small></div>
+            <em id="wood-workers">0</em>
+          </div>
+          <div class="resource" title="Gold • Mine gold deposits">
+            <span class="res-icon gold"></span>
+            <div><strong id="gold">130</strong><small>GOLD</small></div>
+            <em id="gold-workers">0</em>
+          </div>
+          <div
+            class="resource population"
+            title="Population • Build houses to increase capacity"
+          >
+            <span class="res-icon pop"></span>
+            <div>
+              <strong id="population">3 <i>/ 10</i></strong
+              ><small>POPULATION</small>
+            </div>
+          </div>
+        </div>
+        <div class="top-tools">
+          <button
+            id="sound-button"
+            class="icon-button"
+            aria-label="Mute sound"
+            title="Mute sound (M)"
+          ></button
+          ><button
+            id="help-button"
+            class="icon-button"
+            aria-label="Show controls"
+            title="Controls (?)"
+          ></button
+          ><button
+            id="pause-button"
+            class="icon-button"
+            aria-label="Pause game"
+            title="Pause (Space)"
+          ></button>
+        </div>
+      </header>
+      <aside class="objective-panel">
+        <div class="eyebrow">
+          <span class="live-dot"></span> THE BORDERLANDS
+          <span id="game-time">00:00</span>
+        </div>
+        <h1>A hearth worth defending.</h1>
+        <p>Raise a settlement. Break the Redfen banner.</p>
+        <div class="objective">
+          <span class="crossed-swords">⚔</span>
+          <div>
+            Destroy the enemy town centre<small id="enemy-status"
+              >Uncharted · explore toward the northeast</small
+            >
+          </div>
+        </div>
+        <button id="guide-toggle" class="guide-toggle">
+          Your first steps <span>−</span>
+        </button>
+        <ol id="guide-list">
+          <li data-goal="gather">
+            <b>1</b> Send villagers to berries, trees or gold
+          </li>
+          <li data-goal="house">
+            <b>2</b> Build a house to grow your settlement
+          </li>
+          <li data-goal="barracks">
+            <b>3</b> Raise a barracks and train soldiers
+          </li>
+          <li data-goal="army"><b>4</b> Lead your army northeast</li>
+        </ol>
+      </aside>
+      <div id="world-notice" aria-live="polite"></div>
+      <div id="placement-hint" hidden>
+        <span>PLACE BUILDING</span> Left click to build · Right click or Esc to
+        cancel
+      </div>
+      <div class="right-controls">
+        <button id="idle-button" title="Select an idle villager (.)">
+          <span id="idle-count">3</span> idle villagers <kbd>.</kbd></button
+        ><button id="army-button" title="Select all soldiers (Q)">
+          Select army <kbd>Q</kbd>
+        </button>
+      </div>
+      <footer class="bottom-ui">
+        <section class="minimap-panel">
+          <div class="panel-label">
+            <span>THE BORDERLANDS</span
+            ><span id="exploration-label" class="north-mark">UNCHARTED</span>
+          </div>
+          <canvas
+            id="minimap"
+            width="220"
+            height="140"
+            aria-label="Minimap. Click to move the camera."
+          ></canvas>
+          <div class="map-tools">
+            <button id="home-button" title="Return to town centre (H)"></button
+            ><span id="zoom-label">100%</span
+            ><button id="zoom-out" aria-label="Zoom out">−</button
+            ><button id="zoom-in" aria-label="Zoom in">+</button>
+          </div>
+        </section>
+        <section id="selection-panel" class="selection-panel">
+          <div class="selection-summary">
+            <canvas id="portrait" width="96" height="96"></canvas>
+            <div class="selection-description">
+              <div id="selection-owner" class="eyebrow">YOUR SETTLEMENT</div>
+              <h2 id="selection-name">The beginning of a kingdom</h2>
+              <p id="selection-status">
+                Select a villager or your town centre.
+              </p>
+              <div id="selection-health"></div>
+            </div>
+          </div>
+          <div id="selection-details"></div>
+          <div class="actions-wrap">
+            <div id="actions-label" class="panel-label">
+              SETTLEMENT COMMANDS
+            </div>
+            <div id="actions"></div>
+          </div>
+        </section>
+        <div class="field-notes">
+          <div class="eyebrow">A LITTLE FORESIGHT</div>
+          <p id="field-tip">
+            A busy village is a strong village.<br />Keep your workers
+            gathering.
+          </p>
+          <div class="controls-peek">
+            <span><b>LMB</b> Select</span><span><b>RMB</b> Command</span
+            ><span><b>WASD</b> Pan</span>
+          </div>
+        </div>
+      </footer>
+      <div id="welcome" class="modal-backdrop welcome-backdrop">
+        <section class="welcome-card">
+          <div class="eyebrow">A SMALL REAL-TIME STRATEGY GAME</div>
+          <img
+            class="welcome-crest"
+            src="/crest.svg"
+            alt="Hearth and Banner crest"
+          />
+          <h2>Every kingdom<br />begins with a hearth.</h2>
+          <p>
+            Three villagers. A patch of untamed land.<br />And a rival banner
+            beyond the trees.
+          </p>
+          <div class="welcome-features">
+            <span>Gather & build</span><i>◆</i><span>Train & conquer</span>
+          </div>
+          <button id="start-button" class="primary-button">
+            Found your settlement <span>→</span></button
+          ><small>ONE MAP · ONE RIVAL · ABOUT 5–10 MINUTES</small>
+        </section>
+      </div>
+      <div id="pause-modal" class="modal-backdrop" hidden>
+        <section class="dialog">
+          <div class="eyebrow">A MOMENT BY THE FIRE</div>
+          <h2>The realm can wait.</h2>
+          <p>Your settlement is paused.</p>
+          <button id="resume-button" class="primary-button">
+            Return to the borderlands <span>→</span></button
+          ><button id="restart-button" class="secondary-button">
+            Start a new settlement
+          </button>
+        </section>
+      </div>
+      <div id="help-modal" class="modal-backdrop" hidden>
+        <section class="dialog help-dialog">
+          <div class="eyebrow">THE SETTLER’S HANDBOOK</div>
+          <h2>A few things to know.</h2>
+          <div class="help-grid">
+            <b>Left click / drag</b><span>Select one unit / a group</span
+            ><b>Shift + click</b><span>Add or remove from selection</span
+            ><b>Right click</b><span>Move, gather, build or attack</span
+            ><b>WASD / arrows</b><span>Pan the camera</span><b>Mouse wheel</b
+            ><span>Zoom in and out</span><b>Middle drag</b
+            ><span>Drag the map</span><b>H / minimap</b
+            ><span>Home base / jump on the map</span><b>. / Q</b
+            ><span>Idle villager / all soldiers</span><b>Space / M</b
+            ><span>Pause / mute sound</span><b>Esc</b
+            ><span>Cancel placement or selection</span>
+          </div>
+          <p>
+            Villagers carry resources back to the town centre. Select a villager
+            to build; right-click an unfinished building to help. Houses add 5
+            population. Farms grow food. Soldiers automatically fight nearby
+            enemies.
+          </p>
+          <p>
+            Train at your town centre and barracks. Press the small × on a queue
+            to cancel and refund. Advance through three ages at the town centre
+            to improve gathering, spearmen and every watchtower. Watchtowers
+            fire automatically and reveal distant land. Dark land is unexplored;
+            dim land was explored but is currently out of sight. Enemy units
+            disappear from view there, while buildings remain as last seen.
+            Protect your town centre and destroy Redfen’s to win.
+          </p>
+          <button id="close-help" class="primary-button">
+            Understood <span>→</span>
+          </button>
+        </section>
+      </div>
+      <div id="end-modal" class="modal-backdrop" hidden>
+        <section class="dialog end-dialog">
+          <div id="end-eyebrow" class="eyebrow">THE CHRONICLE IS WRITTEN</div>
+          <img src="/crest.svg" class="end-crest" alt="" />
+          <h2 id="end-title">Your banner endures.</h2>
+          <p id="end-message"></p>
+          <div id="end-stats"></div>
+          <button id="play-again" class="primary-button">
+            Write a new chapter <span>→</span>
+          </button>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

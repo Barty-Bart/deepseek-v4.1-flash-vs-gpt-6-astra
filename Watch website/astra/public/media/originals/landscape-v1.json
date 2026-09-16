@@ -1,0 +1,29 @@
+{
+  "output": "public/media/originals/landscape-v1.mp4",
+  "aspect": "landscape",
+  "version": "v1",
+  "width": 1928,
+  "height": 1076,
+  "duration": 18.166667,
+  "boundaries": [
+    {
+      "input": "public/media/originals/landscape-1-v2-clean.mp4",
+      "start": 0,
+      "end": 7.041667,
+      "frames": 169
+    },
+    {
+      "input": "public/media/originals/landscape-2-v1-finished2.mp4",
+      "start": 7.041667,
+      "end": 14.083334,
+      "frames": 169
+    },
+    {
+      "input": "public/media/originals/landscape-3-preview-v1.mp4",
+      "start": 14.083334,
+      "end": 18.166667,
+      "frames": 98
+    }
+  ],
+  "method": "Sequential concatenation. Original generated clips and local finishing sidecars preserved; consult the asset ledger for preview versus storyboard acceptance."
+}

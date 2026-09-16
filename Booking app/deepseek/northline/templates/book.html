@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block title %}Choose a time — Northline Barber{% endblock %}
+{% block content %}
+
+{% if errors %}
+<div class="alert alert-error" role="alert" tabindex="-1" id="error-summary">
+  <h2>We could not complete that booking</h2>
+  <ul>
+    {% for error in errors %}<li>{{ error }}</li>{% endfor %}
+  </ul>
+  <p class="small">Nothing was booked. Please adjust and try again.</p>
+</div>
+{% endif %}
+
+<nav class="crumbs" aria-label="Steps">
+  <span class="crumb done">1 Service</span>
+  <span class="crumb done">2 Barber</span>
+  <span class="crumb current">3 Date &amp; time</span>
+  <span class="crumb">4 Your details</span>
+</nav>
+
+<section class="panel">
+  <div class="panel-head">
+    <h1>Pick a date and time</h1>
+    {% if selected_service and selected_barber %}
+    <p class="muted">
+      <strong>{{ selected_service['name'] }}</strong> ·
+      {{ selected_service['duration_minutes'] }} min ·
+      AUD {{ '%.2f'|format(selected_service['price_cents'] / 100) }}
+      with <strong>{{ selected_barber['name'] }}</strong>
+      ({{ selected_barber['work_start'] }}–{{ selected_barber['work_end'] }})
+    </p>
+    {% endif %}
+  </div>
+
+  {% if not selected_service or not selected_barber %}
+  <div class="alert alert-info" role="alert">
+    <h2>Choose a service and a barber first</h2>
+    <p>We need both before we can show real availability.</p>
+    <p><a class="btn btn-primary" href="{{ url_for('customer.home') }}#book">Back to step 1</a></p>
+  </div>
+  {% else %}
+
+  <form class="date-form" method="get" action="{{ url_for('customer.book') }}" data-autosubmit>
+    <input type="hidden" name="service" value="{{ selected_service['id'] }}">
+    <input type="hidden" name="barber" value="{{ selected_barber['id'] }}">
+
+    <h2 class="subhead" id="date-heading">Choose a date</h2>
+    <p class="muted small">Bookings open {{ horizon }} days ahead. Closed Sunday and Monday.</p>
+
+    <div class="date-scroller" role="group" aria-labelledby="date-heading">
+      {% for date in dates %}
+      <label class="date-chip">
+        <input type="radio" name="date" value="{{ date.isoformat() }}" data-autosubmit-input
+               {% if selected_day and selected_day == date %}checked{% endif %} required>
+        <span class="date-chip-body">
+          <span class="dow">{{ date.strftime('%a') }}</span>
+          <span class="dom">{{ date.strftime('%-d %b') }}</span>
+        </span>
+      </label>
+      {% endfor %}
+    </div>
+
+    <div class="date-fallback">
+      <label for="date-input">Or pick a date directly</label>
+      <input type="date" id="date-input" name="date" value="{{ selected_day.isoformat() if selected_day else '' }}"
+             min="{{ min_date }}" max="{{ max_date }}" data-autosubmit-input>
+      <noscript><button class="btn btn-ghost" type="submit">Show times</button></noscript>
+    </div>
+  </form>
+
+  <h2 class="subhead" id="time-heading">Available start times
+    {% if selected_day %}<span class="muted small">on {{ selected_day.strftime('%A %-d %B %Y') }}</span>{% endif %}
+  </h2>
+
+  {% if not selected_day %}
+    <p class="empty">Choose a date above to see the free times.</p>
+  {% elif not slots %}
+    <div class="alert alert-info" role="alert">
+      <h2>Nothing free that day</h2>
+      <p>
+        {{ selected_barber['name'] }} has no {{ selected_service['duration_minutes'] }}-minute gap on
+        {{ selected_day.strftime('%A %-d %B') }} that fits around existing bookings and the {{ break_window }} break.
+      </p>
+      <p>Try another date, the other barber, or a shorter service.</p>
+    </div>
+  {% else %}
+
+  <form class="booking-form" method="post" action="{{ url_for('customer.book') }}" novalidate>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="service" value="{{ selected_service['id'] }}">
+    <input type="hidden" name="barber" value="{{ selected_barber['id'] }}">
+    <input type="hidden" name="date" value="{{ selected_day.isoformat() }}">
+
+    <fieldset>
+      <legend class="visually-hidden">Available start times</legend>
+      <div class="slot-grid">
+        {% for slot in slots %}
+        <label class="slot">
+          <input type="radio" name="time" value="{{ slot.strftime('%H:%M') }}" required
+                 {% if loop.first %}data-first{% endif %}>
+          <span class="slot-body">
+            <span class="slot-time">{{ slot.strftime('%H:%M') }}</span>
+            <span class="slot-end">to {{ (slot + selected_service['duration_minutes']|minutes).strftime('%H:%M') }}</span>
+          </span>
+        </label>
+        {% endfor %}
+      </div>
+      <p class="muted small">{{ slots|length }} free start time{{ '' if slots|length == 1 else 's' }} for a
+        {{ selected_service['duration_minutes'] }}-minute appointment.</p>
+    </fieldset>
+
+    <fieldset class="details-fieldset">
+      <legend><span class="step">4</span> Your details</legend>
+      <div class="field-row">
+        <p class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required maxlength="80"
+                 value="{{ request.form.get('name', '') }}">
+        </p>
+        <p class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required maxlength="254"
+                 value="{{ request.form.get('email', '') }}" aria-describedby="email-hint">
+        </p>
+      </div>
+      <p class="hint" id="email-hint">Used only to label your booking. This local demo does not send emails.</p>
+    </fieldset>
+
+    <div class="summary-bar">
+      <div class="summary-line">
+        <span class="summary-label">Total</span>
+        <span class="summary-value">AUD {{ '%.2f'|format(selected_service['price_cents'] / 100) }}</span>
+        <span class="summary-detail">{{ selected_service['duration_minutes'] }} min with {{ selected_barber['name'] }}</span>
+      </div>
+      <p class="muted small">Pay in the shop — this demo takes no payment details.</p>
+      <button class="btn btn-primary btn-wide" type="submit">Confirm booking</button>
+    </div>
+  </form>
+  {% endif %}
+
+  <p class="back-row"><a href="{{ url_for('customer.home') }}#book">← Change service or barber</a></p>
+  {% endif %}
+</section>
+
+{% endblock %}

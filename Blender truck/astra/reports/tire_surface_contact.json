@@ -1,0 +1,442 @@
+[
+  {
+    "frame": 1,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003876686096191406
+  },
+  {
+    "frame": 1,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003876686096191406
+  },
+  {
+    "frame": 1,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0003876686096191406
+  },
+  {
+    "frame": 1,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0003876686096191406
+  },
+  {
+    "frame": 24,
+    "wheel": "FL",
+    "surface_clearance_m": -0.00035190582275390625
+  },
+  {
+    "frame": 24,
+    "wheel": "FR",
+    "surface_clearance_m": -0.00035190582275390625
+  },
+  {
+    "frame": 24,
+    "wheel": "RL",
+    "surface_clearance_m": -0.00035190582275390625
+  },
+  {
+    "frame": 24,
+    "wheel": "RR",
+    "surface_clearance_m": -0.00035190582275390625
+  },
+  {
+    "frame": 48,
+    "wheel": "FL",
+    "surface_clearance_m": -0.00032621146908043755
+  },
+  {
+    "frame": 48,
+    "wheel": "FR",
+    "surface_clearance_m": -0.00033468008041381836
+  },
+  {
+    "frame": 48,
+    "wheel": "RL",
+    "surface_clearance_m": -0.00033468008041381836
+  },
+  {
+    "frame": 48,
+    "wheel": "RR",
+    "surface_clearance_m": -0.00033468008041381836
+  },
+  {
+    "frame": 62,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003429777571000159
+  },
+  {
+    "frame": 62,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003429777571000159
+  },
+  {
+    "frame": 62,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0022393740937788568
+  },
+  {
+    "frame": 62,
+    "wheel": "RR",
+    "surface_clearance_m": -0.002141244053159637
+  },
+  {
+    "frame": 77,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003893542591806229
+  },
+  {
+    "frame": 77,
+    "wheel": "FR",
+    "surface_clearance_m": -0.00038223644400636053
+  },
+  {
+    "frame": 77,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0003898320719599724
+  },
+  {
+    "frame": 77,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0003898320719599724
+  },
+  {
+    "frame": 84,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003896579146385193
+  },
+  {
+    "frame": 84,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003896579146385193
+  },
+  {
+    "frame": 84,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0003896579146385193
+  },
+  {
+    "frame": 84,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0003896579146385193
+  },
+  {
+    "frame": 93,
+    "wheel": "FL",
+    "surface_clearance_m": -0.000314436387270689
+  },
+  {
+    "frame": 93,
+    "wheel": "FR",
+    "surface_clearance_m": -0.000314436387270689
+  },
+  {
+    "frame": 93,
+    "wheel": "RL",
+    "surface_clearance_m": -0.000314436387270689
+  },
+  {
+    "frame": 93,
+    "wheel": "RR",
+    "surface_clearance_m": -0.000314436387270689
+  },
+  {
+    "frame": 107,
+    "wheel": "FL",
+    "surface_clearance_m": -0.00039812545058887094
+  },
+  {
+    "frame": 107,
+    "wheel": "FR",
+    "surface_clearance_m": -0.00038601484556918114
+  },
+  {
+    "frame": 107,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0009281237369859769
+  },
+  {
+    "frame": 107,
+    "wheel": "RR",
+    "surface_clearance_m": -0.000882859283592552
+  },
+  {
+    "frame": 118,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003695049381349236
+  },
+  {
+    "frame": 118,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003695049381349236
+  },
+  {
+    "frame": 118,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0003695049381349236
+  },
+  {
+    "frame": 118,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0003695049381349236
+  },
+  {
+    "frame": 126,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003851950168609619
+  },
+  {
+    "frame": 126,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003851950168609619
+  },
+  {
+    "frame": 126,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0008334944141097367
+  },
+  {
+    "frame": 126,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0010245675360219895
+  },
+  {
+    "frame": 135,
+    "wheel": "FL",
+    "surface_clearance_m": -0.00037798109201326127
+  },
+  {
+    "frame": 135,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003532607220503234
+  },
+  {
+    "frame": 135,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0004963001661449848
+  },
+  {
+    "frame": 135,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0007983827277326522
+  },
+  {
+    "frame": 144,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003913185040500117
+  },
+  {
+    "frame": 144,
+    "wheel": "FR",
+    "surface_clearance_m": -0.00036467291739359503
+  },
+  {
+    "frame": 144,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0003896048292517662
+  },
+  {
+    "frame": 144,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0003896048292517662
+  },
+  {
+    "frame": 151,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003892630338668823
+  },
+  {
+    "frame": 151,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003413727437701006
+  },
+  {
+    "frame": 151,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0003892630338668823
+  },
+  {
+    "frame": 151,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0003892630338668823
+  },
+  {
+    "frame": 157,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003606667000342241
+  },
+  {
+    "frame": 157,
+    "wheel": "FR",
+    "surface_clearance_m": -0.00033446048385792765
+  },
+  {
+    "frame": 157,
+    "wheel": "RL",
+    "surface_clearance_m": -0.00038948655128479004
+  },
+  {
+    "frame": 157,
+    "wheel": "RR",
+    "surface_clearance_m": -0.00038948655128479004
+  },
+  {
+    "frame": 158,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003896807332396529
+  },
+  {
+    "frame": 158,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003920080770454526
+  },
+  {
+    "frame": 158,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0003939818125218153
+  },
+  {
+    "frame": 158,
+    "wheel": "RR",
+    "surface_clearance_m": -0.00034463745723295144
+  },
+  {
+    "frame": 165,
+    "wheel": "FL",
+    "surface_clearance_m": -0.00038805603981018066
+  },
+  {
+    "frame": 165,
+    "wheel": "FR",
+    "surface_clearance_m": -0.00038805603981018066
+  },
+  {
+    "frame": 165,
+    "wheel": "RL",
+    "surface_clearance_m": -0.003091248380709205
+  },
+  {
+    "frame": 165,
+    "wheel": "RR",
+    "surface_clearance_m": -0.003188546950143936
+  },
+  {
+    "frame": 172,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003871619701385498
+  },
+  {
+    "frame": 172,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003871619701385498
+  },
+  {
+    "frame": 172,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0008544204810711567
+  },
+  {
+    "frame": 172,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0011896298520673889
+  },
+  {
+    "frame": 181,
+    "wheel": "FL",
+    "surface_clearance_m": -0.00038630515336990356
+  },
+  {
+    "frame": 181,
+    "wheel": "FR",
+    "surface_clearance_m": -0.00038630515336990356
+  },
+  {
+    "frame": 181,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0026797002915892355
+  },
+  {
+    "frame": 181,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0023492943567119257
+  },
+  {
+    "frame": 192,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003782160438640797
+  },
+  {
+    "frame": 192,
+    "wheel": "FR",
+    "surface_clearance_m": -0.00039616609185195995
+  },
+  {
+    "frame": 192,
+    "wheel": "RL",
+    "surface_clearance_m": -0.00038909912109375
+  },
+  {
+    "frame": 192,
+    "wheel": "RR",
+    "surface_clearance_m": -0.00038909912109375
+  },
+  {
+    "frame": 201,
+    "wheel": "FL",
+    "surface_clearance_m": -0.00036975078110083144
+  },
+  {
+    "frame": 201,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003356635570526123
+  },
+  {
+    "frame": 201,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0003356635570526123
+  },
+  {
+    "frame": 201,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0003356635570526123
+  },
+  {
+    "frame": 214,
+    "wheel": "FL",
+    "surface_clearance_m": -0.0003784261643886566
+  },
+  {
+    "frame": 214,
+    "wheel": "FR",
+    "surface_clearance_m": -0.0003784261643886566
+  },
+  {
+    "frame": 214,
+    "wheel": "RL",
+    "surface_clearance_m": -0.0016389714033760768
+  },
+  {
+    "frame": 214,
+    "wheel": "RR",
+    "surface_clearance_m": -0.0019221573103989364
+  },
+  {
+    "frame": 240,
+    "wheel": "FL",
+    "surface_clearance_m": -0.00037788681220263243
+  },
+  {
+    "frame": 240,
+    "wheel": "FR",
+    "surface_clearance_m": -0.00037788681220263243
+  },
+  {
+    "frame": 240,
+    "wheel": "RL",
+    "surface_clearance_m": -0.00037788681220263243
+  },
+  {
+    "frame": 240,
+    "wheel": "RR",
+    "surface_clearance_m": -0.00037788681220263243
+  }
+]

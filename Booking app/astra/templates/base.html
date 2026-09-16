@@ -1,0 +1,55 @@
+{% from 'macros.html' import icon %}
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#253d33">
+  <meta name="description" content="Good hair. Good company. Book your next cut with Alex or Jordan at Northline Barber, Melbourne.">
+  <title>{% block title %}Book a chair · Northline Barber{% endblock %}</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+  <script src="{{ url_for('static', filename='controls.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{ url_for('index') }}" aria-label="Northline Barber home">
+        <span class="brand-symbol" aria-hidden="true">n<span>↗</span></span>
+        <span class="brand-wordmark">northline<span>BARBER · MELBOURNE</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu"><span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-label">Menu</span></button>
+      <nav id="primary-navigation" aria-label="Main navigation">
+        {% if request.path.startswith('/admin') and session.get('admin_session') %}
+          <a href="{{ url_for('admin_dashboard') }}">Appointment book</a>
+          <a href="{{ url_for('index') }}">Booking site {{ icon('arrow', 16) }}</a>
+          <form action="{{ url_for('logout') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="nav-link" type="submit">Log out</button></form>
+        {% else %}
+          <a class="shop-nav" href="{{ url_for('index') }}#the-shop">The shop</a>
+          <a class="nav-book" href="{{ url_for('index') }}#booking">Book a chair {{ icon('arrow', 16) }}</a>
+          <a class="phone-staff-link" href="{{ url_for('admin_dashboard') }}">Staff access {{ icon('lock', 16) }}</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell" tabindex="-1">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}<div class="notice {{ category }}" role="status">{{ icon('check' if category == 'success' else 'info') }}<span>{{ message }}</span></div>{% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <dialog class="field-picker" id="field-picker" aria-labelledby="picker-title">
+    <div class="picker-heading"><h2 id="picker-title">Choose a date</h2><button type="button" class="picker-close" aria-label="Close selector">×</button></div>
+    <p id="picker-help" class="picker-help"></p>
+    <div class="picker-content" id="picker-content"></div>
+  </dialog>
+  <footer class="site-footer" id="the-shop">
+    <div class="footer-main"><a class="footer-wordmark" href="{{ url_for('index') }}">northline.</a><p>Considered cuts. Easy company.<br>Your neighbourhood barber in Melbourne.</p><div class="footer-hours"><strong>Pull up a chair.</strong><span>Tuesday–Saturday · 9 am–5 pm</span><span>Sunday & Monday · Closed</span></div></div>
+    <div class="footer-bottom"><span>© {{ current_year }} Northline Barber <span class="footer-dot">·</span> A fictional shop, a proper booking experience.</span><a href="{{ url_for('admin_dashboard') }}">Staff access {{ icon('arrow', 14) }}</a></div>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

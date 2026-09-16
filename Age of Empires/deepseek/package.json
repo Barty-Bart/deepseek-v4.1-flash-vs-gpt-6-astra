@@ -1,0 +1,11 @@
+{
+  "name": "verdant-vale",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A small browser strategy game inspired by classic medieval RTS settlements.",
+  "scripts": {
+    "start": "node serve.mjs",
+    "sim": "node tools/simulate.mjs"
+  }
+}

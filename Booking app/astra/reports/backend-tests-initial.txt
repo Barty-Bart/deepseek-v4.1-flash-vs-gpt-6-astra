@@ -1,0 +1,30 @@
+..........................................................F.....         [100%]
+=================================== FAILURES ===================================
+_________________ test_past_customer_appointment_cannot_cancel _________________
+
+app = <Flask 'app'>, client = <FlaskClient <Flask 'app'>>
+
+    def test_past_customer_appointment_cannot_cancel(app, client):
+        booked = book(client)
+        app.config['NOW'] = lambda: datetime(2026, 9, 15, 10, 0, tzinfo=TZ)
+>       token = csrf(client, booked.location)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_booking.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <FlaskClient <Flask 'app'>>
+path = '/booking/eVZXvezjSBb8A5d4oD4zU8KHra0JskrM51bu4URzs38'
+
+    def csrf(client, path='/'):
+        response = client.get(path)
+        match = re.search(r'name="csrf_token" value="([^"]+)"', response.get_data(as_text=True))
+>       assert match, f'No CSRF token on {path}: {response.status_code}'
+E       AssertionError: No CSRF token on /booking/eVZXvezjSBb8A5d4oD4zU8KHra0JskrM51bu4URzs38: 200
+E       assert None
+
+tests/conftest.py:35: AssertionError
+- generated xml file: ./reports/backend-tests.xml -
+=========================== short test summary info ============================
+FAILED tests/test_booking.py::test_past_customer_appointment_cannot_cancel - ...
+1 failed, 63 passed in 6.73s

@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block title %}Staff sign in · Northline Barber{% endblock %}
+{% block content %}
+<div class="login-page"><div class="login-art"><p class="eyebrow">BEHIND THE CHAIR</p><h1>A good day<br>starts here.</h1><img src="{{ url_for('static', filename='chair.svg') }}" width="440" height="280" alt="Illustrated Northline barber chair"></div><form class="login-form" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><span class="login-lock">{{ icon('lock', 24) }}</span><h2>Welcome back.</h2><p>Sign in to the Northline appointment book.</p>{% if error %}<div class="error-summary" role="alert">{{ error }}</div>{% endif %}<label for="username">Username<input id="username" name="username" autocomplete="username" required value="{{ request.form.get('username', '') }}"></label><label for="password">Password<input id="password" type="password" name="password" autocomplete="current-password" required></label><button class="button primary" type="submit">Sign in {{ icon('arrow', 18) }}</button><p class="field-note">For Northline staff. Local demo credentials are in the project README.</p></form></div>
+{% endblock %}

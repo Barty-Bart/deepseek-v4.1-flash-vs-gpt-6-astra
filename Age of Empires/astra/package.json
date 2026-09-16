@@ -1,0 +1,19 @@
+{
+  "name": "hearth-and-banner",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "playwright test",
+    "format": "prettier --write src index.html tests playwright.config.js README.md package.json"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "prettier": "^3.9.6",
+    "vite": "^7.3.1"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "url": "http://127.0.0.1:5179/",
+  "views": [
+    { "name": "narrow", "width": 390, "height": 844, "mobile": true, "selectorScroll": true, "scrolls": [0] }
+  ]
+}

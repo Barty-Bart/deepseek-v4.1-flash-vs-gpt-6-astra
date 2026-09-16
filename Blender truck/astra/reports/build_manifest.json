@@ -1,0 +1,20 @@
+{
+  "blender": "5.2.1 LTS",
+  "objects": 1209,
+  "collections": {
+    "BODY": 185,
+    "INTERIOR": 84,
+    "CHASSIS": 76,
+    "DRIVETRAIN": 118,
+    "FRONT_SUSPENSION": 97,
+    "REAR_SUSPENSION": 72,
+    "WHEELS": 260,
+    "RIG": 53,
+    "ROAD": 251,
+    "CAMERAS": 6,
+    "LIGHTS": 7
+  },
+  "mesh_vertices": 66788,
+  "build_seconds": 15.394095292023849,
+  "render_invoked": false
+}

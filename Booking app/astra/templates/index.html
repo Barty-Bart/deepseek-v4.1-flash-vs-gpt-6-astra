@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import picker_field %}
+{% block content %}
+<section class="page-intro">
+  <div><p class="eyebrow"><span class="tiny-line"></span> A LITTLE TIME FOR YOURSELF</p><h1>Your next good hair day.</h1><p class="intro-copy">A fresh cut, a familiar face, and a chair with your name on it.</p></div>
+  <span class="intro-stamp">MELBOURNE MADE<br><span>Good since ’18</span></span>
+</section>
+<div class="booking-layout" id="booking">
+  <form class="booking-form" action="{{ url_for('book') }}" method="post" id="booking-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    {% if errors %}<div class="error-summary" role="alert" tabindex="-1"><strong>Let’s get that sorted.</strong><ul>{% for error in errors %}<li>{{ error }}</li>{% endfor %}</ul><p>Your details are saved below. Choose an available time and try again.</p></div>{% endif %}
+    <section class="form-section">
+      <div class="section-heading"><span class="step-number">01</span><h2>What are we doing?</h2><span class="section-aside">THE SERVICES</span></div>
+      <fieldset class="service-options"><legend class="sr-only">Choose your service</legend>
+        {% for service in services %}
+        <label class="service-option">
+          <input type="radio" name="service" value="{{ service.id }}" data-name="{{ service.name }}" data-duration="{{ service.duration }}" data-price="{{ service.price }}" {% if values.service == service.id|string %}checked{% endif %} required>
+          <span class="service-card"><span class="service-top">{{ icon(['scissors', 'beard', 'spark'][loop.index0], 25) }}<span class="radio-mark"></span></span><strong>{{ service.name }}</strong><span class="service-desc">{{ ['A clean cut. A fresh start.', 'Shape up. Look sharp.', 'The full refresh.'][loop.index0] }}</span><span class="service-meta"><span>{{ service.duration }} min</span><strong>${{ service.price }}</strong></span></span>
+        </label>{% endfor %}
+      </fieldset>
+    </section>
+    <section class="form-section">
+      <div class="section-heading"><span class="step-number">02</span><h2>Pick your barber.</h2><span class="section-aside">GOOD HANDS, EITHER WAY</span></div>
+      <fieldset class="barber-options"><legend class="sr-only">Choose your barber</legend>
+        {% for barber in barbers %}<label class="barber-option"><input type="radio" name="staff" value="{{ barber.id }}" data-name="{{ barber.name }}" {% if values.staff == barber.id|string %}checked{% endif %} required><span class="barber-card"><span class="avatar avatar-{{ barber.name|lower }}">{{ barber.name[0] }}<span>✦</span></span><span><strong>{{ barber.name }}</strong><span class="barber-description">{{ 'Classic craft, modern touch' if barber.name == 'Alex' else 'An eye for the details' }}</span></span><span class="radio-mark"></span></span></label>{% endfor %}
+      </fieldset>
+    </section>
+    <section class="form-section date-section">
+      <div class="section-heading"><span class="step-number">03</span><h2>Make some time.</h2><span class="section-aside">YOUR NEXT 30 DAYS</span></div>
+      <div class="date-toolbar"><span id="selected-date-label">{{ selected_date.strftime('%A, %-d %B') }}</span>{{ picker_field('date-picker', 'date', 'Appointment date', values.date, min=today.isoformat(), max=max_date.isoformat(), closed_days='0,1') }}</div>
+      <div class="date-rail" role="group" aria-label="Appointment date">{% for day in days %}<button type="button" class="date-chip {% if day == selected_date %}selected{% endif %}" data-date="{{ day.isoformat() }}" aria-pressed="{{ 'true' if day == selected_date else 'false' }}" aria-label="{{ day.strftime('%A, %-d %B') }}{% if day.weekday() in (0,6) %}, shop closed{% endif %}" {% if day.weekday() in (0,6) %}disabled{% endif %}><span>{{ day.strftime('%a') }}</span><strong>{{ day.day }}</strong><span class="date-dot">{{ '—' if day.weekday() in (0,6) else '·' }}</span></button>{% endfor %}</div>
+      <button class="button secondary refresh-times" type="submit" formaction="{{ url_for('refresh_booking') }}" formnovalidate>Update available times</button>
+      <div class="time-heading"><span>Available times</span><span>{{ icon('clock', 14) }} Melbourne time</span></div>
+      <fieldset class="time-grid" id="time-slots"><legend class="sr-only">Choose an available start time</legend>{% for slot in slots %}<label class="time-option"><input type="radio" name="slot" value="{{ slot.value }}" {% if values.get('slot') == slot.value %}checked{% endif %} required><span>{{ slot.label }}</span></label>{% endfor %}</fieldset>
+      <div id="availability-message" class="availability-message" role="status" aria-live="polite" {% if slots %}hidden{% endif %}>{% if selected_date.weekday() in (0,6) %}A little time off. We’re closed on Sundays and Mondays. Choose Tuesday to Saturday.{% else %}No times left for this day. Try another date or barber.{% endif %}</div>
+      <p class="field-note">Just the times that fit your service. We’ll take care of the rest.</p>
+    </section>
+    <section class="form-section details-section">
+      <div class="section-heading"><span class="step-number">04</span><h2>And your details.</h2><span class="section-aside">NO ACCOUNT NEEDED</span></div>
+      <div class="details-grid"><label for="name">Full name<input id="name" name="name" placeholder="Your name" autocomplete="name" minlength="2" maxlength="80" value="{{ values.get('name', '') }}" required></label><label for="email">Email address<input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" maxlength="254" value="{{ values.get('email', '') }}" required></label></div>
+      <div class="demo-note">{{ icon('info', 17) }}<p>A little heads-up: this is a local demo. No confirmation emails are sent. Save your private booking link on the next page.</p></div>
+    </section>
+    <div class="mobile-summary"><span><strong id="mobile-service">{{ selected_service.name }}</strong><span id="mobile-duration">{{ selected_service.duration }} min</span></span><strong id="mobile-price">${{ selected_service.price }} <small>AUD</small></strong></div>
+    <button class="button primary book-button" type="submit" id="book-button">Confirm my appointment {{ icon('arrow', 20) }}</button>
+    <p class="submit-note">No payment now. Just a good cut to look forward to.</p>
+  </form>
+  <aside class="booking-sidebar" aria-label="Your appointment summary">
+    <div class="sidebar-sticky">
+      <div class="shop-card"><div class="shop-card-title"><span>THE NORTHLINE WAY</span><span>EST. 2018</span></div><h2>Good hair.<br>Good company.</h2><p>Come as you are.<br>Leave feeling like yourself.</p><img class="chair-illustration" src="{{ url_for('static', filename='chair.svg') }}" alt="An illustrated vintage barber chair in a sunlit shop" width="440" height="280"><div class="shop-card-bottom">{{ icon('pin', 15) }} IN THE HEART OF MELBOURNE <span>↗</span></div></div>
+      <div class="appointment-summary"><p class="eyebrow">YOUR TIME IN THE CHAIR</p><div class="summary-service"><h3 id="summary-service">{{ selected_service.name }}</h3><strong id="summary-price">${{ selected_service.price }}</strong></div><p class="summary-barber">with <span id="summary-barber">{{ selected_barber.name }}</span> <span class="separator">/</span> <span id="summary-duration">{{ selected_service.duration }} minutes</span></p><div class="summary-schedule">{{ icon('calendar', 19) }}<span><strong id="summary-date">{{ selected_date.strftime('%a, %-d %b') }}</strong><span id="summary-time">Choose a time that suits you</span></span></div><div class="summary-total"><span>Total <small>AUD</small></span><strong id="summary-total">${{ selected_service.price }}</strong></div><p class="summary-note">Pay at the shop. No online payment.</p></div>
+      <p class="sidebar-caption">{{ icon('spark', 16) }} A little care goes a long way.</p>
+    </div>
+  </aside>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+PASS chromium-1440x1000: sticky header, anchors, focus, accessible menu and thumb targets
+PASS chromium-1440x1000: booking, stale-slot conflict, private cancellation and released availability
+PASS chromium-1440x1000: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS chromium-393x852: sticky header, anchors, focus, accessible menu and thumb targets
+PASS chromium-393x852: booking, stale-slot conflict, private cancellation and released availability
+PASS chromium-393x852: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS chromium-402x874: sticky header, anchors, focus, accessible menu and thumb targets
+PASS chromium-402x874: booking, stale-slot conflict, private cancellation and released availability
+PASS chromium-402x874: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS chromium: all five fields automatically use selectable fallbacks when showPicker is missing
+PASS chromium: all five fields automatically use selectable fallbacks when showPicker is throws
+PASS webkit-1440x1000: sticky header, anchors, focus, accessible menu and thumb targets
+PASS webkit-1440x1000: booking, stale-slot conflict, private cancellation and released availability
+PASS webkit-1440x1000: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS webkit-393x852: sticky header, anchors, focus, accessible menu and thumb targets
+PASS webkit-393x852: booking, stale-slot conflict, private cancellation and released availability
+PASS webkit-393x852: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS webkit-402x874: sticky header, anchors, focus, accessible menu and thumb targets
+PASS webkit-402x874: booking, stale-slot conflict, private cancellation and released availability
+PASS webkit-402x874: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS webkit: all five fields automatically use selectable fallbacks when showPicker is missing
+PASS webkit: all five fields automatically use selectable fallbacks when showPicker is throws
+PASS Existing database and signing secret preserved; no uncaught JavaScript errors or HTTP 5xx responses

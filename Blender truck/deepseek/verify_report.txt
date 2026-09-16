@@ -1,0 +1,82 @@
+00:00.629  blend            | Read blend: "./pickup_truck.blend"
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+=== verification of ./pickup_truck.blend ===
+PASS fps = 24 :: 24
+PASS frame range 1-672 :: 1-672 (28.0 s)
+PASS resolution 1920x1080
+PASS engine :: BLENDER_EEVEE
+PASS metric units
+PASS motion blur enabled and modest :: 0.35
+PASS collection BODY populated :: 149 objects
+PASS collection INTERIOR populated :: 35 objects
+PASS collection CHASSIS populated :: 57 objects
+PASS collection DRIVETRAIN populated :: 35 objects
+PASS collection FRONT_SUSPENSION populated :: 46 objects
+PASS collection REAR_SUSPENSION populated :: 42 objects
+PASS collection WHEELS populated :: 4 objects
+PASS collection RIG populated :: 12 objects
+PASS collection ROAD populated :: 117 objects
+PASS collection CAMERAS populated :: 5 objects
+PASS collection LIGHTS populated :: 13 objects
+PASS rig control RIG_Truck exists
+PASS rig control RIG_Sprung exists
+PASS rig control RIG_Body exists
+PASS rig control RIG_Frame exists
+PASS rig control CTRL_RearAxle exists
+PASS rig control CTRL_Steering exists
+PASS rig control CTRL_FSusp_L exists
+PASS rig control CTRL_FSusp_R exists
+PASS rig control CTRL_RSusp_RL exists
+PASS rig control CTRL_RSusp_RR exists
+PASS rig control LeafArm_L exists
+PASS rig control LeafArm_R exists
+PASS five cameras :: CAM_Film_Main, CAM_Front_Suspension, CAM_Full_Truck, CAM_RearRight_Suspension, CAM_Underside_Overview
+PASS camera CAM_Full_Truck exists
+PASS camera CAM_Underside_Overview exists
+PASS camera CAM_Front_Suspension exists
+PASS camera CAM_RearRight_Suspension exists
+PASS camera CAM_Film_Main exists
+--- wheel rotation vs travelled distance
+PASS frame 1 wheel rotation matches distance :: spin 0.00000 rad, expected 0.00000 (x=0.000 m, r=0.395 m)
+PASS frame 121 wheel rotation matches distance :: spin 37.97468 rad, expected 37.97468 (x=15.000 m, r=0.395 m)
+PASS frame 241 wheel rotation matches distance :: spin 75.94936 rad, expected 75.94937 (x=30.000 m, r=0.395 m)
+PASS frame 361 wheel rotation matches distance :: spin 113.92405 rad, expected 113.92405 (x=45.000 m, r=0.395 m)
+PASS frame 481 wheel rotation matches distance :: spin 151.89873 rad, expected 151.89873 (x=60.000 m, r=0.395 m)
+PASS frame 601 wheel rotation matches distance :: spin 189.87341 rad, expected 189.87342 (x=75.000 m, r=0.395 m)
+PASS frame 672 wheel rotation matches distance :: spin 212.34177 rad, expected 212.34177 (x=83.875 m, r=0.395 m)
+--- suspension travel (sprung-local wheel height, rest = 0)
+PASS travel FL within +/-80 mm :: min -7.7 mm max 41.1 mm
+PASS travel FR within +/-80 mm :: min -10.8 mm max 63.8 mm
+PASS travel RL within +/-80 mm :: min -8.0 mm max 43.0 mm
+PASS travel RR within +/-80 mm :: min -8.8 mm max 56.4 mm
+PASS rear-right wheel has a clear compression/rebound stroke :: stroke 65.2 mm
+PASS compression cycle inside the rear-right close-up (frames 390-447) :: stroke in shot 61.7 mm
+--- tyre / road contact (no penetration, no floating, all frames)
+INFO worst contact: frame 541 RR at (x 65.927, y -0.699) tyre z 0.0644 road z 0.0686
+PASS no tyre penetration :: worst -4.18 mm
+PASS no floating tyres :: worst gap 13.26 mm
+--- mechanism coherence
+PASS prop shaft tracks the diff pinion :: max endpoint error 0.0 mm
+PASS leaf spring maintains constant segment length (no stretching) :: max deviation 0.94 mm
+--- leaf spring flex is real geometry (rear-right)
+PASS leaf spring arc rises with the axle during the close-up :: clamp range 45.7 mm
+INFO leaf pack at the axle clamp: z range 0.4434..0.4892 m (rest ~0.446), rise 45.7 mm
+PASS leaf spring flexes (arc depth changes, not a rigid shift) :: arc depth range 48.5 mm
+--- camera clearance along the whole path
+PASS camera keeps clearance from all vehicle geometry :: closest 223 mm at frame 647 (Exhaust_Tailpipe) cam (77.913, -0.609, 0.231)
+PASS camera never comes within 120 mm of any surface (triangles) :: nearest 185 mm at frame 643 (road)
+PASS exhaust routes clear of the fuel tank :: closest 91 mm
+PASS front skid plate clear of the crank pulley :: closest 334 mm
+PASS camera stays inside the recessed inspection channel under the truck :: []
+PASS camera never passes under the road solid :: []
+--- undercarriage visibility during the underside pass
+PASS required undercarriage parts exist :: []
+PASS each required chassis part is in frame for >=8 frames of the pass :: all parts well covered (frames 90-144)
+--- camera path sanity
+PASS camera path continuous (no teleports) :: max step 2.907 m per 8 frames at frame 89 (8.72 m/s)
+PASS frame 1 is the low side tracking shot :: (3.10, -7.10, 1.02)
+PASS frame 240 camera is behind the truck (truck drives away) :: cam x 77.59 vs truck x 83.88
+--- shot segmentation present in keyed data
+PASS film camera location fully keyed :: 672 keys
+
+=== 0 checks failed ===

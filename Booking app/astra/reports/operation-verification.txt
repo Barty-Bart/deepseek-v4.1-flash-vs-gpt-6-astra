@@ -1,0 +1,12 @@
+{
+  "primary_port": 5181,
+  "alternate_port": 5183,
+  "bookings": 6,
+  "blocks": 2,
+  "primary_preview": "HTTP 200",
+  "secret_permissions": "0600",
+  "primary_restart_preserved_records_and_secret": true,
+  "simultaneous_previews": "Both HTTP 200",
+  "alternate_start_preserved_records_and_secret": true,
+  "result": "passed"
+}

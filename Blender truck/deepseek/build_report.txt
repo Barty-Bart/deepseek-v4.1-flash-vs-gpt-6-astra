@@ -1,0 +1,14 @@
+objects 516
+actions 44
+build_seconds 9.80
+collection BODY objects 149
+collection INTERIOR objects 35
+collection CHASSIS objects 57
+collection DRIVETRAIN objects 35
+collection FRONT_SUSPENSION objects 46
+collection REAR_SUSPENSION objects 42
+collection WHEELS objects 4
+collection RIG objects 12
+collection ROAD objects 118
+collection CAMERAS objects 5
+collection LIGHTS objects 13

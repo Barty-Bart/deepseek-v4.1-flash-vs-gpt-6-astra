@@ -1,0 +1,12 @@
+{
+  "preview": "http://127.0.0.1:5181",
+  "records_and_secret_preserved": true,
+  "bookings": 6,
+  "blocks": 2,
+  "http_checks": {
+    "/": 200,
+    "/admin/login": 200,
+    "/static/controls.js": 200,
+    "/static/responsive.css": 200
+  }
+}

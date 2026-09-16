@@ -1,0 +1,7 @@
+{
+  "views": [
+    { "name": "film-1440", "width": 1440, "height": 900, "scrolls": [0, 1000, 2500, 4200] },
+    { "name": "film-390",  "width": 390,  "height": 844, "mobile": true, "scrolls": [0, 700, 1750, 2900] },
+    { "name": "film-tab",  "width": 768,  "height": 1024, "mobile": true, "scrolls": [0, 1500] }
+  ]
+}

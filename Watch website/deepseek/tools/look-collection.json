@@ -1,0 +1,7 @@
+{
+  "views": [
+    { "name": "collection-1440", "width": 1440, "height": 900, "scrolls": [5900, 7400] },
+    { "name": "collection-1024", "width": 1024, "height": 768, "scrolls": [5200] },
+    { "name": "collection-390",  "width": 390,  "height": 844, "mobile": true, "scrolls": [5200] }
+  ]
+}

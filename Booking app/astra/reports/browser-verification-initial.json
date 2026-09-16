@@ -1,0 +1,16 @@
+{
+  "preview": "http://127.0.0.1:5181",
+  "browser": "Chromium",
+  "checks": [
+    "Live preview renders at 1440\u00d71000 with keyboard skip link and visible focus",
+    "Live preview renders at 390\u00d7844 without page overflow; time controls have 44px targets"
+  ],
+  "javascript_errors": [],
+  "server_errors": [],
+  "screenshots": [
+    "desktop-booking.png",
+    "mobile-booking.png"
+  ],
+  "result": "failed",
+  "failure": "Page.wait_for_function: EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self'\".\n\n    at eval (<anonymous>)\n    at predicate (eval at evaluate (:291:30), <anonymous>:4:56)\n    at next (eval at evaluate (:291:30), <anonymous>:29:29)"
+}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import picker_field %}
+{% block title %}Appointment book · Northline Barber{% endblock %}
+{% block content %}
+<section class="page-intro admin-intro"><div><p class="eyebrow"><span class="tiny-line"></span> BEHIND THE CHAIR</p><h1>The appointment book.</h1><p class="intro-copy">A clear view of the day ahead. All times are in Melbourne.</p></div><span class="admin-badge">{{ icon('lock', 15) }} STAFF SPACE</span></section>
+{% if errors %}<div class="error-summary" role="alert" tabindex="-1"><strong>We couldn’t make that change.</strong><ul>{% for error in errors %}<li>{{ error }}</li>{% endfor %}</ul></div>{% endif %}
+<form class="admin-filters" action="{{ url_for('admin_dashboard') }}" method="get">{{ picker_field('filter-date', 'date', 'Date', date.isoformat(), min='2000-01-01', max='2100-12-31', picker_label='Diary date') }}<label for="filter-staff">Barber<select id="filter-staff" name="staff"><option value="">All barbers</option>{% for barber in barbers %}<option value="{{ barber.id }}" {% if staff_filter == barber.id|string %}selected{% endif %}>{{ barber.name }}</option>{% endfor %}</select></label><button class="button primary" type="submit">View day {{ icon('arrow', 17) }}</button><a class="text-link" href="{{ url_for('admin_dashboard') }}">Today</a></form>
+<div class="day-heading"><h2>{{ date.strftime('%A, %-d %B') }}</h2><span>{{ confirmed_count }} confirmed <span class="separator">/</span> {{ bookings|length - confirmed_count }} cancelled</span></div>
+<section class="diary-card" aria-label="Appointments for selected day">
+{% if bookings %}
+  <div class="table-scroll" role="region" aria-label="Daily appointments">
+    <table class="appointments-table" role="table">
+      <thead role="rowgroup"><tr role="row"><th scope="col" id="col-time">Time</th><th scope="col" id="col-customer">Customer</th><th scope="col" id="col-service">Service</th><th scope="col" id="col-barber">Barber</th><th scope="col" id="col-status">Status</th><th scope="col" id="col-actions"><span class="sr-only">Actions</span></th></tr></thead>
+      <tbody role="rowgroup">
+      {% for booking in bookings %}
+        <tr class="booking-row" role="row">
+          <td class="time-cell" role="cell" headers="col-time" data-label="Time"><strong>{{ time_label(local(booking.starts_at)) }}</strong><span>to {{ time_label(local(booking.ends_at)) }}</span></td>
+          <td class="customer-cell" role="cell" headers="col-customer" data-label="Customer"><strong>{{ booking.customer_name }}</strong><span>{{ booking.customer_email }}</span><small>{{ booking.reference }}</small></td>
+          <td class="service-cell" role="cell" headers="col-service" data-label="Service">{{ booking.service_name }}<span>{{ booking.duration }} min · ${{ booking.price }}</span></td>
+          <td class="barber-cell" role="cell" headers="col-barber" data-label="Barber"><span class="staff-name"><span class="staff-dot"></span>{{ booking.staff_name }}</span></td>
+          <td class="status-cell" role="cell" headers="col-status"><span class="status {{ booking.status }}">{{ booking.status|capitalize }}</span></td>
+          <td class="action-cell" role="cell" headers="col-actions">
+            {% if booking.status == 'confirmed' and local(booking.starts_at) > now %}
+            <form action="{{ url_for('admin_cancel', booking_id=booking.id) }}" method="post" data-confirm="Cancel {{ booking.customer_name }}’s appointment at {{ time_label(local(booking.starts_at)) }}? This releases the time.">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="date" value="{{ date.isoformat() }}"><input type="hidden" name="filter_staff" value="{{ staff_filter }}">
+              <button class="text-button danger-text" type="submit" aria-label="Cancel {{ booking.customer_name }}’s appointment">Cancel<span class="phone-action-label"> appointment</span></button>
+            </form>
+            {% else %}<span class="muted">{{ 'Cancelled' if booking.status == 'cancelled' else 'Past appointment' }}</span>{% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% else %}
+  <div class="empty-state">{{ icon('calendar', 32) }}<h3>A little room in the diary.</h3><p>No appointments for {{ 'this barber on ' if staff_filter else '' }}{{ date.strftime('%-d %B') }}. Choose another date to see what’s coming up.</p></div>
+{% endif %}
+</section>
+<div class="admin-lower"><section class="blocked-card"><div class="section-heading"><h2>Time off the floor.</h2><span class="count-badge">{{ blocks|length }}</span></div><p class="muted">Unavailable periods for this day.</p>{% for block in blocks %}<div class="block-row"><span class="block-icon">{{ icon('clock', 20) }}</span><div><strong>{{ block.staff_name }} · {{ time_label(local(block.starts_at)) }}–{{ time_label(local(block.ends_at)) }}</strong><span>{{ block.reason }}</span></div><form method="post" action="{{ url_for('delete_block', block_id=block.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="date" value="{{ date.isoformat() }}"><input type="hidden" name="filter_staff" value="{{ staff_filter }}"><button class="text-button" type="submit" aria-label="Remove {{ block.staff_name }}’s unavailable period at {{ time_label(local(block.starts_at)) }}">Remove</button></form></div>{% else %}<div class="small-empty">No extra unavailable periods.<br><span>Regular hours and 12:30–1 pm breaks still apply.</span></div>{% endfor %}<div class="staff-hours"><p>{{ icon('info', 17) }} THE REGULAR RHYTHM</p><span>Alex · Tue–Sat, 9 am–5 pm</span><span>Jordan · Tue–Sat, 10 am–5 pm</span><span>Both barbers break from 12:30–1 pm.</span></div></section>
+<form class="block-form" action="{{ url_for('create_block') }}" method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="filter_staff" value="{{ staff_filter }}">
+  <h2>Set some time aside.</h2><p class="muted">Add an unavailable period for one barber.</p>
+  <div class="details-grid">
+    <label for="block-staff">Barber<select id="block-staff" name="block_staff" required>{% for barber in barbers %}<option value="{{ barber.id }}" data-start-hour="{{ barber.start_hour }}" {% if form_values.get('block_staff', staff_filter) == barber.id|string %}selected{% endif %}>{{ barber.name }}</option>{% endfor %}</select></label>
+    {{ picker_field('block-date', 'date', 'Date', date.isoformat(), min=now.date().isoformat(), max=max_block_date.isoformat(), closed_days='0,1', picker_label='Unavailable date') }}
+  </div>
+  <div class="details-grid">
+    {{ picker_field('block-start', 'start', 'From', form_values.get('start', ''), type='time', min='09:00', max='17:00', step='900', picker_label='Start time') }}
+    {{ picker_field('block-end', 'end', 'Until', form_values.get('end', ''), type='time', min='09:00', max='17:00', step='900', picker_label='End time') }}
+  </div>
+  <label for="block-reason">Reason <span class="label-note">Only visible to staff</span><input id="block-reason" name="reason" minlength="2" maxlength="120" placeholder="e.g. Equipment maintenance" value="{{ form_values.get('reason', '') }}" required></label>
+  <p class="field-note">Existing appointments must be cancelled before their time can be blocked. Times are in Melbourne.</p>
+  <button class="button primary" type="submit">Add unavailable period {{ icon('arrow', 18) }}</button>
+</form></div>
+{% endblock %}

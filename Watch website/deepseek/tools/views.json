@@ -1,0 +1,82 @@
+{
+  "views": [
+    {
+      "name": "f1440",
+      "width": 1440,
+      "height": 900,
+      "canvasDump": true,
+      "scrolls": [
+        0,
+        1800,
+        2600,
+        4300
+      ],
+      "probe": "() => {\n  const de = document.documentElement;\n  const sp = window.__stage || {};\n  const b = document.querySelector('.beat.is-active');\n  const t = document.querySelector('[data-stage-track]');\n  return {\n    y: Math.round(window.scrollY),\n    overflowX: de.scrollWidth - de.clientWidth,\n    current: sp.current,\n    drawn: sp.drawnBitmapIndex,\n    settled: sp.isSettled ? sp.isSettled() : null,\n    variant: sp.variantKey,\n    beat: b ? b.getAttribute('data-beat') : null,\n    title: b && b.querySelector('.beat-title') ? b.querySelector('.beat-title').textContent : null,\n    trackH: Math.round(t.getBoundingClientRect().height),\n    cards: document.querySelectorAll('.product-card').length,\n    headerSolid: document.querySelector('[data-header]').classList.contains('is-solid'),\n    canvasShown: document.querySelector('[data-stage-canvas]').classList.contains('is-shown'),\n    fallback: de.dataset.stageFallback || null\n  };\n}"
+    },
+    {
+      "name": "f1024",
+      "width": 1024,
+      "height": 768,
+      "canvasDump": true,
+      "scrolls": [
+        0,
+        1500,
+        3400
+      ],
+      "probe": "() => {\n  const de = document.documentElement;\n  const sp = window.__stage || {};\n  const b = document.querySelector('.beat.is-active');\n  const t = document.querySelector('[data-stage-track]');\n  return {\n    y: Math.round(window.scrollY),\n    overflowX: de.scrollWidth - de.clientWidth,\n    current: sp.current,\n    drawn: sp.drawnBitmapIndex,\n    settled: sp.isSettled ? sp.isSettled() : null,\n    variant: sp.variantKey,\n    beat: b ? b.getAttribute('data-beat') : null,\n    title: b && b.querySelector('.beat-title') ? b.querySelector('.beat-title').textContent : null,\n    trackH: Math.round(t.getBoundingClientRect().height),\n    cards: document.querySelectorAll('.product-card').length,\n    headerSolid: document.querySelector('[data-header]').classList.contains('is-solid'),\n    canvasShown: document.querySelector('[data-stage-canvas]').classList.contains('is-shown'),\n    fallback: de.dataset.stageFallback || null\n  };\n}"
+    },
+    {
+      "name": "f768",
+      "width": 768,
+      "height": 1024,
+      "mobile": true,
+      "canvasDump": true,
+      "scrolls": [
+        0,
+        1400,
+        3000
+      ],
+      "probe": "() => {\n  const de = document.documentElement;\n  const sp = window.__stage || {};\n  const b = document.querySelector('.beat.is-active');\n  const t = document.querySelector('[data-stage-track]');\n  return {\n    y: Math.round(window.scrollY),\n    overflowX: de.scrollWidth - de.clientWidth,\n    current: sp.current,\n    drawn: sp.drawnBitmapIndex,\n    settled: sp.isSettled ? sp.isSettled() : null,\n    variant: sp.variantKey,\n    beat: b ? b.getAttribute('data-beat') : null,\n    title: b && b.querySelector('.beat-title') ? b.querySelector('.beat-title').textContent : null,\n    trackH: Math.round(t.getBoundingClientRect().height),\n    cards: document.querySelectorAll('.product-card').length,\n    headerSolid: document.querySelector('[data-header]').classList.contains('is-solid'),\n    canvasShown: document.querySelector('[data-stage-canvas]').classList.contains('is-shown'),\n    fallback: de.dataset.stageFallback || null\n  };\n}"
+    },
+    {
+      "name": "f390",
+      "width": 390,
+      "height": 844,
+      "mobile": true,
+      "dpr": 3,
+      "canvasDump": true,
+      "scrolls": [
+        0,
+        900,
+        2300
+      ],
+      "probe": "() => {\n  const de = document.documentElement;\n  const sp = window.__stage || {};\n  const b = document.querySelector('.beat.is-active');\n  const t = document.querySelector('[data-stage-track]');\n  return {\n    y: Math.round(window.scrollY),\n    overflowX: de.scrollWidth - de.clientWidth,\n    current: sp.current,\n    drawn: sp.drawnBitmapIndex,\n    settled: sp.isSettled ? sp.isSettled() : null,\n    variant: sp.variantKey,\n    beat: b ? b.getAttribute('data-beat') : null,\n    title: b && b.querySelector('.beat-title') ? b.querySelector('.beat-title').textContent : null,\n    trackH: Math.round(t.getBoundingClientRect().height),\n    cards: document.querySelectorAll('.product-card').length,\n    headerSolid: document.querySelector('[data-header]').classList.contains('is-solid'),\n    canvasShown: document.querySelector('[data-stage-canvas]').classList.contains('is-shown'),\n    fallback: de.dataset.stageFallback || null\n  };\n}"
+    },
+    {
+      "name": "f360",
+      "width": 360,
+      "height": 800,
+      "mobile": true,
+      "dpr": 3,
+      "canvasDump": true,
+      "scrolls": [
+        0,
+        900,
+        2200
+      ],
+      "probe": "() => {\n  const de = document.documentElement;\n  const sp = window.__stage || {};\n  const b = document.querySelector('.beat.is-active');\n  const t = document.querySelector('[data-stage-track]');\n  return {\n    y: Math.round(window.scrollY),\n    overflowX: de.scrollWidth - de.clientWidth,\n    current: sp.current,\n    drawn: sp.drawnBitmapIndex,\n    settled: sp.isSettled ? sp.isSettled() : null,\n    variant: sp.variantKey,\n    beat: b ? b.getAttribute('data-beat') : null,\n    title: b && b.querySelector('.beat-title') ? b.querySelector('.beat-title').textContent : null,\n    trackH: Math.round(t.getBoundingClientRect().height),\n    cards: document.querySelectorAll('.product-card').length,\n    headerSolid: document.querySelector('[data-header]').classList.contains('is-solid'),\n    canvasShown: document.querySelector('[data-stage-canvas]').classList.contains('is-shown'),\n    fallback: de.dataset.stageFallback || null\n  };\n}"
+    },
+    {
+      "name": "fred",
+      "width": 1440,
+      "height": 900,
+      "reduced": true,
+      "scrolls": [
+        0,
+        1400,
+        3200
+      ],
+      "probe": "() => {\n  const de = document.documentElement;\n  const sp = window.__stage || {};\n  const b = document.querySelector('.beat.is-active');\n  const t = document.querySelector('[data-stage-track]');\n  return {\n    y: Math.round(window.scrollY),\n    overflowX: de.scrollWidth - de.clientWidth,\n    current: sp.current,\n    drawn: sp.drawnBitmapIndex,\n    settled: sp.isSettled ? sp.isSettled() : null,\n    variant: sp.variantKey,\n    beat: b ? b.getAttribute('data-beat') : null,\n    title: b && b.querySelector('.beat-title') ? b.querySelector('.beat-title').textContent : null,\n    trackH: Math.round(t.getBoundingClientRect().height),\n    cards: document.querySelectorAll('.product-card').length,\n    headerSolid: document.querySelector('[data-header]').classList.contains('is-solid'),\n    canvasShown: document.querySelector('[data-stage-canvas]').classList.contains('is-shown'),\n    fallback: de.dataset.stageFallback || null\n  };\n}"
+    }
+  ]
+}

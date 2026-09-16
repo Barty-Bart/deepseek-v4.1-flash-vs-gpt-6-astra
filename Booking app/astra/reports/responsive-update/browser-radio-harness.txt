@@ -1,0 +1,62 @@
+PASS chromium-1440x1000: sticky header, anchors, focus, accessible menu and thumb targets
+PASS chromium-1440x1000: booking, stale-slot conflict, private cancellation and released availability
+PASS chromium-1440x1000: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS chromium-393x852: sticky header, anchors, focus, accessible menu and thumb targets
+PASS chromium-393x852: booking, stale-slot conflict, private cancellation and released availability
+PASS chromium-393x852: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS chromium-402x874: sticky header, anchors, focus, accessible menu and thumb targets
+PASS chromium-402x874: booking, stale-slot conflict, private cancellation and released availability
+PASS chromium-402x874: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS chromium: all five fields automatically use selectable fallbacks when showPicker is missing
+PASS chromium: all five fields automatically use selectable fallbacks when showPicker is throws
+PASS JavaScript-disabled phone booking/cancellation and sticky-header anchor clearance remain functional
+PASS webkit-1440x1000: sticky header, anchors, focus, accessible menu and thumb targets
+PASS webkit-1440x1000: booking, stale-slot conflict, private cancellation and released availability
+PASS webkit-1440x1000: all date/time fields, manual entry, responsive admin rows, block conflict/create/remove and logout
+PASS webkit-393x852: sticky header, anchors, focus, accessible menu and thumb targets
+Traceback (most recent call last):
+  File "./scripts/verify_responsive.py", line 390, in <module>
+    journey(browser, engine, width, height, base)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "./scripts/verify_responsive.py", line 216, in journey
+    page.locator('input[name="service"][value="3"]').check(force=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "./.venv/lib/python3.14/site-packages/playwright/sync_api/_generated.py", line 15451, in check
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.check(
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        )
+        ^
+    )
+    ^
+  File "./.venv/lib/python3.14/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "./.venv/lib/python3.14/site-packages/playwright/_impl/_locator.py", line 145, in check
+    return await self._frame.check(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "./.venv/lib/python3.14/site-packages/playwright/_impl/_frame.py", line 829, in check
+    await self._channel.send("check", self._timeout, locals_to_params(locals()))
+  File "./.venv/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "./.venv/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Locator.check: Clicking the checkbox did not change its state
+Call log:
+  - waiting for locator("input[name=\"service\"][value=\"3\"]")
+    - locator resolved to <input value="3" required="" type="radio" name="service" data-price="65" data-duration="45" data-name="Cut and Beard"/>
+  - attempting click action
+    - scrolling into view if needed
+    - done scrolling
+    - forcing action
+    - performing click action
+    - click action done
+    - waiting for scheduled navigations to finish
+    - navigations have finished
+

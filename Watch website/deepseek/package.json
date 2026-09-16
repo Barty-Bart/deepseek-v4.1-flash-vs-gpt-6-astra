@@ -1,0 +1,15 @@
+{
+  "name": "meridian-watch-concept",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MERIDIAN — fictional watch studio concept website (local demo)",
+  "scripts": {
+    "dev": "vite --port 5178 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 5179 --strictPort"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "input": "public/media/originals/landscape-2-v1.mp4",
+  "output": "public/media/originals/landscape-2-v1-defocus.mp4",
+  "operation": "Locally authored continuous Gaussian defocus ramp over the same generated macro shot, no scene replacement.",
+  "start": 5,
+  "end": 6.75,
+  "sigma": 120,
+  "commandRate": 24
+}

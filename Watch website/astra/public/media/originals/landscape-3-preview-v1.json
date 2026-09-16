@@ -1,0 +1,10 @@
+{
+  "source": "public/media/originals/landscape-3-v2.mp4",
+  "reference": "artifacts/media-qa/references/landscape-2-v1-finished2-last.png",
+  "output": "public/media/originals/landscape-3-preview-v1.mp4",
+  "duration": 4.083333333333333,
+  "sourceTailStartFrame": 180,
+  "sourceTailFrames": 37,
+  "status": "preview-story-incomplete",
+  "edit": "Use only clean wrist tail from7.5s onward, half speed, short final hold. Match abstract opening through a local defocus/blur-colour transition. Failed action entirely excluded; no reassembly or clasp-closure claim."
+}

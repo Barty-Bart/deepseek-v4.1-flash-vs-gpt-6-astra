@@ -1,0 +1,8 @@
+{
+  "url": "http://127.0.0.1:5179/",
+  "views": [
+    { "name": "hover", "width": 1440, "height": 900, "scrolls": [5900],
+      "hover": "[data-product-id=\"m01-forest\"] .card-media",
+      "click": null }
+  ]
+}

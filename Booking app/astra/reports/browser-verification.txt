@@ -1,0 +1,80 @@
+PASS Live preview renders at 1440×1000 with keyboard skip link and visible focus
+PASS Live preview renders at 390×844 without page overflow; time controls have 44px targets
+127.0.0.1 - - [15/Sep/2026 15:02:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:34] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:34] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:34] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:35] "GET /api/availability?service=3&staff=1&date=2026-09-15 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:35] "GET /api/availability?service=3&staff=2&date=2026-09-15 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:35] "[32mPOST /book HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:02:35] "GET /booking/S9_0esg2IRj1egy1PVgUUd57drUbVb4b7haGmt_yFHU HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:35] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:35] "GET /static/app.js HTTP/1.1" 200 -
+PASS Customer can select service/barber/time and confirm; summary and stored duration agree
+127.0.0.1 - - [15/Sep/2026 15:02:35] "GET /booking/S9_0esg2IRj1egy1PVgUUd57drUbVb4b7haGmt_yFHU HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:35] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:35] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "[32mPOST /booking/S9_0esg2IRj1egy1PVgUUd57drUbVb4b7haGmt_yFHU/cancel HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET /booking/S9_0esg2IRj1egy1PVgUUd57drUbVb4b7haGmt_yFHU HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET /?service=3&staff=2&date=2026-09-15 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET /static/app.js HTTP/1.1" 200 -
+PASS Private booking page renders on mobile; cancellation releases the selected slot
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:36] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:37] "GET /api/availability?service=1&staff=1&date=2026-09-16 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:37] "GET /api/availability?service=1&staff=1&date=2026-09-20 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:37] "GET /api/availability?service=1&staff=1&date=2026-09-20 HTTP/1.1" 200 -
+PASS Mobile date rail and date picker refresh availability; closed days have a helpful empty state
+127.0.0.1 - - [15/Sep/2026 15:02:37] "[32mGET /admin HTTP/1.1[0m" 302 -
+127.0.0.1 - - [15/Sep/2026 15:02:37] "GET /admin/login HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:37] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:37] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:37] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:38] "[32mPOST /admin/login HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:02:38] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:38] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:38] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:38] "GET /admin?date=2026-09-16&staff= HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:38] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:38] "GET /static/app.js HTTP/1.1" 200 -
+PASS Admin requires sign in and shows seeded appointments for the chosen date
+127.0.0.1 - - [15/Sep/2026 15:02:39] "[31m[1mPOST /admin/blocks HTTP/1.1[0m" 409 -
+127.0.0.1 - - [15/Sep/2026 15:02:39] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:39] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "[32mPOST /admin/blocks HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /admin?date=2026-09-16&staff= HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "[32mPOST /admin/blocks/3/delete HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /admin?date=2026-09-16&staff= HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/app.js HTTP/1.1" 200 -
+PASS Admin receives a named overlap error and can create/remove a valid unavailable period
+127.0.0.1 - - [15/Sep/2026 15:02:40] "[32mPOST /admin/logout HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /admin/login HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "[32mGET /admin HTTP/1.1[0m" 302 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /admin/login HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/app.js HTTP/1.1" 200 -
+PASS Admin layout fits mobile width with a scrollable table; logout revokes access
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:40] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:41] "POST /availability HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:41] "GET /static/chair.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:02:41] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:03:10] "[32mPOST /book HTTP/1.1[0m" 303 -
+127.0.0.1 - - [15/Sep/2026 15:03:10] "GET /booking/8754V9iOm2wQOyn8PeGvPcDwURoa_an6bgi-KrSwt_s HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:03:10] "GET /static/style.css HTTP/1.1" 200 -
+PASS Complete booking works with JavaScript disabled; refreshing times keeps details out of URLs
+PASS No uncaught JavaScript errors or HTTP 5xx responses during the pass

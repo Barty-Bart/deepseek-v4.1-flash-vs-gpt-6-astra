@@ -1,0 +1,26 @@
+node_modules/
+.venv/
+.media-venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+dist/
+test-results/
+artifacts/
+# booking apps: local database and session secret are created on first run
+.local/
+instance/
+secret_key
+*.log
+
+# Private local configuration, databases, and Blender backups
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.db
+*.blend1
+*.blend2
+*.blend@

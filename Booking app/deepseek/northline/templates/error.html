@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} — Northline Barber{% endblock %}
+{% block content %}
+<section class="panel narrow">
+  <p class="eyebrow">Northline Barber</p>
+  <h1>{{ title }}</h1>
+  <div class="alert alert-error" role="alert"><p>{{ message }}</p></div>
+  <p><a class="btn btn-primary" href="{{ url_for('customer.home') }}">Back to booking</a></p>
+</section>
+{% endblock %}

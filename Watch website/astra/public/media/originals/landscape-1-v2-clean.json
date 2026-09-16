@@ -1,0 +1,6 @@
+{
+  "input": "public/media/originals/landscape-1-v2.mp4",
+  "output": "public/media/originals/landscape-1-v2-clean.mp4",
+  "frames": 169,
+  "operation": "Smooth dark-studio matte: maximum RGB <=43 becomes #101820, smooth transition to original RGB at68. No geometric, timing or scene changes."
+}

@@ -1,0 +1,724 @@
+{
+  "file": "./pickup_truck.blend",
+  "blender": "5.2.1 LTS",
+  "frame_range": [
+    1,
+    240
+  ],
+  "fps": 24,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "engine": "BLENDER_EEVEE",
+  "render_invoked": false,
+  "checked_frames": 240,
+  "max_wheel_contact_error_m": 2.753853797909933e-05,
+  "max_wheel_rotation_error_rad": 3.7676022373034357e-06,
+  "distance_travelled_m": 29.875,
+  "suspension_range_m": [
+    -0.017677679657936096,
+    0.06690220534801483
+  ],
+  "body_heave_range_m": [
+    0.00026599501143209636,
+    0.018643934279680252
+  ],
+  "RR_closeup_min_travel": {
+    "frame": 158,
+    "travel_m": 19.625,
+    "wheel_contact_error_m": {
+      "FL": -2.9668138501470764e-09,
+      "FR": 5.102579447857636e-08,
+      "RL": 1.19209286886246e-09,
+      "RR": 4.43335362865227e-09
+    },
+    "wheel_spin_error_rad": {
+      "FL": 8.006154814665933e-07,
+      "FR": 8.006154814665933e-07,
+      "RL": 8.006154814665933e-07,
+      "RR": 8.006154814665933e-07
+    },
+    "travel_m_by_wheel": {
+      "FL": 0.01871933974325657,
+      "FR": 0.03257233649492264,
+      "RL": -0.013277928344905376,
+      "RR": -0.013084031641483307
+    },
+    "RR_shock_length_m": 0.7141674143619159,
+    "rear_axle_length_m": 1.6600000039701162
+  },
+  "RR_closeup_max_travel": {
+    "frame": 165,
+    "travel_m": 20.5,
+    "wheel_contact_error_m": {
+      "FL": 1.19209286886246e-09,
+      "FR": 1.19209286886246e-09,
+      "RL": 1.2575166798534099e-05,
+      "RR": -1.2528419458313067e-05
+    },
+    "wheel_spin_error_rad": {
+      "FL": -1.0831856371851245e-06,
+      "FR": -1.0831856371851245e-06,
+      "RL": -1.0831856371851245e-06,
+      "RR": -1.0831856371851245e-06
+    },
+    "travel_m_by_wheel": {
+      "FL": -0.015097792260348797,
+      "FR": -0.015097792260348797,
+      "RL": 0.01518786046653986,
+      "RR": 0.06690220534801483
+    },
+    "RR_shock_length_m": 0.6773106476175939,
+    "rear_axle_length_m": 1.6600000112307403
+  },
+  "RR_closeup_shock_range_m": [
+    0.6773106476175939,
+    0.7141674143619159
+  ],
+  "max_rigid_axle_span_error_m": 1.5057604429991045e-07,
+  "max_link_endpoint_error_m": 3.625608998714816e-07,
+  "max_leaf_saddle_error_m": 1.1444130601916484e-05,
+  "min_camera_mesh_clearance_m": 0.09095847450327002,
+  "min_camera_clearance_frame": {
+    "frame": 194,
+    "distance_m": 0.09095847450327002,
+    "nearest": "Hitch ball tongue",
+    "lower_bound_only": false
+  },
+  "wishbone_length_variation_pct": {
+    "FL Lower A-arm -0.18": 0.41726603929218425,
+    "FL Lower A-arm 0.18": 0.5082412317725474,
+    "FL Upper A-arm -0.18": 0.9332275882976387,
+    "FL Upper A-arm 0.18": 1.0693076187788344,
+    "FR Lower A-arm -0.18": 0.8773799943847852,
+    "FR Lower A-arm 0.18": 0.8149652564449257,
+    "FR Upper A-arm -0.18": 1.498447368768366,
+    "FR Upper A-arm 0.18": 1.405427145431854
+  },
+  "full_vehicle_framing": {
+    "1": {
+      "min_x": 0.07962941378355026,
+      "max_x": 0.8980473875999451,
+      "min_y": 0.23981305956840515,
+      "max_y": 0.7481068968772888,
+      "all_in_front": true
+    },
+    "24": {
+      "min_x": 0.07965147495269775,
+      "max_x": 0.8981085419654846,
+      "min_y": 0.19499269127845764,
+      "max_y": 0.7479559183120728,
+      "all_in_front": true
+    },
+    "48": {
+      "min_x": 0.0671970322728157,
+      "max_x": 0.8974448442459106,
+      "min_y": 0.20794402062892914,
+      "max_y": 0.7559688091278076,
+      "all_in_front": true
+    },
+    "240": {
+      "min_x": 0.28012987971305847,
+      "max_x": 0.6522312760353088,
+      "min_y": 0.26208698749542236,
+      "max_y": 0.6562904715538025,
+      "all_in_front": true
+    }
+  },
+  "visibility": {
+    "93": {
+      "Front differential | compact carrier": {
+        "visible": true,
+        "visible_samples": 164,
+        "tested_in_frame": 167,
+        "occluders": {}
+      },
+      "Engine oil sump": {
+        "visible": false,
+        "visible_samples": 0,
+        "tested_in_frame": 99,
+        "occluders": {
+          "Front differential | compact carrier": 99
+        }
+      },
+      "Front CV halfshaft FR": {
+        "visible": false,
+        "visible_samples": 0,
+        "tested_in_frame": 17,
+        "occluders": {
+          "Front differential | compact carrier": 17
+        }
+      },
+      "FR Lower A-arm -0.18": {
+        "visible": false,
+        "visible_samples": 0,
+        "tested_in_frame": 17,
+        "occluders": {
+          "Wishbone pivot sleeve FR1.420.345": 16,
+          "Wishbone frame tab FR1.420.3450.055": 1
+        }
+      }
+    },
+    "107": {
+      "Transmission | longitudinal case": {
+        "visible": false,
+        "visible_samples": 0,
+        "tested_in_frame": 64,
+        "occluders": {
+          "Transfer case | offset front output": 64
+        }
+      },
+      "Transfer case | offset front output": {
+        "visible": true,
+        "visible_samples": 46,
+        "tested_in_frame": 174,
+        "occluders": {
+          "Transfer skid | small serviceable plate": 101,
+          "Transmission cast rib 0": 14,
+          "Transmission | longitudinal case": 5,
+          "Gearbox mount saddle": 3
+        }
+      },
+      "Fuel tank | left side protected polymer": {
+        "visible": true,
+        "visible_samples": 106,
+        "tested_in_frame": 190,
+        "occluders": {
+          "Transfer skid | small serviceable plate": 36,
+          "Fuel tank retaining strap -0.79": 28,
+          "Frame crossmember 02": 16,
+          "Fuel tank retaining strap -0.11": 2
+        }
+      },
+      "Muffler | oval silencer": {
+        "visible": true,
+        "visible_samples": 41,
+        "tested_in_frame": 45,
+        "occluders": {}
+      },
+      "Frame rail R": {
+        "visible": true,
+        "visible_samples": 11,
+        "tested_in_frame": 16,
+        "occluders": {
+          "Frame crossmember 02": 5
+        }
+      }
+    },
+    "118": {
+      "Rear driveshaft | articulated": {
+        "visible": true,
+        "visible_samples": 24,
+        "tested_in_frame": 33,
+        "occluders": {
+          "Universal joint cross Joint rear pinion": 9
+        }
+      },
+      "Exhaust | continuous right-side routing": {
+        "visible": true,
+        "visible_samples": 39,
+        "tested_in_frame": 116,
+        "occluders": {
+          "Frame rail R": 34,
+          "Rear axle | rigid driven tube": 15,
+          "Leaf pack clamp plate -1": 6,
+          "Leaf pack RR lamination 1": 6
+        }
+      },
+      "Frame rail L": {
+        "visible": true,
+        "visible_samples": 1,
+        "tested_in_frame": 89,
+        "occluders": {
+          "Rear axle | rigid driven tube": 48,
+          "Tow receiver crossbar": 40
+        }
+      },
+      "Rear differential | cast housing": {
+        "visible": true,
+        "visible_samples": 93,
+        "tested_in_frame": 131,
+        "occluders": {
+          "Rear driveshaft | articulated": 19,
+          "Universal joint cross Joint rear pinion": 8,
+          "Rear axle | rigid driven tube": 3,
+          "Universal joint bearing Joint rear pinion": 2
+        }
+      }
+    },
+    "135": {
+      "Rear differential | cast housing": {
+        "visible": true,
+        "visible_samples": 90,
+        "tested_in_frame": 185,
+        "occluders": {
+          "Rear differential cover": 83,
+          "Rear axle | rigid driven tube": 6,
+          "Rear differential cover bolt 6": 1,
+          "Rear differential cover bolt 0": 1
+        }
+      },
+      "Rear axle | rigid driven tube": {
+        "visible": true,
+        "visible_samples": 15,
+        "tested_in_frame": 121,
+        "occluders": {
+          "Leaf pack RR lamination 5": 37,
+          "Rear wheel bearing housing -1": 22,
+          "Rear differential cover": 20,
+          "Leaf pack RR lamination 3": 8
+        }
+      }
+    },
+    "151": {
+      "Leaf pack RR lamination 1": {
+        "visible": true,
+        "visible_samples": 48,
+        "tested_in_frame": 143,
+        "occluders": {
+          "Rear differential cover": 48,
+          "Leaf pack RR lamination 2": 15,
+          "Leaf pack RR lamination 3": 14,
+          "Leaf spring saddle -1": 14
+        }
+      },
+      "Rear shock body RR": {
+        "visible": true,
+        "visible_samples": 14,
+        "tested_in_frame": 33,
+        "occluders": {
+          "Tow hitch receiver": 11,
+          "Tow receiver crossbar": 5
+        }
+      },
+      "Rear shock chrome shaft RR": {
+        "visible": true,
+        "visible_samples": 16,
+        "tested_in_frame": 33,
+        "occluders": {
+          "Shock eye RR lower": 13,
+          "Shock eye bushing RR lower": 4
+        }
+      },
+      "Wheel hub RR": {
+        "visible": true,
+        "visible_samples": 28,
+        "tested_in_frame": 177,
+        "occluders": {
+          "Rear wheel bearing housing -1": 42,
+          "Rear axle | rigid driven tube": 20,
+          "Brake rotor face RR-0.011": 19,
+          "Leaf pack RR lamination 4": 17
+        }
+      },
+      "Brake rotor face RR-0.035": {
+        "visible": true,
+        "visible_samples": 2,
+        "tested_in_frame": 172,
+        "occluders": {
+          "Brake rotor face RR-0.011": 53,
+          "Rear axle | rigid driven tube": 20,
+          "Rear wheel bearing housing -1": 18,
+          "Tire RR | formed sidewall and carcass": 15
+        }
+      },
+      "Rear axle | rigid driven tube": {
+        "visible": true,
+        "visible_samples": 22,
+        "tested_in_frame": 121,
+        "occluders": {
+          "Rear wheel bearing housing -1": 41,
+          "Wheel hub RR": 22,
+          "Rear differential cover": 20,
+          "Leaf pack RR lamination 1": 16
+        }
+      },
+      "Rear driveshaft | articulated": {
+        "visible": false,
+        "visible_samples": 0,
+        "tested_in_frame": 50,
+        "occluders": {
+          "Rear axle | rigid driven tube": 27,
+          "Rear differential cover": 11,
+          "Rear differential | cast housing": 10,
+          "Rear differential cover bolt 0": 2
+        }
+      }
+    },
+    "165": {
+      "Leaf pack RR lamination 1": {
+        "visible": true,
+        "visible_samples": 45,
+        "tested_in_frame": 143,
+        "occluders": {
+          "Rear differential cover": 39,
+          "Leaf pack RR lamination 3": 18,
+          "Leaf pack RR lamination 2": 14,
+          "Leaf spring saddle -1": 14
+        }
+      },
+      "Rear shock body RR": {
+        "visible": true,
+        "visible_samples": 8,
+        "tested_in_frame": 33,
+        "occluders": {
+          "Tow receiver crossbar": 10,
+          "Tow hitch receiver": 6
+        }
+      },
+      "Rear shock chrome shaft RR": {
+        "visible": true,
+        "visible_samples": 16,
+        "tested_in_frame": 33,
+        "occluders": {
+          "Shock eye RR lower": 13,
+          "Shock eye bushing RR lower": 4
+        }
+      },
+      "Wheel hub RR": {
+        "visible": true,
+        "visible_samples": 27,
+        "tested_in_frame": 177,
+        "occluders": {
+          "Rear wheel bearing housing -1": 38,
+          "Rear axle | rigid driven tube": 20,
+          "Brake rotor face RR-0.011": 18,
+          "Leaf pack RR lamination 2": 16
+        }
+      },
+      "Rear axle | rigid driven tube": {
+        "visible": true,
+        "visible_samples": 22,
+        "tested_in_frame": 121,
+        "occluders": {
+          "Rear wheel bearing housing -1": 37,
+          "Rear differential cover": 20,
+          "Wheel hub RR": 19,
+          "Leaf pack RR lamination 2": 12
+        }
+      },
+      "Brake rotor face RR-0.011": {
+        "visible": true,
+        "visible_samples": 49,
+        "tested_in_frame": 172,
+        "occluders": {
+          "Rear axle | rigid driven tube": 24,
+          "Leaf pack RR lamination 4": 15,
+          "Tire RR | formed sidewall and carcass": 14,
+          "Rear wheel bearing housing -1": 13
+        }
+      }
+    },
+    "181": {
+      "Leaf pack RR lamination 1": {
+        "visible": true,
+        "visible_samples": 46,
+        "tested_in_frame": 143,
+        "occluders": {
+          "Rear differential cover": 42,
+          "Leaf pack RR lamination 3": 17,
+          "Leaf pack RR lamination 2": 14,
+          "Leaf spring saddle -1": 14
+        }
+      },
+      "Rear shock body RR": {
+        "visible": true,
+        "visible_samples": 11,
+        "tested_in_frame": 33,
+        "occluders": {
+          "Tow receiver crossbar": 9,
+          "Tow hitch receiver": 7
+        }
+      },
+      "Rear shock chrome shaft RR": {
+        "visible": true,
+        "visible_samples": 16,
+        "tested_in_frame": 33,
+        "occluders": {
+          "Shock eye RR lower": 13,
+          "Shock eye bushing RR lower": 4
+        }
+      },
+      "Wheel hub RR": {
+        "visible": true,
+        "visible_samples": 27,
+        "tested_in_frame": 177,
+        "occluders": {
+          "Rear wheel bearing housing -1": 39,
+          "Brake rotor face RR-0.011": 18,
+          "Rear axle | rigid driven tube": 18,
+          "Leaf pack RR lamination 1": 14
+        }
+      },
+      "Rear axle | rigid driven tube": {
+        "visible": true,
+        "visible_samples": 22,
+        "tested_in_frame": 121,
+        "occluders": {
+          "Rear wheel bearing housing -1": 37,
+          "Wheel hub RR": 20,
+          "Rear differential cover": 20,
+          "Leaf pack RR lamination 1": 12
+        }
+      }
+    },
+    "158": {
+      "Leaf pack RR lamination 1": {
+        "visible": true,
+        "visible_samples": 47,
+        "tested_in_frame": 143,
+        "occluders": {
+          "Rear differential cover": 48,
+          "Leaf pack RR lamination 2": 15,
+          "Leaf spring saddle -1": 14,
+          "Leaf pack RR lamination 3": 13
+        }
+      },
+      "Rear shock body RR": {
+        "visible": true,
+        "visible_samples": 17,
+        "tested_in_frame": 33,
+        "occluders": {
+          "Tow receiver crossbar": 8,
+          "Tow hitch receiver": 8
+        }
+      },
+      "Rear shock chrome shaft RR": {
+        "visible": true,
+        "visible_samples": 16,
+        "tested_in_frame": 33,
+        "occluders": {
+          "Shock eye RR lower": 13,
+          "Shock eye bushing RR lower": 4
+        }
+      },
+      "Wheel hub RR": {
+        "visible": true,
+        "visible_samples": 28,
+        "tested_in_frame": 177,
+        "occluders": {
+          "Rear wheel bearing housing -1": 41,
+          "Leaf pack RR lamination 1": 19,
+          "Rear axle | rigid driven tube": 19,
+          "Brake rotor face RR-0.011": 19
+        }
+      },
+      "Rear axle | rigid driven tube": {
+        "visible": true,
+        "visible_samples": 22,
+        "tested_in_frame": 121,
+        "occluders": {
+          "Rear wheel bearing housing -1": 40,
+          "Wheel hub RR": 22,
+          "Rear differential cover": 20,
+          "Leaf pack RR lamination 1": 17
+        }
+      },
+      "Brake rotor face RR-0.011": {
+        "visible": true,
+        "visible_samples": 49,
+        "tested_in_frame": 172,
+        "occluders": {
+          "Rear axle | rigid driven tube": 23,
+          "Rear wheel bearing housing -1": 15,
+          "Tire RR | formed sidewall and carcass": 12,
+          "Leaf pack RR lamination 1": 10
+        }
+      }
+    }
+  },
+  "inspection_cameras": [
+    "INSPECT_01_FULL_TRUCK",
+    "INSPECT_02_UNDERSIDE_OVERVIEW",
+    "INSPECT_03_FRONT_SUSPENSION",
+    "INSPECT_04_REAR_RIGHT_SUSPENSION"
+  ],
+  "invalid_drivers": [],
+  "verification_seconds": 7.7137320000329055,
+  "checks": {
+    "wheel_contact_under_2mm": true,
+    "wheel_spin_under_1e-4rad": true,
+    "travel_within_80mm": true,
+    "rigid_axle_under_0.1mm": true,
+    "link_endpoints_under_0.1mm": true,
+    "leaf_center_under_5mm": true,
+    "lens_clearance_over_50mm": true,
+    "four_inspection_cameras": true,
+    "all_drivers_valid": true,
+    "whole_truck_in_establishing_and_end": true,
+    "RR_compression_rebound_over_50mm": true,
+    "all_required_undercarriage_groups_visible": true,
+    "RR_mechanism_visible_at_both_extremes": true,
+    "tire_surface_contact_within_6mm": true
+  },
+  "undercarriage_visibility_frames": {
+    "Engine oil sump": [
+      85,
+      89,
+      141
+    ],
+    "Transmission | longitudinal case": [
+      85,
+      89,
+      93,
+      97,
+      101,
+      105
+    ],
+    "Transfer case | offset front output": [
+      85,
+      89,
+      93,
+      97,
+      101,
+      105,
+      109,
+      133,
+      137,
+      141
+    ],
+    "Front differential | compact carrier": [
+      85,
+      89,
+      93,
+      97,
+      137,
+      141
+    ],
+    "Rear differential | cast housing": [
+      85,
+      89,
+      113,
+      117,
+      121,
+      125,
+      129,
+      133,
+      137,
+      141
+    ],
+    "Rear driveshaft | articulated": [
+      85,
+      89,
+      105,
+      109,
+      113,
+      117,
+      121,
+      125,
+      133,
+      137
+    ],
+    "Front driveshaft | transfer to IFS differential": [
+      85,
+      89,
+      93,
+      97,
+      101,
+      137,
+      141
+    ],
+    "Fuel tank | left side protected polymer": [
+      85,
+      89,
+      93,
+      101,
+      105,
+      109,
+      113,
+      117,
+      121,
+      133,
+      137
+    ],
+    "Exhaust | continuous right-side routing": [
+      85,
+      89,
+      93,
+      97,
+      105,
+      109,
+      113,
+      117,
+      121,
+      125,
+      129,
+      133,
+      137,
+      141
+    ],
+    "Muffler | oval silencer": [
+      85,
+      89,
+      93,
+      97,
+      101,
+      105,
+      109,
+      133,
+      137
+    ],
+    "Frame rail L": [
+      85,
+      89,
+      93,
+      97,
+      101,
+      105,
+      109,
+      113,
+      121,
+      125
+    ],
+    "Frame rail R": [
+      85,
+      89,
+      93,
+      97,
+      101,
+      105,
+      109,
+      113,
+      121,
+      125,
+      129,
+      133
+    ],
+    "Steering rack | central housing": [
+      85,
+      89,
+      93,
+      97,
+      137,
+      141
+    ],
+    "Front CV halfshaft FR": [
+      137,
+      141
+    ],
+    "FR Lower A-arm -0.18": [
+      85,
+      89,
+      133,
+      137,
+      141
+    ],
+    "FR Lower A-arm 0.18": [
+      85,
+      89,
+      137
+    ],
+    "Front coil spring FR": [
+      85,
+      89,
+      93,
+      133,
+      137
+    ]
+  },
+  "evaluated_tire_surface_clearance_range_m": [
+    -0.003188546950143936,
+    -0.000314436387270689
+  ]
+}

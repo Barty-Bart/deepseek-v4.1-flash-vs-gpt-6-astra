@@ -1,0 +1,28 @@
+{
+  "preview": "http://127.0.0.1:5181",
+  "browser": "Chromium",
+  "checks": [
+    "Live preview renders at 1440\u00d71000 with keyboard skip link and visible focus",
+    "Live preview renders at 390\u00d7844 without page overflow; time controls have 44px targets",
+    "Customer can select service/barber/time and confirm; summary and stored duration agree",
+    "Private booking page renders on mobile; cancellation releases the selected slot",
+    "Mobile date rail and date picker refresh availability; closed days have a helpful empty state",
+    "Admin requires sign in and shows seeded appointments for the chosen date",
+    "Admin receives a named overlap error and can create/remove a valid unavailable period",
+    "Admin layout fits mobile width with a scrollable table; logout revokes access",
+    "Complete booking works with JavaScript disabled; refreshing times keeps details out of URLs",
+    "No uncaught JavaScript errors or HTTP 5xx responses during the pass"
+  ],
+  "javascript_errors": [],
+  "server_errors": [],
+  "screenshots": [
+    "desktop-booking.png",
+    "mobile-booking.png",
+    "desktop-confirmation.png",
+    "mobile-confirmation.png",
+    "desktop-login.png",
+    "desktop-admin.png",
+    "mobile-admin.png"
+  ],
+  "result": "passed"
+}

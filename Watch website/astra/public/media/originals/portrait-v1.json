@@ -1,0 +1,29 @@
+{
+  "output": "public/media/originals/portrait-v1.mp4",
+  "aspect": "portrait",
+  "version": "v1",
+  "width": 1076,
+  "height": 1928,
+  "duration": 23.125001,
+  "boundaries": [
+    {
+      "input": "public/media/originals/portrait-1-v1.mp4",
+      "start": 0,
+      "end": 7.041667,
+      "frames": 169
+    },
+    {
+      "input": "public/media/originals/portrait-2-v1-defocus2.mp4",
+      "start": 7.041667,
+      "end": 14.083334,
+      "frames": 169
+    },
+    {
+      "input": "public/media/originals/portrait-3-v1.mp4",
+      "start": 14.083334,
+      "end": 23.125001,
+      "frames": 217
+    }
+  ],
+  "method": "Sequential concatenation of connected generated clips; no crossfades or substituted scenes. Original clips preserved."
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Northline Barber{% endblock %}</title>
+<meta name="description" content="Northline Barber — walk in sharp. Book a cut, beard trim or both with Alex or Jordan in Melbourne.">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+<link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ url_for('customer.home') }}">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28" role="presentation">
+          <circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M10.2 21.6 L16 12.4 L21.8 21.6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12.6 18.4 H19.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Northline</span>
+        <span class="brand-sub">Barber · Melbourne</span>
+      </span>
+    </a>
+
+    <button type="button" class="nav-toggle" id="nav-toggle"
+            aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-icon" aria-hidden="true">
+        <svg viewBox="0 0 20 14" width="20" height="14" focusable="false">
+          <path class="bar bar-1" d="M1 1h18" />
+          <path class="bar bar-2" d="M1 7h18" />
+          <path class="bar bar-3" d="M1 13h18" />
+        </svg>
+      </span>
+      <span class="nav-toggle-text">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="{{ url_for('customer.home') }}" {% if request.endpoint == 'customer.home' %}aria-current="page"{% endif %}>Book</a>
+      <a href="{{ url_for('customer.manage_entry') }}" {% if request.endpoint and request.endpoint.startswith('customer.manage') %}aria-current="page"{% endif %}>My booking</a>
+      <a href="{{ url_for('admin_panel.dashboard') }}" class="nav-admin">Staff</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-stack" role="status">
+        {% for category, message in messages %}
+          <p class="flash flash-{{ category }}">{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p><strong>Northline Barber</strong> · 12 Northline Arcade, Melbourne VIC</p>
+    <p class="muted">Tuesday–Saturday 09:00–17:00 ({{ shop_tz_name }})</p>
+    <p class="muted small">Local demo build — no confirmation emails are sent, no payments are taken, and no data leaves this machine.</p>
+  </div>
+</footer>
+<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</body>
+</html>

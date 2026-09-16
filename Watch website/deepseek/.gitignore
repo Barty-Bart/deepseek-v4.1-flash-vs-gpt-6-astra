@@ -1,0 +1,7 @@
+node_modules/
+dist/
+build/chrome-*/
+build/*.log
+build/tmp/
+*.tmp
+.DS_Store
